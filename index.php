@@ -5,6 +5,7 @@
         <title></title>
          
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <meta name="viewport" content="width=980px, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         
         <link rel="stylesheet" type="text/css" href="_static/css/reset-min.css" />
         <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
@@ -16,6 +17,8 @@
     
     <body>
         
+        <img id="logo" src="_static/img/logo.png" />
+
         <div id="menuContainer">
             <ul id="menu">
                 <li><a href="p1">Pagina 1</a></li>

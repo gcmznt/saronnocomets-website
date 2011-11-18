@@ -9,6 +9,15 @@ body {
 	position: relative;
 }
 
+#logo {
+	height: 200px;
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	margin-left: 270px;
+	z-index: 1000;
+}
+
 #container {
 	height: 100%;
 	overflow: hidden;
@@ -26,7 +35,7 @@ body {
 	height: 100%;
 }
 .innerContainer {
-	width: 960px;
+	width: 940px;
 	margin: 0 auto 0px;
 	padding: 10px;
 	position: relative;
@@ -58,6 +67,8 @@ body {
 }
 #menu {
 	overflow: auto;
+	width: 960px;
+	margin: auto;
 }
 #menu a {
 	display: block;
@@ -105,7 +116,7 @@ body {
 }
 
 .innerMenu a.active {
-	background: #7B9A03;
-	color: #fff;
+	background: #F7941E;
+	color: #333;
 }
 

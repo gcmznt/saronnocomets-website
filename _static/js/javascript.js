@@ -23,6 +23,7 @@ $(document).ready(function() {
             pages.append(current);
             currentPage = current;
             pageLoaded.push($(this).attr('href'));
+            currentPage.find('div[title]:first').addClass('active');
         } else {
             pages.append('<div class="page" id="'+$(this).attr('href')+'"><div class="innerContainer"></div></div>');
         }
@@ -80,7 +81,7 @@ $(document).ready(function() {
 
     $('.innerMenu a').live('click', function(event) {
         var currentLink = $(this);
-        goTo(currentLink.attr('href'));
+        goTo(currentLink.attr('href').substring(1));
         return false;
     });
     $('.innerMenu a').live('mouseenter',function() {
@@ -118,34 +119,49 @@ $(document).ready(function() {
 
 
 
+    $(document).bind('keydown', function(data) {
+        console.log(data.keyCode);
+        /* su e pgsu */
+        if(data.keyCode == 38 || data.keyCode == 33) {
+            var k = currentPage.find('.innerContainer > .active').prev().attr('id');
+            if (k != undefined)
+                goTo(k);
+            return false;
+        }
+        /* giu e pggiu */
+        if(data.keyCode == 40 || data.keyCode == 34) {
+            var k = currentPage.find('.innerContainer > .active').next().attr('id');
+            if (k != undefined)
+                goTo(k);
+            return false;
+        }
+        /* fine */
+        if(data.keyCode == 35) {
+            var k = currentPage.find('.innerContainer > div').last().attr('id');
+            if (k != undefined)
+                goTo(k);
+            return false;
+        }
+        /* inizio */
+        if(data.keyCode == 36) {
+            var k = currentPage.find('.innerContainer > div').first().attr('id');
+            if (k != undefined)
+                goTo(k);
+            return false;
+        }
+    });
 
 
 
 
 
 
-    // $.get('p1.php', function(data) {
-    //     $('#p1 .innerContainer').html(data);
-    //     $('#p1 .innerContainer').find('div[title]:first').addClass('active');
-    // });
-
-    // $.get('p3.php', function(data) {
-    //     $('#p3 .innerContainer').html(data);
-    //     $('#p3 .innerContainer').find('div[title]:first').addClass('active');
-    // });
-
-    // $.get('p4.php', function(data) {
-    //     $('#p4 .innerContainer').html(data);
-    //     $('#p4 .innerContainer').find('div[title]:first').addClass('active');
-    // });
-
-    $('#p2 .innerContainer').find('div[title]:first').addClass('active');
     
     
 });
 
 function goTo(id) {
-    var anchor = $('div[id='+id.substring(1)+']');
+    var anchor = $('div[id='+id+']');
     anchor.parents('.page').animate({scrollTop:anchor.position().top}, 'slow');    
 }
 
