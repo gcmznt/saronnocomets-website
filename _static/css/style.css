@@ -1,15 +1,19 @@
 body, html {
 	height: 100%;
+	font-family: 'trebuchet MS';
+}
+
+body {
+	background: url('../img/sfondo.png');
 }
 
 #container {
-	background: #ccc;
 	height: 100%;
 	overflow: hidden;
 	position: relative;
 }
 
-.pages {
+#pages {
 	position: relative;
 	width: 20000em;
 	height: 100%;
@@ -20,22 +24,61 @@ body, html {
 	height: 100%;
 }
 .innerContainer {
-	background: #fff;
 	width: 960px;
 	margin: 0 auto 0px;
+	padding: 10px;
 	position: relative;
 }
 .innerContainer a.active {
 	color: #f00;
 }
+.innerContainer > div {
+	margin-bottom: 10px;
+	padding: 10px;
+	border-left: 3px solid #ccc;
+	border-radius: 15px;
+	background: rgba(255,255,255,0.6);
+}
+.innerContainer > div.active {
+	border-color: #f00;
+	background: rgba(255,255,255,0.8);
+}
 
-#menu {
-	background: #f4f4f4;
+#menuContainer {
+	background: rgba(255,255,255,0.7);
 	position: fixed;
 	width: 100%;
 	bottom: 0;
 	left: 0;
 }
+#menu {
+	overflow: auto;
+}
+#menu a {
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	margin-left: 20px;
+	text-decoration: none;
+	position: relative;
+	z-index: 200;
+}
+#menu a.active {
+	border-color: #ff0;
+}
+#menuContainer {
+}
+#menuContainer #pageCursor {
+	height: 100%;
+	width: 10px;
+	background-color: rgba(0,0,255,0.2);
+	position: absolute;
+	top: 0px;
+	left: 0;
+	border-top: 3px solid #00f;
+	z-index: 100;
+}
+
 .innerMenu {
 	position: absolute;
 	top: 0px;
