@@ -123,28 +123,28 @@ $(document).ready(function() {
         console.log(data.keyCode);
         /* su e pgsu */
         if(data.keyCode == 38 || data.keyCode == 33) {
-            var k = currentPage.find('.innerContainer > .active').prev().attr('id');
+            var k = currentPage.find('.innerContainer > .active').prev('div').attr('id');
             if (k != undefined)
                 goTo(k);
             return false;
         }
         /* giu e pggiu */
         if(data.keyCode == 40 || data.keyCode == 34) {
-            var k = currentPage.find('.innerContainer > .active').next().attr('id');
+            var k = currentPage.find('.innerContainer > .active').next('div').attr('id');
             if (k != undefined)
                 goTo(k);
             return false;
         }
         /* fine */
         if(data.keyCode == 35) {
-            var k = currentPage.find('.innerContainer > div').last().attr('id');
+            var k = currentPage.find('.innerContainer > div').last('div').attr('id');
             if (k != undefined)
                 goTo(k);
             return false;
         }
         /* inizio */
         if(data.keyCode == 36) {
-            var k = currentPage.find('.innerContainer > div').first().attr('id');
+            var k = currentPage.find('.innerContainer > div').first('div').attr('id');
             if (k != undefined)
                 goTo(k);
             return false;
