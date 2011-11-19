@@ -46,7 +46,7 @@ $(document).ready(function() {
                 var width = dest.outerWidth();
                 var perc = index / this.getSize() * 20;
                 $('#pageCursor').animate({left: left, width: width});
-                $('body').animate({backgroundPosition: -perc+'% 0'});
+                $('body').animate({backgroundPosition: perc+'% 0'});
 
                 if (jQuery.inArray(dest.attr('href'), pageLoaded) == -1) {
                     $.get(dest.attr('href')+'.php', function(data) {
@@ -120,41 +120,30 @@ $(document).ready(function() {
 
 
     $(document).bind('keydown', function(data) {
-        console.log(data.keyCode);
         /* su e pgsu */
-        if(data.keyCode == 38 || data.keyCode == 33) {
-            var k = currentPage.find('.innerContainer > .active').prev('div').attr('id');
-            if (k != undefined)
-                goTo(k);
-            return false;
-        }
+        if(data.keyCode == 38 || data.keyCode == 33) { goUp(); return false; }
         /* giu e pggiu */
-        if(data.keyCode == 40 || data.keyCode == 34) {
-            var k = currentPage.find('.innerContainer > .active').next('div').attr('id');
-            if (k != undefined)
-                goTo(k);
-            return false;
-        }
+        if(data.keyCode == 40 || data.keyCode == 34) { goDown(); return false; }
         /* fine */
-        if(data.keyCode == 35) {
-            var k = currentPage.find('.innerContainer > div').last('div').attr('id');
-            if (k != undefined)
-                goTo(k);
-            return false;
-        }
+        if(data.keyCode == 35) { goEnd(); return false; }
         /* inizio */
-        if(data.keyCode == 36) {
-            var k = currentPage.find('.innerContainer > div').first('div').attr('id');
-            if (k != undefined)
-                goTo(k);
-            return false;
-        }
+        if(data.keyCode == 36) { goTop(); return false; }
     });
 
 
+    $('#navigator a').live('click', function(event) {
+        /* su */
+        if($(this).attr('href') == '#up') { goUp(); return false; }
+        /* giu */
+        if($(this).attr('href') == '#down') { goDown(); return false; }
+        /* avanti */
+        if($(this).attr('href') == '#next') { scrollableAPI.next(); return false; }
+        /* indietro */
+        if($(this).attr('href') == '#prev') { scrollableAPI.prev(); return false; }
+    });
 
 
-
+    $('body').append('<div id="navigatorContainer"><ul id="navigator"><li><a href="#up" class="uarr">&uarr;</a></li><li><a href="#next" class="rarr">&rarr;</a></li><li><a href="#down" class="darr">&darr;</a></li><li><a href="#prev" class="larr">&larr;</a></li></ul></div>');
 
     
     
@@ -162,7 +151,29 @@ $(document).ready(function() {
 
 function goTo(id) {
     var anchor = $('div[id='+id+']');
-    anchor.parents('.page').animate({scrollTop:anchor.position().top}, 'slow');    
+    anchor.parents('.page').animate({scrollTop:anchor.position().top-10}, {duration:'slow',queue:false, complete:function() {
+        $('#navigator a').removeClass('active');
+    }});
+}
+function goDown() {
+    var k = currentPage.find('.innerContainer > .active').next('div').attr('id');
+    if (k != undefined)
+        goTo(k);
+}
+function goUp() {
+    var k = currentPage.find('.innerContainer > .active').prev('div').attr('id');
+    if (k != undefined)
+        goTo(k);
+}
+function goTop() {
+    var k = currentPage.find('.innerContainer > div').first('div').attr('id');
+    if (k != undefined)
+        goTo(k);
+}
+function goEnd() {
+    var k = currentPage.find('.innerContainer > div').last('div').attr('id');
+    if (k != undefined)
+        goTo(k);
 }
 
 function resizeViewport() {

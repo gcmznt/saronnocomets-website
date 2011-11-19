@@ -1,6 +1,7 @@
 body, html {
 	height: 100%;
 	font-family: 'trebuchet MS';
+	font-size: 90%;
 }
 
 body {
@@ -46,12 +47,12 @@ body {
 .innerContainer > div {
 	margin-bottom: 10px;
 	padding: 10px;
-	border-left: 3px solid #ccc;
+	border-left: 3px solid #fff;
 	border-radius: 15px;
 	background: rgba(255,255,255,0.6);
 }
 .innerContainer > div.active {
-	border-color: #f00;
+	border-color: #000080;
 	background: rgba(255,255,255,0.8);
 }
 
@@ -61,9 +62,19 @@ body {
 	width: 100%;
 	bottom: 0;
 	left: 0;
-	box-shadow: 0px -3px 5px #000;
+	box-shadow: 0px -3px 5px #6cf;
 	z-index: 10;
 	overflow: hidden;
+}
+#menuContainer #pageCursor {
+	height: 100%;
+	width: 10px;
+	background-color: rgba(255,128,0,0.2);
+	position: absolute;
+	top: 0px;
+	left: 0;
+	border-top: 3px solid #ff8000;
+	z-index: 100;
 }
 #menu {
 	overflow: auto;
@@ -73,7 +84,7 @@ body {
 #menu a {
 	display: block;
 	float: left;
-	padding: 5px 10px;
+	padding: 8px 10px 5px;
 	margin-left: 20px;
 	text-decoration: none;
 	position: relative;
@@ -81,18 +92,6 @@ body {
 }
 #menu a.active {
 	border-color: #ff0;
-}
-#menuContainer {
-}
-#menuContainer #pageCursor {
-	height: 100%;
-	width: 10px;
-	background-color: rgba(0,0,255,0.2);
-	position: absolute;
-	top: 0px;
-	left: 0;
-	border-top: 3px solid #00f;
-	z-index: 100;
 }
 
 .innerMenu {
@@ -106,7 +105,7 @@ body {
 	height: 20px;
 	padding: 0 10px;
 	float: right;
-	background: #333;
+	background: #000080;
 	overflow: hidden;
 	margin-bottom: 10px;
 	color: #fff;
@@ -116,7 +115,53 @@ body {
 }
 
 .innerMenu a.active {
-	background: #F7941E;
-	color: #333;
+	background: #ff8000;
+	color: #000080;
 }
 
+#navigatorContainer {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	margin-left: -450px;
+	width: 102px;
+	height: 68px;
+	opacity: 0.85;
+}
+#navigator a {
+	display: block;
+	width: 27px;
+	height: 20px;
+	line-height: 16px;
+	padding: 10px 0 0 3px;
+	text-decoration: none;
+	position: absolute;
+	background: #fff;
+	border: 1px solid #6cf;
+	border-radius: 8px;
+	color: 000080;
+	box-shadow: 1px 1px 3px #000;
+}
+#navigator a:hover,
+#navigator a.active {
+	background: #cef;
+	margin-top: 1px;
+	margin-left: 1px;
+	box-shadow: 0px 0px 3px #000;
+}
+#navigator .uarr {
+	top: 0px;
+	left: 34px;
+}
+#navigator .rarr {
+	top: 34px;
+	left: 68px;
+}
+#navigator .darr {
+	top: 34px;
+	left: 34px;
+}
+#navigator .larr {
+	top: 34px;
+	left: 0px;
+}
