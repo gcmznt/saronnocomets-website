@@ -21,10 +21,10 @@
 
         <div id="menuContainer">
             <ul id="menu">
-                <li><a href="p1">Pagina 1</a></li>
-                <li><a href="p2" class="active">Pagina 2</a></li>
-                <li><a href="p3">Pagina 3</a></li>
-                <li><a href="p4">Pagina 4</a></li>
+                <li><a href="p1" class="active">News</a></li>
+                <li><a href="p2">Le Squadre</a></li>
+                <li><a href="p3">La Societ&agrave;</a></li>
+                <li><a href="p4">Le Partite</a></li>
             </ul>
         </div>
         

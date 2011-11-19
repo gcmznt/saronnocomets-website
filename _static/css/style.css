@@ -34,11 +34,12 @@ body {
 	overflow: auto;
 	float: left;
 	height: 100%;
+	width: 100%;
 }
 .innerContainer {
 	width: 940px;
 	margin: 0 auto 0px;
-	padding: 10px;
+	padding: 10px 10px 180px 10px;
 	position: relative;
 }
 .innerContainer a.active {
@@ -89,9 +90,12 @@ body {
 	text-decoration: none;
 	position: relative;
 	z-index: 200;
+	color: #000080;
+	font-weight: bold;
 }
 #menu a.active {
-	border-color: #ff0;
+	border-top: 3px solid #ff8000;
+	padding-top: 5px;
 }
 
 .innerMenu {
