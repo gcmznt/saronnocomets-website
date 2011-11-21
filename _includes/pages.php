@@ -38,9 +38,11 @@
                 <?php
                     $menu = array(
                         'news' => array('News'),
-                        'p2' => array('Le Squadre'),
-                        'p3' => array('La Societ&agrave;'),
-                        'p4' => array('Le Partite'),
+                        'partite' => array('Le Partite'),
+                        'squadre' => array('Le Squadre'),
+                        'info' => array('La Societ&agrave;'),
+                        'torneo' => array('Torneo di Saronno'),
+                        'tchoukball' => array('Il TchoukBall'),
                     );
                     foreach ($menu AS $key => $value) {
                         ?>

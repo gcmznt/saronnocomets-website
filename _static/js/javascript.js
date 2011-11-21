@@ -123,17 +123,17 @@ $(document).ready(function() {
 
     $(document).bind('keydown', function(data) {
         /* su e pgsu */
-        if(data.keyCode == 38 || data.keyCode == 33) { $('#navigator .uarr').addClass('active'); return false; }
+        if(data.keyCode == 38 || data.keyCode == 33) { $('#navigatorContainer .baloon').clearQueue().fadeOut(); $('#navigator .uarr').addClass('active'); return false; }
         /* giu e pggiu */
-        if(data.keyCode == 40 || data.keyCode == 34) { $('#navigator .darr').addClass('active'); return false; }
+        if(data.keyCode == 40 || data.keyCode == 34) { $('#navigatorContainer .baloon').clearQueue().fadeOut(); $('#navigator .darr').addClass('active'); return false; }
         /* fine */
-        if(data.keyCode == 35) { return false; }
+        if(data.keyCode == 35) { $('#navigatorContainer .baloon').clearQueue().fadeOut(); return false; }
         /* inizio */
-        if(data.keyCode == 36) { return false; }
+        if(data.keyCode == 36) { $('#navigatorContainer .baloon').clearQueue().fadeOut(); return false; }
         /* destra */
-        if(data.keyCode == 39) { $('#navigator .rarr').addClass('active'); return false; }
+        if(data.keyCode == 39) { $('#navigatorContainer .baloon').clearQueue().fadeOut(); $('#navigator .rarr').addClass('active'); return false; }
         /* sinistra */
-        if(data.keyCode == 37) { $('#navigator .larr').addClass('active'); return false; }
+        if(data.keyCode == 37) { $('#navigatorContainer .baloon').clearQueue().fadeOut(); $('#navigator .larr').addClass('active'); return false; }
     });
 
     $(document).bind('keyup', function(data) {
@@ -164,8 +164,8 @@ $(document).ready(function() {
     });
 
 
-    $('body').append('<div id="navigatorContainer"><ul id="navigator"><li><a href="#up" class="uarr">&uarr;</a></li><li><a href="#next" class="rarr">&rarr;</a></li><li><a href="#down" class="darr">&darr;</a></li><li><a href="#prev" class="larr">&larr;</a></li></ul></div>');
-
+    $('body').append('<div id="navigatorContainer"><div class="baloon">Naviga con la tua tastiera!</div><ul id="navigator"><li><a href="#up" class="uarr">&uarr;</a></li><li><a href="#next" class="rarr">&rarr;</a></li><li><a href="#down" class="darr">&darr;</a></li><li><a href="#prev" class="larr">&larr;</a></li></ul></div>');
+    $('#navigatorContainer .baloon').delay(1500).fadeIn().delay(20000).fadeOut();
     
     
 });

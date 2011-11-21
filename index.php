@@ -33,38 +33,41 @@
         
         <div id="container">
             <div class="page">
-        <div class="home">
-            <h1>Saronno TchoukBall Club</h1>
-            <div class="box">
-                <h3>News</h3>
-                    La terza giornata di campionato, che sar&agrave; giocata domani, domenica 20 novembre, ad Asti e Gerenzano, segna turno di riposo per i Comets. Siccome la quarta giornata prevede l'incontro con i Varese Pirates e il derby Castor - Pollux, le societ&agrave; di Varese e Saronno hanno deciso di anticipare le partite e di giocarle durante le serate di allenamento.<br />
-                    Tutte le partite avverranno alla palestra del Liceo G.B Grassi di Saronno, in via B. Croce, alle ore 21.<br />
-                    <br />
-                    Questo l'ordine delle partite:<br />
-                    <br />
-                    luned&igrave; 21 novembre ore 21: Saronno Castor-Saronno Pollux<br />
-                    luned&igrave; 28 novembre ore 21: Saronno Castor-Varese Pirates<br />
-                    gioved&igrave; 1 dicembre ore 21: Saronno Pollux-Varese Pirates<br />
+                <div class="home">
+                    <h1>Saronno TchoukBall Club</h1>
+                    <div class="box news">
+                        <h3>News</h3>
+                        <p>
+                            La terza giornata di campionato, che sar&agrave; giocata domani, domenica 20 novembre, ad Asti e Gerenzano, segna turno di riposo per i Comets. Siccome la quarta giornata prevede l'incontro con i Varese Pirates e il derby Castor - Pollux, le societ&agrave; di Varese e Saronno hanno deciso di anticipare le partite e di giocarle durante le serate di allenamento.<br />
+                            Tutte le partite avverranno alla palestra del Liceo G.B Grassi di Saronno, in via B. Croce, alle ore 21.<br />
+                            <br />
+                            Questo l'ordine delle partite:<br />
+                            <br />
+                            luned&igrave; 21 novembre ore 21: Saronno Castor-Saronno Pollux<br />
+                            luned&igrave; 28 novembre ore 21: Saronno Castor-Varese Pirates<br />
+                            gioved&igrave; 1 dicembre ore 21: Saronno Pollux-Varese Pirates<br />
+                        </p>
+                        <a href="news">Leggi tutto</a>
+                    </div>
+                    <div class="box societa">
+                        <h3>La Societ&agrave;</h3>
+                        <a href="info"><img src="_static/img/logo.png" alt="Logo del Saronno TchoukBall Club" /></a>
+                    </div>
+                    <div class="box partite">
+                        <h3>Partite</h3>
+                    </div>
+                    <div class="box squadre">
+                        <h3>Le Squadre</h3>
+                    </div>
+                    <div class="box tchoukball">
+                        <h3>TchoukBall</h3>
+                    </div>
+                    <div class="box torneo">
+                        <h3>Torneo di Saronno</h3>
+                        <a href="torneo"><img src="_static/img/logo-tds.png" alt="Logo del Torneo Città di Saronno" /></a>
+                    </div>
+                </div>
             </div>
-            <div class="box">
-                <h3>Societ&agrave;</h3>
-                <img id="logo" src="_static/img/logo.png" alt="Logo del Saronno TchoukBall Club" />
-            </div>
-            <div class="box">
-                <h3>Partite</h3>
-            </div>
-            <div class="box">
-                <h3>Squadre</h3>
-            </div>
-            <div class="box">
-                <h3>TchoukBall</h3>
-            </div>
-            <div class="box">
-                <h3>Torneo di Saronno</h3>
-                <img id="logo-tds" src="_static/img/logo-tds.png" alt="Logo del Torneo Città di Saronno" />
-            </div>
-        </div>
-        </div>
         </div>
         
     </body>
