@@ -87,7 +87,7 @@ $(document).ready(function() {
         return false;
     });
     $('.innerMenu a').live('mouseenter',function() {
-        $(this).animate({'margin-right':'10px'},{duration:100,queue:false});
+        $(this).animate({'margin-right':'-10px'},{duration:100,queue:false});
     }).live('mouseleave', function() {
         $(this).animate({'margin-right':'0px'},{duration:100,queue:false});
     });
@@ -206,12 +206,14 @@ function resizeViewport() {
     allPages.css('height', globalContainer.height());
     scrollableAPI.seekTo(scrollableAPI.getIndex(), 0);
     allPages.each(function() {
-        h1 = $(this).children('.innerContainer').height();
-        if (h1 > 0) {
-            h2 = $(this).find('div[title]:last').position().top;
-            h3 = $(this).height();
-            p = h3 - (h1 - h2) - 20;
-            $(this).children('.innerContainer').css('padding-bottom', p+'px');
+        if ($(this).find('div[title]').length != 0) {
+            h1 = $(this).children('.innerContainer').height();
+            if (h1 > 0) {
+                h2 = $(this).find('div[title]:last').position().top;
+                h3 = $(this).height();
+                p = h3 - (h1 - h2) - 20;
+                $(this).children('.innerContainer').css('padding-bottom', p+'px');
+            }
         }
     });
 }

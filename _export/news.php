@@ -1,6 +1,6 @@
 <?php
     header("Content-type: text/plain");
-    include_once dirname(__FILE__).'/../core/db_connect.php';
+    include_once dirname(__FILE__).'/db_connect.php';
     
     $select = "n.id AS id, oggetto, data, testo, categoria, link, CONCAT_WS(' ', a.nome, a.cognome) AS nome, u.livello, a.public, a.codice";
     $news = mysql_query("SELECT $select FROM (news AS n, utenti AS u) LEFT JOIN anagrafica AS a ON a.utente = u.id WHERE n.utente = u.id AND ftbi >= 1 ORDER BY n.data DESC");

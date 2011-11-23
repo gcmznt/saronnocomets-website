@@ -11,11 +11,11 @@ body {
 }
 
 #logo {
-    height: 200px;
+    height: 160px;
     position: absolute;
     bottom: 5px;
     left: 50%;
-    margin-left: 270px;
+    margin-left: 244px;
     z-index: 1000;
 }
 
@@ -65,7 +65,7 @@ h1 {
     font-size: 2em;
     font-weight: bold;
     margin: 10px 0;
-    border-left: 3px solid #fff;
+    border-left: 4px solid #fff;
     border-radius: 15px;
     background-color: rgba(0,0,128,0.8);
     color: #fff;
@@ -77,10 +77,10 @@ h1 {
 }
 .home .box {
     height: 290px;
-    width: 287px;
+    width: 286px;
     margin: 0 10px 10px 0;
     padding: 10px;
-    border-left: 3px solid #fff;
+    border-left: 4px solid #fff;
     border-radius: 15px;
     background: rgba(255,255,255,0.6);
     position: relative;
@@ -120,7 +120,7 @@ h1 {
 .innerContainer {
     width: 630px;
     margin: 0 auto 0px;
-    padding: 10px 150px 180px 10px;
+    padding: 10px 160px 180px 10px;
     position: relative;
 }
 .innerContainer a.active {
@@ -129,7 +129,7 @@ h1 {
 .innerContainer > div {
     margin-bottom: 10px;
     padding: 10px;
-    border-left: 3px solid #fff;
+    border-left: 4px solid #fff;
     border-radius: 15px;
     background: rgba(255,255,255,0.6);
     position: relative;
@@ -144,7 +144,7 @@ h2 {
     font-weight: bold;
     margin-bottom: 10px;
     padding: 10px;
-    border-left: 3px solid #fff;
+    border-left: 4px solid #fff;
     border-radius: 15px;
     background: rgba(0,0,128,0.8);
     color: #fff;
@@ -203,14 +203,14 @@ h3 {
 }
 #menu {
     overflow: auto;
-    width: 960px;
+    width: 792px;
     margin: auto;
 }
 #menu a {
     display: block;
     float: left;
     padding: 8px 10px 5px;
-    margin-left: 20px;
+    margin-right: 18px;
     text-decoration: none;
     position: relative;
     z-index: 200;
@@ -226,7 +226,7 @@ h3 {
     position: absolute;
     top: 0px;
     right: 0px;
-    padding-top: 50px;
+    padding-top: 10px;
     z-index: 100;
 }
 .innerMenu a {
@@ -234,7 +234,7 @@ h3 {
     height: 20px;
     padding: 0 10px;
     float: right;
-    background: #000080;
+    background: #00f;
     overflow: hidden;
     margin-bottom: 10px;
     color: #fff;
@@ -243,22 +243,21 @@ h3 {
     box-shadow: 1px 1px 5px #6cf;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 120px;
+    max-width: 127px;
     clear: both;
-    border-right: 2px solid #fff;
-    opacity: 0.7;
+    border-right: 3px solid #00f;
+    opacity: 0.85;
 }
 
 .innerMenu a.active {
     opacity: 1;
-    border-right: 2px solid #000080;
-    background: #fff;
-    color: #000080;
+    color: #fff;
+    border-right: 3px solid #fff;
 }
 
 #navigatorContainer {
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
     left: 50%;
     margin-left: -450px;
     width: 102px;
