@@ -56,6 +56,7 @@ $(document).ready(function() {
                         createMenu($('#'+dest.attr('href')));
                         pageLoaded.push(dest.attr('href'));
                         resizeViewport();
+                        convertData();
                     });
                 }
             }
@@ -96,16 +97,26 @@ $(document).ready(function() {
         var cutoff = currentPage.scrollTop();
         currentPage.find('.innerMenu').animate({top:cutoff},{duration:200,queue:false},'easeOutCirc');
         var pageLinks = currentPage.find('div[title]');
+        var prevLink;
         pageLinks.each(function() {
             var currentLink = $(this);
-            if (currentLink.position().top >= cutoff) {
+            if (currentLink.position().top >= cutoff && currentLink.position().top < cutoff+400) {
                 pageLinks.removeClass('active');
                 currentLink.addClass('active');
                 currentPage.find('.innerMenu a').removeClass('active');
-                currentPage.find('.innerMenu a[href=#'+$(this).attr('id')+']').addClass('active');
+                currentPage.find('.innerMenu a[href=#'+currentLink.attr('id')+']').addClass('active');
                 return false;
             }
+            if (currentLink.position().top >= cutoff+400) {
+                pageLinks.removeClass('active');
+                prevLink.addClass('active');
+                currentPage.find('.innerMenu a').removeClass('active');
+                currentPage.find('.innerMenu a[href=#'+prevLink.attr('id')+']').addClass('active');
+                return false;
+            }
+            prevLink = currentLink;
         });
+
     });
 
     $('#menu a').click(function() {
@@ -168,6 +179,8 @@ $(document).ready(function() {
     $('#navigatorContainer .baloon').delay(1500).fadeIn().delay(20000).fadeOut();
     
     
+    convertData();
+
 });
 
 function goTo(id) {
@@ -225,10 +238,19 @@ function createMenu(page) {
     current.children('div[title]').each(function(index) {
         var linkName = $(this).attr('title');
         var linkId = 'page'+pageId+'-content'+index;
-        $(this).attr('id', linkId)
+        $(this).attr('id', linkId);
         var item = $('<li><a href="#'+linkId+'">'+linkName+'</a></li>');
         item.appendTo(menu);
     });
     menu.find('li:first a').addClass('active');
     current.prepend(menu);
+}
+
+function convertData() {
+    $('.partite .data').each(function() {
+        var val1 = $(this).html();
+        var val = $(this).html();
+        val = moment(val, 'D/MM/YYYY h:mm:ss').format('DD-MM-YYYY');
+        $(this).html(val);
+    });
 }

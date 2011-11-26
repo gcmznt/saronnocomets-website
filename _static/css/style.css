@@ -19,58 +19,6 @@ body {
     z-index: 1000;
 }
 
-
-.home .societa img {
-    height: 200px;
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    margin-left: -85px;
-}
-.home .news p {
-    height: 200px;
-    overflow: hidden;
-    padding: 5px;
-    text-overflow: ellipsis;
-}
-.home .news a {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    background: #000080;
-    border-radius: 8px;
-    display: block;
-    padding: 2px 10px;
-    border-right: 3px solid #fff;
-}
-.home .news a:hover {
-    bottom: 9px;
-    right: 9px;
-}
-.home .torneo img {
-    height: 200px;
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    margin-left: -78px;
-}
-
-h1 {
-    background: url('../img/titolo.png') 10% 60% no-repeat;
-    height: 80px;
-    text-indent: -2000em;
-    font-size: 2em;
-    font-weight: bold;
-    margin: 10px 0;
-    border-left: 4px solid #fff;
-    border-radius: 15px;
-    background-color: rgba(0,0,128,0.8);
-    color: #fff;
-}
-
 .home {
     width: 950px;
     margin: auto;
@@ -87,6 +35,9 @@ h1 {
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: block;
+    text-decoration: none;
+    color: #333;
 }
 .home .box:nth-child(3n+1) {
     margin-right: 0;
@@ -94,6 +45,53 @@ h1 {
 .home .box:hover {
     border-color: #000080;
     background: rgba(255,255,255,0.8);
+}
+
+
+.home .info img {
+    height: 200px;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    margin-left: -85px;
+}
+.home .news h4 {
+    overflow: hidden;
+    padding: 10px 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.home .news p {
+    height: 200px;
+    overflow: hidden;
+    padding: 0 5px;
+    text-overflow: ellipsis;
+}
+.home .torneo img {
+    height: 200px;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    margin-left: -78px;
+}
+
+.home .box.squadre {
+    background: url('../img/squadre/home.jpg') center center no-repeat;
+}
+
+
+
+h1 {
+    background: url('../img/titolo.png') 10% 60% no-repeat;
+    height: 80px;
+    text-indent: -2000em;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0;
+    border-left: 4px solid #fff;
+    border-radius: 15px;
+    background-color: rgba(0,0,128,0.8);
+    color: #fff;
 }
 
 
@@ -159,6 +157,11 @@ h3 {
     background: #6cf;
     color: #fff;
 }
+h4 {
+    padding: 10px 10px;
+    color: #000080;
+    font-weight: bold;
+}
 
 .news .data {
     position: absolute;
@@ -170,16 +173,103 @@ h3 {
 .news.active .data {
     display: block;
 }
-.news p {
+p {
     padding: 0 10px;
     text-align: justify;
 }
-.news .firma {
+.firma {
     padding: 10px 10px 0;
     text-align: right;
     font-style: italic;
     text-transform: capitalize;
 }
+
+.info label {
+    font-style: italic;
+    font-size: 0.85em;
+}
+
+.castorpollux {
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px #6cf;
+}
+
+img.right {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+a.partite table {
+    width: 100%;
+}
+a.partite td {
+    padding: 1px 0px 1px 8px;
+    white-space: nowrap;
+}
+a.partite .evento {
+    padding: 5px 0;
+}
+a.partite td:nth-child(2) {
+    text-align: center;
+}
+a.partite td:nth-child(3) {
+    text-align: center;
+}
+a.partite td:nth-child(4) {
+    text-align: right;
+}
+a.partite td.data {
+    padding-top: 9px;
+    font-size: 0.85em;
+    text-align: left;
+}
+table.partite td {
+    padding: 2px 8px;
+    white-space: nowrap;
+}
+table.partite td:nth-child(1) {
+    font-size: 0.9em;
+}
+table.partite td:nth-child(2) {
+    padding: 2px 4px;
+}
+table.partite td:nth-child(3) {
+    padding: 2px 4px;
+}
+table.partite td:nth-child(4) {
+    font-size: 0.9em;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+table.partite td:nth-child(5) {
+    text-align: right;
+}
+table.partite td:nth-child(6) {
+    text-align: right;
+}
+table.partite td:nth-child(7) {
+    text-align: right;
+}
+table.partite .saronno {
+    font-weight: bold;
+}
+
+.squadre td {
+    padding: 2px 8px;
+    white-space: nowrap;
+}
+.squadre td:nth-child(1) {
+    text-align: right;
+}
+.squadre td:nth-child(3) {
+    font-weight: bold;
+}
+.squadre td:nth-child(4) {
+    text-align: right;
+}
+
+
 
 #menuContainer {
     background-color: rgba(255,255,255,0.8);
@@ -225,7 +315,7 @@ h3 {
 .innerMenu {
     position: absolute;
     top: 0px;
-    right: 0px;
+    left: 650px;
     padding-top: 10px;
     z-index: 100;
 }
@@ -245,14 +335,14 @@ h3 {
     white-space: nowrap;
     max-width: 127px;
     clear: both;
-    border-right: 3px solid #00f;
+    border-left: 3px solid #00f;
     opacity: 0.85;
 }
 
 .innerMenu a.active {
     opacity: 1;
     color: #fff;
-    border-right: 3px solid #fff;
+    border-left: 3px solid #fff;
 }
 
 #navigatorContainer {
