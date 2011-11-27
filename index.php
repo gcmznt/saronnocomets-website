@@ -53,8 +53,9 @@
     $i = 0;
     foreach($stagioni AS $s => $partite) {
         foreach($partite AS $p) {
-            if ($i >= 5) break;
-            $i++;
+            if ($p['home']) {
+                if ($i >= 5) break;
+                $i++;
         ?>
                             <tr>
                                 <td class="evento" rowspan="2"><img src="_static/img/<?php echo $icone[$p['evento']]; ?>" alt="<?php echo $p['evento']; ?>" /></td>
@@ -67,7 +68,7 @@
                                 <td><?php echo $p['s2']; ?></td>
                             </tr>
         <?php
-    }}
+    }}}
 ?>
                         </table>
                     </a>

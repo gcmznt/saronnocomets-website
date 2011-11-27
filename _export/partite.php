@@ -19,18 +19,19 @@
                             'sheet'         => 0, // Foglio interno, partono da 0
                             'jumpheader'    => 1, // Numero di righe da saltare
                             'fields'        => array( // Colonne da pescare (partono da 1)
-                                                    's1'             => 1,
-                                                    'p1'             => 2,
-                                                    'p2'             => 3,
-                                                    's2'             => 4,
-                                                    'derby'          => 5,
-                                                    'neutro'         => 6,
-                                                    'citta'          => 7,
-                                                    'indirizzo'      => 8,
-                                                    'evento'         => 9,
-                                                    'stagione'       => 10,
-                                                    'data'           => 11,
-                                                    'youtchouk'      => 12,
+                                                    'home'           => 1,
+                                                    's1'             => 2,
+                                                    'p1'             => 3,
+                                                    'p2'             => 4,
+                                                    's2'             => 5,
+                                                    'derby'          => 6,
+                                                    'neutro'         => 7,
+                                                    'citta'          => 8,
+                                                    'indirizzo'      => 9,
+                                                    'evento'         => 10,
+                                                    'stagione'       => 11,
+                                                    'data'           => 12,
+                                                    'youtchouk'      => 13,
                                                     ),
                             'callback'      => 'Store', // Funzione di callback
                         ),
@@ -45,6 +46,7 @@
                 
         function Store($Fields) {
             
+            $Fields['home'] = ($Fields['home'] == 'x') ? true : false;
             $Fields['derby'] = ($Fields['derby'] == 'x') ? true : false;
             $Fields['neutro'] = ($Fields['neutro'] == 'x') ? true : false;
 

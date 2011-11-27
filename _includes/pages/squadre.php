@@ -9,7 +9,10 @@
                     <h3>Stagione <?php echo ($s-1).' - '.$s; ?></h3>
                     <?php
                         foreach($squadre AS $t => $giocatori) {
+                            $foto = '_static/img/squadre/'.$t.$s;
+                            $foto = (is_file(dirname(__FILE__).'/../../'.$foto.'.jpg')) ? '<a href="'.$foto.'.jpg" class="prettyPhoto" title="'.$t.' '.$s.'" rel="prettyPhoto[squadre]"><img src="'.$foto.'_sm.jpg" /></a>' : '';
                             ?>
+                                <?php echo $foto; ?>
                                 <h4><?php echo $t; ?></h4>
                                 <table>
                                 <?php
@@ -20,7 +23,6 @@
                                                 <td><?php echo ($g['capitano']) ? '(C)' : ''; ?></td>
                                                 <td><?php echo $g['nome']; ?></td>
                                                 <td><?php echo $g['nascita']; ?></td>
-                                                <td><?php echo $g['data']; ?></td>
                                             </tr>
                                         <?php
                                     }
