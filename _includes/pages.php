@@ -44,9 +44,9 @@
                 <?php
                     $menu = array(
                         'news' => array('News'),
-                        'partite' => array('Le Partite'),
-                        'squadre' => array('Le Squadre'),
-                        'info' => array('La Societ&agrave;'),
+                        'partite' => array('Partite'),
+                        'squadre' => array('Squadre'),
+                        'info' => array('Societ&agrave;'),
                         'torneo' => array('Torneo di Saronno'),
                         'tchoukball' => array('Il TchoukBall'),
                     );
