@@ -1,4 +1,4 @@
-        <h2>News</h2>
+        <h2>Societ&agrave;</h2>
         <div title="Informazioni societ&agrave;" class="info">
             <h3>Informazioni societ&agrave;</h3>
             <h4>Associazione Sportiva Dilettantistica Saronno TchoukBall Club</h4>
