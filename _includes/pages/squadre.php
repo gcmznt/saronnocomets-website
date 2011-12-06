@@ -10,17 +10,16 @@
                     <?php
                         foreach($squadre AS $t => $giocatori) {
                             $foto = '_static/img/squadre/'.$t.$s;
-                            $foto = (is_file(dirname(__FILE__).'/../../'.$foto.'.jpg')) ? '<a href="'.$foto.'.jpg" class="prettyPhoto" title="'.$t.' '.$s.'" rel="prettyPhoto[squadre]"><img src="'.$foto.'_sm.jpg" /></a>' : '';
+                            $foto = (is_file(dirname(__FILE__).'/../../'.$foto.'.jpg')) ? '<a href="'.$foto.'.jpg" class="prettyPhoto" title="'.$t.' '.$s.'" rel="prettyPhoto['.$t.']"><img src="'.$foto.'_sm.jpg" /></a>' : '';
                             ?>
-                                <?php echo $foto; ?>
                                 <h4><?php echo $t; ?></h4>
+                                <?php echo $foto; ?>
                                 <table>
                                 <?php
                                     foreach($giocatori AS $t => $g) {
                                         ?>
                                             <tr>
                                                 <td><?php echo $g['numero']; ?></td>
-                                                <td><?php echo ($g['capitano']) ? '(C)' : ''; ?></td>
                                                 <td><?php echo $g['nome']; ?></td>
                                                 <td><?php echo $g['nascita']; ?></td>
                                             </tr>

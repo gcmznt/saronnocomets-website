@@ -13,7 +13,7 @@ body {
 #logo {
     height: 160px;
     position: absolute;
-    bottom: 5px;
+    bottom: 10px;
     left: 50%;
     margin-left: 244px;
     z-index: 1000;
@@ -118,7 +118,7 @@ h1 {
 .innerContainer {
     width: 630px;
     margin: 0 auto 0px;
-    padding: 10px 160px 180px 10px;
+    padding: 60px 160px 180px 10px;
     position: relative;
 }
 .innerContainer a.active {
@@ -255,46 +255,51 @@ table.partite .saronno {
     font-weight: bold;
 }
 
+.squadre table {
+    width: 336px;
+}
 .squadre td {
     padding: 2px 8px;
     white-space: nowrap;
 }
 .squadre td:nth-child(1) {
     text-align: right;
+    width: 18px;
 }
-.squadre td:nth-child(3) {
+.squadre tr:nth-child(1) {
     font-weight: bold;
 }
-.squadre td:nth-child(4) {
+.squadre td:nth-child(3) {
     text-align: right;
     font-size: 0.9em;
 }
 
 .squadre .prettyPhoto img {
     float: right;
-    margin: 10px 10px 0 0;
+    margin: 4px 10px 0 0;
 }
 
 
 
 #menuContainer {
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.9);
     position: absolute;
     width: 100%;
-    bottom: 0;
+    top: 10px;
     left: 0;
-    box-shadow: 0px -3px 5px #6cf;
+    box-shadow: 0px 1px 8px #6cf;
     z-index: 10;
     overflow: hidden;
 }
 #menuContainer #pageCursor {
-    height: 100%;
+    height: 30px;
     width: 10px;
-    background-color: rgba(255,128,0,0.2);
+    background-color: rgba(102,204,255,0.6);
+    box-shadow: 1px 1px 2px #39c;
     position: absolute;
-    top: 0px;
+    top: 5px;
     left: 0;
-    border-top: 3px solid #ff8000;
+    border-radius: 10px;
     z-index: 100;
 }
 #menu {
@@ -305,25 +310,29 @@ table.partite .saronno {
 #menu a {
     display: block;
     float: left;
-    padding: 8px 10px 5px;
+    padding: 5px 10px;
     margin-right: 18px;
     text-decoration: none;
     position: relative;
     z-index: 200;
     color: #000080;
     font-weight: bold;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
 }
 #menu a.active {
-    border-top: 3px solid #ff8000;
-    padding-top: 5px;
+    /*border-top: 3px solid #ff8000;*/
+    /*padding-top: 8px;*/
+    color: #fff;
 }
 
 .innerMenu {
     position: absolute;
     top: 0px;
     left: 650px;
-    padding-top: 10px;
-    z-index: 100;
+    padding-top: 60px;
+    z-index: 5;
 }
 .innerMenu a {
     display: block;
@@ -353,7 +362,7 @@ table.partite .saronno {
 
 #navigatorContainer {
     position: absolute;
-    bottom: 40px;
+    bottom: 10px;
     left: 50%;
     margin-left: -450px;
     width: 102px;
