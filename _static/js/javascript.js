@@ -90,9 +90,9 @@ $(document).ready(function() {
         return false;
     });
     $('.innerMenu a').live('mouseenter',function() {
-        $(this).animate({'margin-right':'-10px'},{duration:100,queue:false});
+        $(this).animate({'margin-left':'10px'},{duration:100,queue:false});
     }).live('mouseleave', function() {
-        $(this).animate({'margin-right':'0px'},{duration:100,queue:false});
+        $(this).animate({'margin-left':'0px'},{duration:100,queue:false});
     });
 
     allPages.scroll(function() {
@@ -213,7 +213,7 @@ $.address.init(function(event) {
 
 function goTo(id) {
     var anchor = $('div[id='+id+']');
-    anchor.parents('.page').animate({scrollTop:anchor.position().top-10}, {duration:'slow',queue:false, complete:function() {
+    anchor.parents('.page').animate({scrollTop:anchor.position().top-60}, {duration:'slow',queue:false, complete:function() {
         $('#navigator a').removeClass('active');
     }});
 }

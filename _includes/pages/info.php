@@ -1,6 +1,7 @@
         <h2>Societ&agrave;</h2>
         <div title="Informazioni societ&agrave;" class="info">
             <h3>Informazioni societ&agrave;</h3>
+            <img src="_static/img/logo.png" class="logo" />
             <h4>Associazione Sportiva Dilettantistica Saronno TchoukBall Club</h4>
             <p>
                 <label>Sede:</label> via Parini, 54 - 21047 Saronno (VA)<br />
@@ -8,7 +9,6 @@
                 <label>Web:</label> www.saronnocomets.it<br />
                 <label>Facebook:</label> <a href="http://www.facebook.com/saronnocomets">www.facebook.com/saronnocomets</a><br />
             </p>
-            <img src="_static/img/logo.png" class="right" />
             <h4>Consiglio direttivo</h4>
             <p>
                 <label>Presidente:</label> Fausto Zinetti<br />
