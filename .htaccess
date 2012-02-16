@@ -1,5 +1,6 @@
 #Options +FollowSymlinks
 RewriteEngine On
+RewriteBase /
 
 RewriteRule ^([a-z0-9_]+)-([a-zA-Z0-9_\-\ ]+)$ pages.php?section=$1&param=$2
 RewriteRule ^([a-z0-9_]+)$ _includes/pages.php?section=$1
