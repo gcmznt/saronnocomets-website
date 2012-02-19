@@ -19,6 +19,37 @@
         <class id="bookmark"><img src="_static/img/logo-shadow.png" id="logo" alt="Il logo del Saronno TchoukBall Club" /></div>
     </div>
 
+    <div id="main">
+        <div id="herospace">
+            <div class="hero" style="background-image:url(_static/img/hero-2002.png);">
+                <h2>
+                    Saronno. Since 2002<br />
+                    Il primo TchoukBall<br />Club italiano!
+                </h2>
+                <h3>
+                    
+                </h3>
+            </div>
+            <div class="hero" style="background-image:url(_static/img/hero-championships.png);display:none;">
+                <h2>
+                    Saronno Castor<br />
+                    4 volte campioni d&rsquo;Italia
+                </h2>
+                <h3>
+                    2007 &bull; 2008 &bull; 2009 &bull; 2010
+                </h3>
+            </div>
+            <div class="hero" style="background-image:url(_static/img/hero-ewcs.png);display:none;">
+                <h2>
+                    Saronno Castor<br />
+                    Campioni d&rsquo;Europa in carica
+                </h2>
+                <h3>
+                    2010 &bull; 2011
+                </h3>
+            </div>
+        </div>
+        <div id="content">
 asd<br/>
 asd<br/>
 asd<br/>
@@ -71,6 +102,9 @@ asd<br/>
 asd<br/>
 asd<br/>
 asd<br/>
+        </div>
+    </div>
+
 </body>
 </html>
     

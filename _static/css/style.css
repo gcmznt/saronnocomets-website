@@ -13,6 +13,7 @@ body {
     top: 26px;
     width: 100%;
     font-size: 300%;
+    z-index: 10;
 }
 
 h1 {
@@ -33,4 +34,38 @@ h1 {
 
 #logo {
     margin: 26px 0 0 29px;
+}
+
+#main {
+    width: 960px;
+    margin: auto;
+    padding: 130px 0 0;
+}
+
+#herospace {
+    height: 300px;
+    width: 730px;
+    background: center center no-repeat;
+    margin-left: 230px;
+    color: #000080;
+    position: relative;
+}
+
+.hero {
+    height: 300px;
+    width: 730px;
+    position: absolute;
+}
+
+h2 {
+    font-size: 220%;
+    line-height: 120%;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 0 #fff;
+}
+h3 {
+    font-size: 160%;
+    line-height: 120%;
+    text-shadow: 1px 1px 0 #fff;
+    font-style: italic;
 }
