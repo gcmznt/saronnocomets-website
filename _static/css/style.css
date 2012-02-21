@@ -47,6 +47,7 @@ h1 {
     width: 730px;
     background: center center no-repeat;
     padding-left: 230px;
+    margin-bottom: 30px;
     color: #000080;
     position: relative;
     box-shadow: 0 25px 25px -25px #333;
@@ -84,6 +85,33 @@ h1 {
     background: #fff;
 }
 
+#content {
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+#col1,
+#col2 {
+    float: left;
+    width: 200px;
+    min-height: 1px;
+}
+#col2 {
+    padding-top: 30px;
+}
+#colMain {
+    float: left;
+    width: 500px;
+    margin: 0 30px;
+    box-shadow: 25px 0px 25px -25px #bdbdbd;
+}
+
+#footer {
+    box-shadow: 0 0 20px #bdbdbd;
+    background: url('../img/sfondo-gray.png') center center;
+    padding: 50px;
+}
+
 h2 {
     font-size: 220%;
     line-height: 120%;
@@ -95,4 +123,11 @@ h3 {
     line-height: 120%;
     text-shadow: 1px 1px 0 #fff;
     font-style: italic;
+}
+h4 {
+    font-size: 140%;
+    line-height: 120%;
+    text-shadow: 1px 1px 0 #fff;
+    color: #000080;
+    margin: 0 0 10px;
 }

@@ -50,6 +50,11 @@
             </div>
         </div>
         <div id="content">
+            <div id="col1">
+                
+            </div>
+            <div id="colMain">
+                <h2>News</h2>
 asd<br/>
 asd<br/>
 asd<br/>
@@ -102,7 +107,15 @@ asd<br/>
 asd<br/>
 asd<br/>
 asd<br/>
+            </div>
+            <div id="col2">
+                <h4>Partite</h4>
+                Saronno Castor vs Rovello Sgavisc
+            </div>
         </div>
+    </div>
+    <div id="footer">
+        footer
     </div>
 
 </body>
