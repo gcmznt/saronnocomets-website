@@ -46,15 +46,42 @@ h1 {
     height: 300px;
     width: 730px;
     background: center center no-repeat;
-    margin-left: 230px;
+    padding-left: 230px;
     color: #000080;
     position: relative;
+    box-shadow: 0 25px 25px -25px #333;
 }
 
 .hero {
     height: 300px;
     width: 730px;
+    margin-left: 230px;
+    left: 0;
     position: absolute;
+}
+
+#heroNavi {
+    position: absolute;
+    left: 970px;
+    top: 0px;
+}
+#heroNavi a {
+    display: block;
+    height: 10px;
+    width: 10px;
+    line-height: 15px;
+    text-align: center;
+    background: #aaa;
+    color: #fff;
+    text-indent: -1000em;
+    float: left;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 3px #333;
+}
+#heroNavi a.active {
+    background: #fff;
 }
 
 h2 {
