@@ -2,6 +2,7 @@ body {
     font-family: 'Philosopher', sans-serif;
     font-size: 100%;
     background: url('../img/sfondo.png') center top repeat-x fixed;
+    color: #333;
 }
 
 #title {
@@ -130,4 +131,75 @@ h4 {
     text-shadow: 1px 1px 0 #fff;
     color: #000080;
     margin: 0 0 10px;
+}
+h5 {
+    font-size: 100%;
+    color: #000080;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+#partite {
+    margin-bottom: 50px;
+}
+.partita {
+    box-shadow: 0 10px 10px -10px #bdbdbd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.partita h5 {
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+.partita.champ h5 {
+    background-image: url('../img/ico-cam.png');
+}
+.partita.friendly h5 {
+    background-image: url('../img/ico-ami.png');
+}
+.partita.ewc h5 {
+    background-image: url('../img/ico-ewc.png');
+}
+.partita.torneo h5 {
+    background-image: url('../img/ico-tor.png');
+}
+.partita span {
+    float: right;
+}
+#squadre {
+    margin-bottom: 50px;
+    box-shadow: 0 10px 10px -10px #bdbdbd;
+    padding-bottom: 5px;
+}
+.squadra {
+    overflow: auto;
+    margin-bottom: 15px;
+}
+.squadra img {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #333;
+}
+.squadra a {
+    text-decoration: none;
+    color: #333;
+}
+
+#facebook {
+    box-shadow: 0 10px 10px -10px #bdbdbd;
+}
+.facebookContainer {
+    overflow: hidden;
+    height: 312px;
+    width: 182px;
+    margin: auto;
+}
+
+.facebookInnerContainer {
+    height: 386px;
+    width: 184px;
+    margin: -1px 0 0 -1px;
 }

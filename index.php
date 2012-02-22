@@ -7,9 +7,11 @@
     <link rel="stylesheet" type="text/css" href="_static/css/reset-min.css" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic" />
     <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/prettyPhoto.css" />
     
     <script type="text/javascript" src="_static/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="_static/js/moment.min.js"></script>
     <script type="text/javascript" src="_static/js/javascript.js"></script>
 </head>
@@ -107,10 +109,72 @@ asd<br/>
 asd<br/>
 asd<br/>
 asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
             </div>
             <div id="col2">
-                <h4>Partite</h4>
-                Saronno Castor vs Rovello Sgavisc
+                <div id="partite">
+                    <h4>Partite</h4>
+                    <div class="partita champ">
+                        <h5>15 gennaio 2012, 20:15<br />Saronno, PalaDozio</h5>
+                        <div>Saronno Castor <span>50</span></div>
+                        <div>Rovello Sgavisc <span>48</span></div>
+                    </div>
+                    <div class="partita friendly">
+                        <h5>15 gennaio 2012<br />Saronno</h5>
+                        <div>Saronno Castor <span>50</span></div>
+                        <div>Rovello Sgavisc <span>48</span></div>
+                    </div>
+                    <div class="partita ewc">
+                        <h5>15 gennaio 2012<br />Saronno</h5>
+                        <div>Saronno Castor <span>50</span></div>
+                        <div>Rovello Sgavisc <span>48</span></div>
+                    </div>
+                    <div class="partita torneo">
+                        <h5>15 gennaio 2012<br />Saronno</h5>
+                        <div>Saronno Castor <span>50</span></div>
+                        <div>Rovello Sgavisc <span>48</span></div>
+                    </div>
+                </div>
+                <div id="squadre">
+                    <h4>Le squadre</h4>
+                    <div class="squadra">
+                        <a href="_static/img/squadre/Castor2012.jpg" class="prettyPhoto" title="Castor 2012" rel="prettyPhoto[2012]">
+                            <img src="_static/img/squadre/Castor2012_sm.jpg" />
+                            Castor
+                        </a>
+                    </div>
+                    <div class="squadra">
+                        <a href="_static/img/squadre/Pollux2012.jpg" class="prettyPhoto" title="Pollux 2012" rel="prettyPhoto[2012]">
+                            <img src="_static/img/squadre/Pollux2012_sm.jpg" />
+                            Pollux
+                        </a>
+                    </div>
+                    <div class="squadra">
+                        <a href="_static/img/squadre/PolarisMizar2012.jpg" class="prettyPhoto" title="Mizar e Polaris 2012" rel="prettyPhoto[2012]">
+                            <img src="_static/img/squadre/PolarisMizar2012_sm.jpg" />
+                            Mizar e Polaris
+                        </a>
+                    </div>
+                </div>
+                <div id="facebook">
+                    <h4>Facebook</h4>
+                    <div class="facebookContainer">
+                        <div class="facebookInnerContainer">
+                            <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fsaronnocomets&amp;width=184&amp;height=410&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=110921952278697" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:184px; height:410px;" allowTransparency="true"></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

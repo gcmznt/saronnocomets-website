@@ -43,5 +43,8 @@ $(document).ready(function() {
             t = setTimeout(heroTimer, heroInterval);
         });
     }
-
+    $('.prettyPhoto').prettyPhoto({
+        deeplinking: false,
+        social_tools: ''
+    });
 });
