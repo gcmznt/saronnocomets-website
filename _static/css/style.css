@@ -162,6 +162,20 @@ a {
     text-decoration: none;
 }
 
+.news {
+    position: relative;
+    margin-bottom: 30px;
+    padding-right: 10px;
+    font-size: 90%;
+}
+.news .date {
+    position: absolute;
+    width: 100px;
+    top: 0;
+    left: -120px;
+    text-align: center;
+}
+
 #partite {
     margin-bottom: 30px;
 }

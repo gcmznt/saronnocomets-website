@@ -16,6 +16,17 @@
     <script type="text/javascript" src="_static/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="_static/ckeditor/adapters/jquery.js"></script>
     <script type="text/javascript" src="_static/js/javascript.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-28063203-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </head>
 <body>
     <div id="title">
@@ -58,6 +69,46 @@
             </div>
             <div id="colMain">
                 <h2>News</h2>
+                <div class="news">
+                    <div class="date">
+                        15.01<br />2012
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="news">
+                    <div class="date">
+                        15.01<br />2012
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="news">
+                    <div class="date">
+                        15.01<br />2012
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+
 asd<br/>
 asd<br/>
 asd<br/>
@@ -200,7 +251,7 @@ asd<br/>
                 <h5>A.S.D. Saronnno TchoukBall Club</h5>
                 <p>via Parini 54, 21047 Saronno (VA)</p>
                 <p>info@saronnocomets.it</p>
-                <p><a href="post/?iframe=true" rel="prettyPhotoIframes" class="prettyPhotoIframe">Admin</a></p>
+                <p><a href="post/?iframe=true" rel="prettyPhotoIframes" title="Aggiungi post" class="prettyPhotoIframe">Admin</a></p>
             </div>
             <div class="footerCol" id="link">
                 <h4>Link</h4>

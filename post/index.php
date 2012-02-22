@@ -16,9 +16,19 @@
     </script>
 </head>
 <body>
-
-    <textarea></textarea>
-
+    <?php
+        if (isset($_POST['testo'])) {
+            echo $_POST['testo'];
+        } else {
+    ?>
+    <form method="post" action="">
+        <textarea name="testo"></textarea>
+        <br />
+        <input type="submit" value="Salva" />
+    </form>
+    <?php
+        }
+    ?>
 </body>
 </html>
     
