@@ -121,6 +121,20 @@ asd<br/>
 asd<br/>
 asd<br/>
 asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
+asd<br/>
             </div>
             <div id="col2">
                 <div id="partite">
@@ -179,7 +193,26 @@ asd<br/>
         </div>
     </div>
     <div id="footer">
-        footer
+        <div id="footerContent">
+            <div class="footerCol" id="link">
+                <h4>Link</h4>
+                <a href="http://www.tchouball.it" id="ftbi">Federazione TchoukBall Italia</a>
+                <a href="http://www.youtchouk.com/" id="youtchouk">YouTchouk</a>
+            </div>
+            <div class="footerCol">
+                <h4>La Societ&agrave;</h4>
+                <h5>A.S.D. Saronnno TchoukBall Club</h5>
+                <p>via Parini 54, 21047 Saronno (VA)</p>
+                <p>info@saronnocomets.it</p>
+                <h4>Il TchoukBall</h4>
+                <p><a href="http://www.tchoukball.it/tchouk">Cos'&egrave; il TchoukBall?</a></p>
+            </div>
+            <div class="footerCol" id="sponsor">
+                <h4>Sponsor</h4>
+                <a href="http://www.prodigys.it" id="prodigys">Prodigys Technology</a>
+                <a href="http://www.imp-spa.com/" id="imp">IMP Saronno</a>
+            </div>
+        </div>
     </div>
 
 </body>

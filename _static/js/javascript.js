@@ -32,7 +32,7 @@ $(document).ready(function() {
             navi.append('<a'+active+'>'+(i+1)+'</a>');
         }
         $('#herospace').append(navi);
-        $('#herospace').hover(function() {
+        $('.hero').hover(function() {
             clearTimeout(t);
         }, function() {
             t = setTimeout(heroTimer, heroInterval);

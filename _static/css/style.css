@@ -113,6 +113,20 @@ h1 {
     padding: 50px;
 }
 
+#footerContent {
+    width: 960px;
+    padding: 20px;
+    margin: auto;
+    overflow: auto;
+}
+
+.footerCol {
+    float: left;
+    width: 300px;
+    padding: 0 10px;
+    box-shadow: -15px 0px 15px -15px #bdbdbd;
+}
+
 h2 {
     font-size: 220%;
     line-height: 120%;
@@ -130,7 +144,7 @@ h4 {
     line-height: 120%;
     text-shadow: 1px 1px 0 #fff;
     color: #000080;
-    margin: 0 0 10px;
+    margin: 20px 0 15px;
 }
 h5 {
     font-size: 100%;
@@ -138,9 +152,16 @@ h5 {
     margin: 10px 0;
     font-style: italic;
 }
+p {
+    margin-bottom: 10px;
+}
+a {
+    color: #FF4500;
+    text-decoration: none;
+}
 
 #partite {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 .partita {
     box-shadow: 0 10px 10px -10px #bdbdbd;
@@ -168,7 +189,7 @@ h5 {
     float: right;
 }
 #squadre {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     box-shadow: 0 10px 10px -10px #bdbdbd;
     padding-bottom: 5px;
 }
@@ -202,4 +223,36 @@ h5 {
     height: 386px;
     width: 184px;
     margin: -1px 0 0 -1px;
+}
+
+#link a {
+    display: block;
+    background-position: left top;
+    background-repeat: no-repeat;
+    text-indent: -1000em;
+    margin-bottom: 5px;
+}
+#link #ftbi {
+    background-image: url('../img/sponsor-prodigys.png');
+    height: 80px;
+}
+#link #youtchouk {
+    background-image: url('../img/youtchouk.png');
+    height: 80px;
+    background-size: 280px auto;
+}
+#sponsor a {
+    display: block;
+    background-position: left top;
+    background-repeat: no-repeat;
+    text-indent: -1000em;
+    margin-bottom: 5px;
+}
+#sponsor #prodigys {
+    background-image: url('../img/sponsor-prodigys.png');
+    height: 80px;
+}
+#sponsor #imp {
+    background-image: url('../img/sponsor-imp.png');
+    height: 80px;
 }
