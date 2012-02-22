@@ -13,6 +13,8 @@
     <script type="text/javascript" src="_static/js/jquery.tools.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="_static/js/moment.min.js"></script>
+    <script type="text/javascript" src="_static/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="_static/ckeditor/adapters/jquery.js"></script>
     <script type="text/javascript" src="_static/js/javascript.js"></script>
 </head>
 <body>
@@ -20,7 +22,6 @@
         <h1>Saronno Tchoukball Club</h1>
         <class id="bookmark"><img src="_static/img/logo-shadow.png" id="logo" alt="Il logo del Saronno TchoukBall Club" /></div>
     </div>
-
     <div id="main">
         <div id="herospace">
             <div class="hero" style="background-image:url(_static/img/hero-2002.png);">
@@ -194,16 +195,19 @@ asd<br/>
     </div>
     <div id="footer">
         <div id="footerContent">
+            <div class="footerCol">
+                <h4>La Societ&agrave;</h4>
+                <h5>A.S.D. Saronnno TchoukBall Club</h5>
+                <p>via Parini 54, 21047 Saronno (VA)</p>
+                <p>info@saronnocomets.it</p>
+                <p><a href="post/?iframe=true" rel="prettyPhotoIframes" class="prettyPhotoIframe">Admin</a></p>
+            </div>
             <div class="footerCol" id="link">
                 <h4>Link</h4>
                 <a href="http://www.tchouball.it" id="ftbi">Federazione TchoukBall Italia</a>
                 <a href="http://www.youtchouk.com/" id="youtchouk">YouTchouk</a>
             </div>
             <div class="footerCol">
-                <h4>La Societ&agrave;</h4>
-                <h5>A.S.D. Saronnno TchoukBall Club</h5>
-                <p>via Parini 54, 21047 Saronno (VA)</p>
-                <p>info@saronnocomets.it</p>
                 <h4>Il TchoukBall</h4>
                 <p><a href="http://www.tchoukball.it/tchouk">Cos'&egrave; il TchoukBall?</a></p>
             </div>

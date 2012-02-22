@@ -11,7 +11,8 @@ body {
     line-height: 78px;
     color: #fff;
     position: fixed;
-    top: 26px;
+    top: 0px;
+    padding-top: 26px;
     width: 100%;
     font-size: 300%;
     z-index: 10;
@@ -51,7 +52,7 @@ h1 {
     margin-bottom: 30px;
     color: #000080;
     position: relative;
-    box-shadow: 0 25px 25px -25px #bdbdbd;
+    box-shadow: 0 25px 25px -25px #dbdbdb;
 }
 
 .hero {
@@ -104,13 +105,14 @@ h1 {
     float: left;
     width: 500px;
     margin: 0 30px;
-    box-shadow: 25px 0px 25px -25px #bdbdbd;
+    box-shadow: 25px 0px 25px -25px #dbdbdb;
 }
 
 #footer {
-    box-shadow: 0 -20px 20px -20px #bdbdbd;
+    font-size: 90%;
+    box-shadow: inset 0 20px 70px -20px #dbdbdb;
     background: url('../img/sfondo-gray.png') center center;
-    padding: 50px;
+    padding: 20px 50px;
 }
 
 #footerContent {
@@ -122,9 +124,9 @@ h1 {
 
 .footerCol {
     float: left;
-    width: 300px;
+    width: 220px;
     padding: 0 10px;
-    box-shadow: -15px 0px 15px -15px #bdbdbd;
+    box-shadow: -15px 0px 15px -15px #dbdbdb;
 }
 
 h2 {
@@ -164,7 +166,7 @@ a {
     margin-bottom: 30px;
 }
 .partita {
-    box-shadow: 0 10px 10px -10px #bdbdbd;
+    box-shadow: 0 10px 10px -10px #dbdbdb;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -190,7 +192,7 @@ a {
 }
 #squadre {
     margin-bottom: 30px;
-    box-shadow: 0 10px 10px -10px #bdbdbd;
+    box-shadow: 0 10px 10px -10px #dbdbdb;
     padding-bottom: 5px;
 }
 .squadra {
@@ -210,7 +212,7 @@ a {
 }
 
 #facebook {
-    box-shadow: 0 10px 10px -10px #bdbdbd;
+    box-shadow: 0 10px 10px -10px #dbdbdb;
 }
 .facebookContainer {
     overflow: hidden;
@@ -235,11 +237,12 @@ a {
 #link #ftbi {
     background-image: url('../img/sponsor-prodigys.png');
     height: 80px;
+    background-size: 220px auto;
 }
 #link #youtchouk {
     background-image: url('../img/youtchouk.png');
     height: 80px;
-    background-size: 280px auto;
+    background-size: 220px auto;
 }
 #sponsor a {
     display: block;
@@ -251,6 +254,7 @@ a {
 #sponsor #prodigys {
     background-image: url('../img/sponsor-prodigys.png');
     height: 80px;
+    background-size: 220px auto;
 }
 #sponsor #imp {
     background-image: url('../img/sponsor-imp.png');

@@ -47,4 +47,10 @@ $(document).ready(function() {
         deeplinking: false,
         social_tools: ''
     });
+    $('.prettyPhotoIframe').prettyPhoto({
+        deeplinking: false,
+        social_tools: '',
+        default_width: 960,
+        default_height: 500,
+    });
 });
