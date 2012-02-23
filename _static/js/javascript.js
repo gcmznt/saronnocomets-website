@@ -43,6 +43,7 @@ $(document).ready(function() {
             t = setTimeout(heroTimer, heroInterval);
         });
     }
+    $('.newsContent img').parents('a').attr('rel','prettyPhoto[news]').addClass('prettyPhoto');
     $('.prettyPhoto').prettyPhoto({
         deeplinking: false,
         social_tools: ''

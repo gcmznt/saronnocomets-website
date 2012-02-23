@@ -34,7 +34,9 @@
 <body>
     <div id="title">
         <h1>Saronno Tchoukball Club</h1>
-        <class id="bookmark"><img src="_static/img/logo-shadow.png" id="logo" alt="Il logo del Saronno TchoukBall Club" /></div>
+        <div id="bookmark">
+            <a href="./"><img src="_static/img/logo-shadow.png" id="logo" alt="Il logo del Saronno TchoukBall Club" /></a>
+        </div>
     </div>
     <div id="main">
         <div id="herospace">
@@ -73,7 +75,11 @@
             <div id="colMain">
                 <h2>News</h2>
                 <?php
-                    $news = mysql_query("SELECT * FROM news ORDER BY data DESC LIMIT 0,10;");
+                    $w = '';
+                    if (isset($_GET['p']) && $_GET['p'] != '') {
+                        $w = " WHERE id = " . mysql_real_escape_string($_GET['p']);
+                    }
+                    $news = mysql_query("SELECT * FROM news" . $w . " ORDER BY data DESC LIMIT 0,10;");
                     while ($n = mysql_fetch_assoc($news)) {
                 ?>
                 <div class="news">
@@ -81,7 +87,8 @@
                         <?php echo substr($n['data'],8,2).'.'.substr($n['data'],5,2); ?><br /><?php echo substr($n['data'],0,4); ?>
                     </div>
                     <div class="newsContent">
-                        <?php echo $n['testo']; ?>
+                        <h3><?php echo stripslashes($n['titolo']); ?></h3>
+                        <?php echo stripslashes($n['testo']); ?>
                     </div>
                 </div>
                 <?php
@@ -100,14 +107,16 @@
     );
 
     $partite = read_data('http://www.saronnocomets.it/_export/partite_home.php');
-    foreach($partite AS $p) {
-        ?>
-                    <div class="partita <?php echo $icone[$p['evento']]; ?>">
-                        <h5><?php echo substr($p['data'],0,16); ?><br /><?php echo $p['citta']; ?><?php echo ($p['indirizzo'] != '') ? ', '.$p['indirizzo'] : ''; ?></h5>
-                        <div><?php echo $p['s1']; ?> <span><?php echo $p['p1']; ?></span></div>
-                        <div><?php echo $p['s2']; ?> <span><?php echo $p['p2']; ?></span></div>
-                    </div>
-        <?php
+    if ($partite) {
+        foreach($partite AS $p) {
+            ?>
+                        <div class="partita <?php echo $icone[$p['evento']]; ?>">
+                            <h5><?php echo substr($p['data'],0,16); ?><br /><?php echo $p['citta']; ?><?php echo ($p['indirizzo'] != '') ? ', '.$p['indirizzo'] : ''; ?></h5>
+                            <div><?php echo $p['s1']; ?> <span><?php echo $p['p1']; ?></span></div>
+                            <div><?php echo $p['s2']; ?> <span><?php echo $p['p2']; ?></span></div>
+                        </div>
+            <?php
+        }
     }
 ?>
                 </div>

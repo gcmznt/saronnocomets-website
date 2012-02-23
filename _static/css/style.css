@@ -97,9 +97,7 @@ h1 {
     float: left;
     width: 200px;
     min-height: 1px;
-}
-#col2 {
-    padding-top: 10px;
+    padding: 10px 0;
 }
 #colMain {
     float: left;
@@ -140,6 +138,7 @@ h3 {
     line-height: 120%;
     text-shadow: 1px 1px 0 #fff;
     font-style: italic;
+    margin-bottom: 10px;
 }
 h4 {
     font-size: 140%;
@@ -160,6 +159,15 @@ p {
 a {
     color: #FF4500;
     text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
 }
 
 .news {
@@ -183,6 +191,11 @@ a {
 }
 .newsContent {
     overflow: auto;
+    padding: 5px;
+}
+.newsContent img {
+    box-shadow: 2px 2px 6px #dbdbdb;
+    margin: 0 10px 10px;
 }
 
 #partite {
