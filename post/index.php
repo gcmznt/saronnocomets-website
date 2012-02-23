@@ -8,21 +8,31 @@
     
     <script type="text/javascript" src="../_static/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="../_static/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="../_static/ckeditor/adapters/jquery.js"></script>
+    <script type="text/javascript" src="../_static/ckfinder/ckfinder.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('textarea').ckeditor();
+            var editor = CKEDITOR.replace('testo', {
+                filebrowserBrowseUrl : '../_static/ckfinder/ckfinder.html',
+                filebrowserImageBrowseUrl : '../_static/ckfinder/ckfinder.html?Type=Images',
+                filebrowserFlashBrowseUrl : '../_static/ckfinder/ckfinder.html?Type=Flash',
+                filebrowserUploadUrl : '../_static/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                filebrowserImageUploadUrl : '../_static/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                filebrowserFlashUploadUrl : '../_static/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+            });
         });
     </script>
 </head>
 <body>
     <?php
         if (isset($_POST['testo'])) {
-            echo $_POST['testo'];
+            require_once(dirname(__FILE__).'/../_includes/utilities.php');
+            $t = mysql_real_escape_string($_POST['testo']);
+            mysql_query("INSERT INTO news (testo) VALUES ('$t');");
+            echo 'Salvataggio effettuato.';
         } else {
     ?>
     <form method="post" action="">
-        <textarea name="testo"></textarea>
+        <textarea name="testo" id="testo"></textarea>
         <br />
         <input type="submit" value="Salva" />
     </form>

@@ -99,7 +99,7 @@ h1 {
     min-height: 1px;
 }
 #col2 {
-    padding-top: 30px;
+    padding-top: 10px;
 }
 #colMain {
     float: left;
@@ -167,13 +167,22 @@ a {
     margin-bottom: 30px;
     padding-right: 10px;
     font-size: 90%;
+    clear: both;
 }
 .news .date {
     position: absolute;
-    width: 100px;
+    padding: 10px;
     top: 0;
-    left: -120px;
+    left: -90px;
     text-align: center;
+    -webkit-transform: rotate(-25deg);
+    box-shadow: 3px 3px 5px #dbdbdb;
+    border-radius: 10px;
+    font-size: 120%;
+    background: #fff;
+}
+.newsContent {
+    overflow: auto;
 }
 
 #partite {
@@ -246,31 +255,28 @@ a {
     background-position: left top;
     background-repeat: no-repeat;
     text-indent: -1000em;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 #link #ftbi {
-    background-image: url('../img/sponsor-prodigys.png');
-    height: 80px;
-    background-size: 220px auto;
+    background-image: url('../img/link-ftbi.png');
+    height: 58px;
 }
 #link #youtchouk {
-    background-image: url('../img/youtchouk.png');
-    height: 80px;
-    background-size: 220px auto;
+    background-image: url('../img/link-youtchouk.png');
+    height: 35px;
 }
 #sponsor a {
     display: block;
     background-position: left top;
     background-repeat: no-repeat;
     text-indent: -1000em;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 #sponsor #prodigys {
     background-image: url('../img/sponsor-prodigys.png');
-    height: 80px;
-    background-size: 220px auto;
+    height: 44px;
 }
 #sponsor #imp {
     background-image: url('../img/sponsor-imp.png');
-    height: 80px;
+    height: 56px;
 }

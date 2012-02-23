@@ -1,8 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?php
+    require_once(dirname(__FILE__).'/_includes/utilities.php');
+
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>ASD Saronno TchoukBall Club</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <link rel="shortcut icon" href="_static/img/icon.png" type="image/png" />
+    <link rel="icon" href="_static/img/icon.png" type="image/png" />
     
     <link rel="stylesheet" type="text/css" href="_static/css/reset-min.css" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic" />
@@ -13,8 +18,6 @@
     <script type="text/javascript" src="_static/js/jquery.tools.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="_static/js/moment.min.js"></script>
-    <script type="text/javascript" src="_static/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="_static/ckeditor/adapters/jquery.js"></script>
     <script type="text/javascript" src="_static/js/javascript.js"></script>
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -69,148 +72,44 @@
             </div>
             <div id="colMain">
                 <h2>News</h2>
+                <?php
+                    $news = mysql_query("SELECT * FROM news ORDER BY data DESC LIMIT 0,10;");
+                    while ($n = mysql_fetch_assoc($news)) {
+                ?>
                 <div class="news">
                     <div class="date">
-                        15.01<br />2012
+                        <?php echo substr($n['data'],8,2).'.'.substr($n['data'],5,2); ?><br /><?php echo substr($n['data'],0,4); ?>
                     </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-                <div class="news">
-                    <div class="date">
-                        15.01<br />2012
+                    <div class="newsContent">
+                        <?php echo $n['testo']; ?>
                     </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
                 </div>
-                <div class="news">
-                    <div class="date">
-                        15.01<br />2012
-                    </div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
-asd<br/>
+                <?php
+                    }
+                ?>
             </div>
             <div id="col2">
                 <div id="partite">
                     <h4>Partite</h4>
-                    <div class="partita champ">
-                        <h5>15 gennaio 2012, 20:15<br />Saronno, PalaDozio</h5>
-                        <div>Saronno Castor <span>50</span></div>
-                        <div>Rovello Sgavisc <span>48</span></div>
+<?php
+    $icone = array(
+        'Campionato' => 'champ',
+        'Amichevole' => 'friendly',
+        'EWC' => 'ewc',
+        'Torneo' => 'torneo',
+    );
+
+    $partite = read_data('http://www.saronnocomets.it/_export/partite_home.php');
+    foreach($partite AS $p) {
+        ?>
+                    <div class="partita <?php echo $icone[$p['evento']]; ?>">
+                        <h5><?php echo substr($p['data'],0,16); ?><br /><?php echo $p['citta']; ?><?php echo ($p['indirizzo'] != '') ? ', '.$p['indirizzo'] : ''; ?></h5>
+                        <div><?php echo $p['s1']; ?> <span><?php echo $p['p1']; ?></span></div>
+                        <div><?php echo $p['s2']; ?> <span><?php echo $p['p2']; ?></span></div>
                     </div>
-                    <div class="partita friendly">
-                        <h5>15 gennaio 2012<br />Saronno</h5>
-                        <div>Saronno Castor <span>50</span></div>
-                        <div>Rovello Sgavisc <span>48</span></div>
-                    </div>
-                    <div class="partita ewc">
-                        <h5>15 gennaio 2012<br />Saronno</h5>
-                        <div>Saronno Castor <span>50</span></div>
-                        <div>Rovello Sgavisc <span>48</span></div>
-                    </div>
-                    <div class="partita torneo">
-                        <h5>15 gennaio 2012<br />Saronno</h5>
-                        <div>Saronno Castor <span>50</span></div>
-                        <div>Rovello Sgavisc <span>48</span></div>
-                    </div>
+        <?php
+    }
+?>
                 </div>
                 <div id="squadre">
                     <h4>Le squadre</h4>
@@ -261,6 +160,7 @@ asd<br/>
             <div class="footerCol">
                 <h4>Il TchoukBall</h4>
                 <p><a href="http://www.tchoukball.it/tchouk">Cos'&egrave; il TchoukBall?</a></p>
+                <p><a href="http://www.tchoukball.it/eventi-ita12a">Serie A</a> e <a href="http://www.tchoukball.it/eventi-ita12b">Serie B</a> 2011.2012</p>
             </div>
             <div class="footerCol" id="sponsor">
                 <h4>Sponsor</h4>

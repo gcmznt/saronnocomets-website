@@ -32,6 +32,7 @@
                                                     'stagione'       => 11,
                                                     'data'           => 12,
                                                     'youtchouk'      => 13,
+                                                    'info'           => 14,
                                                     ),
                             'callback'      => 'Store', // Funzione di callback
                         ),
