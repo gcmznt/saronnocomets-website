@@ -90,7 +90,7 @@
                         <?php echo substr($n['data'],8,2).'.'.substr($n['data'],5,2); ?><br /><?php echo substr($n['data'],0,4); ?>
                     </div>
                     <div class="newsContent">
-                        <h3><?php echo stripslashes($n['titolo']); ?></h3>
+                        <h3><a href="?p=<?php echo $n['id']; ?>"><?php echo stripslashes($n['titolo']); ?></a></h3>
                         <?php echo stripslashes($n['testo']); ?>
                     </div>
                 </div>
