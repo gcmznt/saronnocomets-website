@@ -6,6 +6,7 @@
 <head>
     <title>ASD Saronno TchoukBall Club</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta property="og:image" content="http://www.saronnocomets.it/_static/img/logo-shadow.png" />
     <link rel="shortcut icon" href="_static/img/icon.png" type="image/png" />
     <link rel="icon" href="_static/img/icon.png" type="image/png" />
     
@@ -43,12 +44,13 @@
             <div class="hero" style="background-image:url(_static/img/hero-2002.png);">
                 <h2>
                     Saronno. Since 2002<br />
-                    Il primo TchoukBall<br />Club italiano!
+
                 </h2>
                 <h3>
-                    
+                    Il primo Club di TchoukBall<br />in Italia!
                 </h3>
             </div>
+            <?php if (false) { ?>
             <div class="hero" style="background-image:url(_static/img/hero-championships.png);display:none;">
                 <h2>
                     Saronno Castor<br />
@@ -67,6 +69,7 @@
                     2010 &bull; 2011
                 </h3>
             </div>
+            <?php } ?>
         </div>
         <div id="content">
             <div id="col1">
@@ -79,7 +82,7 @@
                     if (isset($_GET['p']) && $_GET['p'] != '') {
                         $w = " WHERE id = " . mysql_real_escape_string($_GET['p']);
                     }
-                    $news = mysql_query("SELECT * FROM news" . $w . " ORDER BY data DESC LIMIT 0,10;");
+                    $news = mysql_query("SELECT * FROM news" . $w . " ORDER BY data DESC LIMIT 0,3;");
                     while ($n = mysql_fetch_assoc($news)) {
                 ?>
                 <div class="news">
@@ -177,6 +180,7 @@
                 <a href="http://www.imp-spa.com/" id="imp">IMP Saronno</a>
             </div>
         </div>
+        <a href="http://www.giko.it" id="firma">sito realizzato da Giko</a>
     </div>
 
 </body>

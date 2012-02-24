@@ -12,11 +12,11 @@
         define('DB_HOST',           '62.149.150.66');
         define('DB_USER',           'Sql125733');
         define('DB_PASSWORD',       '612cae5b');
-        define('DB_NAME',           'Sql125733_1');
+        define('DB_NAME',           'Sql125733_3');
     } else {
     	define('DB_HOST', 			'localhost');
     	define('DB_USER', 			'root');
-    	define('DB_PASSWORD', 		'root');
+    	define('DB_PASSWORD', 		'');
     	define('DB_NAME', 			'stbc');
     }
 
