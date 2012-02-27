@@ -212,6 +212,13 @@ em {
 .newsBottom {
     clear: both;
 }
+.twitter {
+    float: left;
+}
+.facebook {
+    float: left;
+    padding-top: 0px; 
+}
 
 #partite {
     margin-bottom: 30px;
