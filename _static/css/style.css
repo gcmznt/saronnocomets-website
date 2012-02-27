@@ -209,6 +209,9 @@ em {
     box-shadow: 2px 2px 6px #dbdbdb;
     margin: 0 10px 10px;
 }
+.newsBottom {
+    clear: both;
+}
 
 #partite {
     margin-bottom: 30px;
