@@ -1,7 +1,58 @@
                 <h2>Partite</h2>
-<?php
-    require_once(dirname(__FILE__).'/../utilities.php');
 
+                    <table class="partite">
+                    <tr>
+                        <td rowspan="2">
+                            <img src="_static/img/ico-cam.png" alt="" />
+                            <img src="_static/img/ico-home.png" alt="" />
+                        </td>
+                        <td>Saronno Castor</td>
+                        <td>50</td>
+                        <td>40</td>
+                        <td>Saronno Pollux</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="font-style: italic; color: #999; font-size: 90%;">
+                            2012-01-12 15:30
+                            Saronno, PalaDozio
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">
+                            <img src="_static/img/ico-cam.png" alt="" />
+                            <img src="_static/img/ico-home.png" alt="" />
+                        </td>
+                        <td>Saronno Castor</td>
+                        <td>50</td>
+                        <td>40</td>
+                        <td>Saronno Pollux</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="font-style: italic; color: #999; font-size: 90%;">
+                            2012-01-12 15:30
+                            Saronno, PalaDozio
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">
+                            <img src="_static/img/ico-cam.png" alt="" />
+                            <img src="_static/img/ico-home.png" alt="" />
+                        </td>
+                        <td>Saronno Castor</td>
+                        <td>50</td>
+                        <td>40</td>
+                        <td>Saronno Pollux</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="font-style: italic; color: #999; font-size: 90%;">
+                            2012-01-12 15:30
+                            Saronno, PalaDozio
+                        </td>
+                    </tr>
+                    </table>
+
+
+<?php
     $icone = array(
         'Campionato' => 'ico_cam.png',
         'Amichevole' => 'ico_ami.png',

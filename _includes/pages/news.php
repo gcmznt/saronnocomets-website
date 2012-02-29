@@ -1,15 +1,21 @@
                 <h2>News</h2>
-<?php
-    require_once(dirname(__FILE__).'/../utilities.php');
-    $news = read_data('http://www.saronnocomets.it/_export/news.php');
-    for($i=0; $i<10; $i++) {
-        ?>
-                <div title="<?php echo $news[$i]['title']; ?>" class="news">
-                    <h3><?php echo $news[$i]['title']; ?></h3>
-                    <div class="data"><?php echo $news[$i]['date']; ?></div>
-                    <p><?php echo $news[$i]['content']; ?></p>
-                    <p class="firma"><?php echo $news[$i]['username']; ?></p>
+                <?php
+                    $w = '';
+                    if (isset($_GET['p']) && $_GET['p'] != '') {
+                        $w = " WHERE id = " . mysql_real_escape_string($_GET['p']);
+                    }
+                    $news = mysql_query("SELECT * FROM news" . $w . " ORDER BY data DESC LIMIT 0,3;");
+                    while ($n = mysql_fetch_assoc($news)) {
+                ?>
+                <div class="news">
+                    <div class="date">
+                        <?php echo substr($n['data'],8,2).'.'.substr($n['data'],5,2); ?><br /><?php echo substr($n['data'],0,4); ?>
+                    </div>
+                    <div class="newsContent">
+                        <h3><a href="?p=<?php echo $n['id']; ?>"><?php echo stripslashes($n['titolo']); ?></a></h3>
+                        <?php echo stripslashes($n['testo']); ?>
+                    </div>
                 </div>
-        <?php
-    }
-?>
+                <?php
+                    }
+                ?>

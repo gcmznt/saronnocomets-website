@@ -305,3 +305,12 @@ em {
     background-image: url('../img/sponsor-imp.png');
     height: 56px;
 }
+
+.partite {
+    width: 100%;
+}
+.partite td {
+    padding: 2px 5px;
+}
+
+
