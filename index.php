@@ -43,33 +43,17 @@
     </div>
     <div id="main">
         <div id="herospace">
-            <div class="hero" style="background-image:url(_static/img/hero-2002.png);">
-                <h2>
-                    Saronno. Since 2002<br />
-
-                </h2>
-                <h3>
-                    Il primo Club di TchoukBall<br />in Italia!
-                </h3>
-            </div>
-            <?php if (false) { ?>
-            <div class="hero" style="background-image:url(_static/img/hero-championships.png);display:none;">
-                <h2>
-                    Saronno Castor<br />
-                    4 volte campioni d&rsquo;Italia
-                </h2>
-                <h3>
-                    2007 &bull; 2008 &bull; 2009 &bull; 2010
-                </h3>
-            </div>
-            <div class="hero" style="background-image:url(_static/img/hero-ewcs.png);display:none;">
-                <h2>
-                    Saronno Castor<br />
-                    Campioni d&rsquo;Europa in carica
-                </h2>
-                <h3>
-                    2010 &bull; 2011
-                </h3>
+            <?php
+                $hero = array(
+                    // array('hero-championships.png', '', ''),
+                    array('hero-ewcs.png', 'Campioni d&rsquo;Europa!', "I <b>Saronno Castor</b> hanno vinto<br />per il terzo anno consecutivo<br />l'<b>European Winners' Cup</b><br />confermandosi squadra di club<br />ai vertici del vecchio continente"),
+                    array('hero-2002.png', 'Saronno. Since 2002', 'Il primo Club di TchoukBall<br />in Italia!'),
+                );
+                foreach ($hero AS $k => $h) {
+            ?>
+            <div class="hero" style="background-image:url('_static/img/<?php echo $h[0]; ?>');<?php if ($k != 0) echo 'display:none;' ?>">
+                <h2><?php echo $h[1]; ?></h2>
+                <h3><?php echo $h[2]; ?></h3>
             </div>
             <?php } ?>
         </div>

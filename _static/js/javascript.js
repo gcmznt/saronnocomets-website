@@ -38,9 +38,11 @@ $(document).ready(function() {
             t = setTimeout(heroTimer, heroInterval);
         });
         $('#heroNavi a').click(function() {
-            changeHero($('.hero').eq($(this).index()));
-            clearTimeout(t);
-            t = setTimeout(heroTimer, heroInterval);
+            if (!$(this).hasClass('active')) {
+                changeHero($('.hero').eq($(this).index()));
+                clearTimeout(t);
+                t = setTimeout(heroTimer, heroInterval);
+            }
         });
     }
     $('.newsContent img').parents('a').attr('rel','prettyPhoto[news]').addClass('prettyPhoto');
