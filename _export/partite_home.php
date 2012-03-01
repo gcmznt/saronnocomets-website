@@ -52,8 +52,8 @@
             $Fields['derby'] = ($Fields['derby'] == 'x') ? true : false;
             $Fields['neutro'] = ($Fields['neutro'] == 'x') ? true : false;
 
-            $lastWeek = time() - (7 * 24 * 60 * 60);
-            $nextWeek = time() + (7 * 24 * 60 * 60);
+            $lastWeek = time() - (4 * 24 * 60 * 60);
+            $nextWeek = time() + (6 * 24 * 60 * 60);
 
             $matchTime = mktime(0, 0, 0, substr($Fields['data'], 3, 2), substr($Fields['data'], 0, 2), substr($Fields['data'], 6, 4));
 

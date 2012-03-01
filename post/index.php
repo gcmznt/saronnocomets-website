@@ -23,7 +23,7 @@
         $(document).ready(function() {
             var editor = CKEDITOR.replace('testo', {
                 toolbar : 'Stbc',
-                height: '370px',
+                height: '330px',
                 contentsCss: '/_static/css/style.css',
                 filebrowserBrowseUrl : '../_static/ckfinder/ckfinder.html',
                 filebrowserImageBrowseUrl : '../_static/ckfinder/ckfinder.html?Type=Images',

@@ -62,8 +62,6 @@
         <div id="content">
             <?php include($page_file); ?>
             <div id="col2">
-                <div id="partite">
-                    <h4>Partite</h4>
 <?php
     $icone = array(
         'Campionato' => 'champ',
@@ -76,6 +74,10 @@
 
     $partite = read_data('http://www.saronnocomets.it/_export/partite_home.php');
     if ($partite) {
+    ?>
+                <div id="partite">
+                    <h4>Partite</h4>
+    <?php
         foreach($partite AS $p) {
             $evento = $p['evento'];
             if ($p['dettaglio'] == 'Serie A') $evento .= ' Serie A';
@@ -92,9 +94,11 @@
                         </div>
             <?php
         }
+        ?>
+                </div>
+        <?php
     }
 ?>
-                </div>
                 <div id="squadre">
                     <h4>Le squadre</h4>
                     <div class="squadra">
