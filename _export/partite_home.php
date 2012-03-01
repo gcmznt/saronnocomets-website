@@ -29,10 +29,11 @@
                                                     'citta'          => 8,
                                                     'indirizzo'      => 9,
                                                     'evento'         => 10,
-                                                    'stagione'       => 11,
-                                                    'data'           => 12,
-                                                    'youtchouk'      => 13,
-                                                    'info'           => 14,
+                                                    'dettaglio'      => 11,
+                                                    'stagione'       => 12,
+                                                    'data'           => 13,
+                                                    'youtchouk'      => 14,
+                                                    'info'           => 15,
                                                     ),
                             'callback'      => 'Store', // Funzione di callback
                         ),
@@ -51,7 +52,12 @@
             $Fields['derby'] = ($Fields['derby'] == 'x') ? true : false;
             $Fields['neutro'] = ($Fields['neutro'] == 'x') ? true : false;
 
-            return ($Fields['home']) ? $Fields : false;
+            $lastWeek = time() - (7 * 24 * 60 * 60);
+            $nextWeek = time() + (7 * 24 * 60 * 60);
+
+            $matchTime = mktime(0, 0, 0, substr($Fields['data'], 3, 2), substr($Fields['data'], 0, 2), substr($Fields['data'], 6, 4));
+
+            return ($Fields['home'] || ($lastWeek <= $matchTime && $matchTime <= $nextWeek)) ? $Fields : false;
             // return array_map('htmlentities', $Fields);
         }
 

@@ -2,6 +2,8 @@
     require_once(dirname(__FILE__).'/_includes/utilities.php');
 
     $page = (isset($_GET['page'])) ? $_GET['page'] : 'news';
+    $page = str_replace(array('/', '.', ' '), '', $page);
+    $page_file = (is_file(dirname(__FILE__).'/_includes/pages/'.$page.'.php')) ? dirname(__FILE__).'/_includes/pages/'.$page.'.php' : dirname(__FILE__).'/_includes/pages/news.php';
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -58,18 +60,15 @@
             <?php } ?>
         </div>
         <div id="content">
-            <div id="col1">
-                
-            </div>
-            <div id="colMain">
-                <?php include(dirname(__FILE__).'/_includes/pages/'.$page.'.php'); ?>
-            </div>
+            <?php include($page_file); ?>
             <div id="col2">
                 <div id="partite">
                     <h4>Partite</h4>
 <?php
     $icone = array(
         'Campionato' => 'champ',
+        'Campionato Serie A' => 'champa',
+        'Campionato Serie B' => 'champb',
         'Amichevole' => 'friendly',
         'EWC' => 'ewc',
         'Torneo' => 'torneo',
@@ -78,9 +77,16 @@
     $partite = read_data('http://www.saronnocomets.it/_export/partite_home.php');
     if ($partite) {
         foreach($partite AS $p) {
+            $evento = $p['evento'];
+            if ($p['dettaglio'] == 'Serie A') $evento .= ' Serie A';
+            if ($p['dettaglio'] == 'Serie B') $evento .= ' Serie B';
             ?>
                         <div class="partita <?php echo $icone[$p['evento']]; ?>">
-                            <h5><?php echo substr($p['data'],0,16); ?><br /><?php echo $p['citta']; ?><?php echo ($p['indirizzo'] != '') ? ', '.$p['indirizzo'] : ''; ?></h5>
+                            <h5>
+                                <?php echo substr($p['data'],0,strrpos($p['data'], '.')); ?><br />
+                                <?php echo $p['citta']; ?><?php echo ($p['indirizzo'] != '') ? ', '.$p['indirizzo'] : ''; ?><br />
+                                <?php echo $p['info']; ?>
+                            </h5>
                             <div><?php echo $p['s1']; ?> <span><?php echo $p['p1']; ?></span></div>
                             <div><?php echo $p['s2']; ?> <span><?php echo $p['p2']; ?></span></div>
                         </div>
@@ -146,7 +152,7 @@
                 <a href="http://www.imp-spa.com/" id="imp">IMP Saronno</a>
             </div>
         </div>
-        <a href="http://www.giko.it" id="firma">sito realizzato da Giko</a>
+        <a href="http://www.giko.it" id="giko">sito realizzato da Giko</a>
     </div>
 
 </body>

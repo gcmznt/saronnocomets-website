@@ -10,7 +10,7 @@ body {
     height: 78px;
     line-height: 78px;
     color: #fff;
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
     padding-top: 26px;
@@ -27,7 +27,7 @@ h1 {
 
 #bookmark {
     background: url('../img/bookmark.png') center center no-repeat;
-    position: fixed;
+    position: absolute;
     width: 210px;
     height: 293px;
     top: 6px;
@@ -106,6 +106,12 @@ h1 {
     margin: 0 30px;
     box-shadow: 25px 0px 25px -25px #dbdbdb;
 }
+#colBig {
+    float: left;
+    width: 730px;
+    margin: 0 30px 0 0;
+    box-shadow: 25px 0px 25px -25px #dbdbdb;
+}
 
 #footer {
     font-size: 90%;
@@ -130,14 +136,6 @@ h1 {
     box-shadow: -15px 0px 15px -15px #dbdbdb;
 }
 
-#firma {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    color: #bdbdbd;
-    font-style: italic;
-}
-
 h2 {
     font-size: 220%;
     line-height: 120%;
@@ -150,6 +148,12 @@ h3 {
     text-shadow: 1px 1px 0 #fff;
     font-style: italic;
     margin-bottom: 10px;
+}
+.accordion h3 {
+    cursor: pointer;
+}
+.accordion h3.current {
+    cursor: default;
 }
 h4 {
     font-size: 140%;
@@ -236,6 +240,12 @@ em {
 .partita.champ h5 {
     background-image: url('../img/ico-cam.png');
 }
+.partita.champa h5 {
+    background-image: url('../img/ico-seriea.png');
+}
+.partita.champb h5 {
+    background-image: url('../img/ico-serieb.png');
+}
 .partita.friendly h5 {
     background-image: url('../img/ico-ami.png');
 }
@@ -256,6 +266,7 @@ em {
 .squadra {
     overflow: auto;
     margin-bottom: 15px;
+    padding: 5px;
 }
 .squadra img {
     width: 100px;
@@ -317,10 +328,39 @@ em {
 }
 
 .partite {
-    width: 100%;
+    width: 98%;
+    margin-bottom: 20px;
+    font-size: 90%;
+    position: relative;
 }
 .partite td {
     padding: 2px 5px;
 }
+.partite td:nth-child(2),
+.partite td:nth-child(3) {
+    font-size: 90%;
+}
+.partite td:nth-child(4) {
+    text-align: right;
+}
+.partite td:nth-child(5),
+.partite td:nth-child(6) {
+    text-align: center;
+}
+.partite .winner {
+    font-weight: bold;
+}
 
-
+#giko {
+    text-indent: -1000em;
+    position: absolute;
+    display: block;
+    right: 10px;
+    bottom: 10px;
+    background-image: url('../img/15.png');
+    width: 50px;
+    height: 42px;
+    opacity: 0.15;
+    -moz-opacity: 0.15;
+    filter: alpha(opacity=15);
+}

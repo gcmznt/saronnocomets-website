@@ -56,4 +56,6 @@ $(document).ready(function() {
         default_width: 960,
         default_height: 500
     });
+
+    // $(".accordion").tabs(".partite", {tabs: 'h3'});
 });
