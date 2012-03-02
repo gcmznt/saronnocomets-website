@@ -43,7 +43,7 @@
 </head>
 <body>
     <div id="title">
-        <h1>Saronno Tchoukball Club</h1>
+        <h1>Saronno TchoukBall Club</h1>
         <div id="bookmark">
             <a href="./"><img src="_static/img/logo-shadow.png" id="logo" alt="Il logo del Saronno TchoukBall Club" /></a>
         </div>
