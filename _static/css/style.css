@@ -224,7 +224,6 @@ p {
     margin-bottom: 10px;
 }
 #colMain p {
-    text-align: justify;
 }
 a {
     color: #FF4500;
@@ -254,7 +253,6 @@ em {
 .news {
     position: relative;
     margin-bottom: 30px;
-    padding-right: 10px;
     font-size: 90%;
     clear: both;
 }
@@ -279,6 +277,13 @@ em {
 img.shadow {
     box-shadow: 2px 2px 6px #dbdbdb;
     margin: 0 10px 10px;
+}
+.newsContent ul {
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+.newsContent li {
+    list-style: disc;
 }
 .newsBottom {
     clear: both;
