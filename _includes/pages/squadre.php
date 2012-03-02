@@ -1,3 +1,7 @@
+            <div id="col1">
+                
+            </div>
+            <div id="colMain">
                 <h2>Squadre</h2>
 <?php
     require_once(dirname(__FILE__).'/../utilities.php');
@@ -10,23 +14,25 @@
                     <?php
                         foreach($squadre AS $t => $giocatori) {
                             $foto = '_static/img/squadre/'.$t.$s;
-                            $foto = (is_file(dirname(__FILE__).'/../../'.$foto.'.jpg')) ? '<a href="'.$foto.'.jpg" class="prettyPhoto" title="'.$t.' '.$s.'" rel="prettyPhoto['.$t.']"><img src="'.$foto.'_sm.jpg" /></a>' : '';
+                            $foto = (is_file(dirname(__FILE__).'/../../'.$foto.'.jpg')) ? '<a href="'.$foto.'.jpg" class="prettyPhoto" title="'.$t.' '.$s.'" rel="prettyPhoto['.$t.']"><img src="'.$foto.'_sm.jpg" class="team_photo" /></a>' : '';
                             ?>
+                            <div class="squadra">
                                 <h4><?php echo $t; ?></h4>
                                 <?php echo $foto; ?>
-                                <table>
+                                <div class="left">
                                 <?php
+                                    $first = true;
                                     foreach($giocatori AS $t => $g) {
                                         ?>
-                                            <tr>
-                                                <td><?php echo $g['numero']; ?></td>
-                                                <td><?php echo $g['nome']; ?></td>
-                                                <td><?php echo $g['nascita']; ?></td>
-                                            </tr>
+                                                <!-- <td><?php echo $g['numero']; ?></td> -->
+                                                <?php echo ($first) ? '&copy; ' : ''; echo $g['nome']; ?><br />
+                                                <!-- <td><?php echo $g['nascita']; ?></td> -->
                                         <?php
+                                        $first = false;
                                     }
                                 ?>
-                                </table>
+                                </div>
+                            </div>
                             <?php
                         }
                     ?>
@@ -34,3 +40,4 @@
         <?php
     }
 ?>
+            </div>

@@ -3,7 +3,12 @@
 
     $page = (isset($_GET['page'])) ? $_GET['page'] : 'news';
     $page = str_replace(array('/', '.', ' '), '', $page);
-    $page_file = (is_file(dirname(__FILE__).'/_includes/pages/'.$page.'.php')) ? dirname(__FILE__).'/_includes/pages/'.$page.'.php' : dirname(__FILE__).'/_includes/pages/news.php';
+    if (is_file(dirname(__FILE__).'/_includes/pages/'.$page.'.php')) {
+        $page_file = dirname(__FILE__).'/_includes/pages/'.$page.'.php';
+    } else {
+        header('HTTP/1.0 404 Not Found');
+        $page_file = dirname(__FILE__).'/_includes/pages/errore.php';
+    }
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -46,22 +51,68 @@
     <div id="main">
         <div id="herospace">
             <?php
-                $hero = array(
-                    // array('hero-championships.png', '', ''),
-                    array('hero-ewcs.png', 'Campioni d&rsquo;Europa!', "I <b>Saronno Castor</b> hanno vinto<br />per il terzo anno consecutivo<br />l'<b>European Winners' Cup</b><br />confermandosi squadra di club<br />ai vertici del vecchio continente"),
-                    array('hero-2002.png', 'Saronno. Since 2002', 'Il primo Club di TchoukBall<br />in Italia!'),
+                $hero_demo = array(
+                    'bg' => "hero-ewcs.png",
+                    'h2' => "Campioni d&rsquo;Europa!",
+                    'h3' => "I <b>Saronno Castor</b> hanno vinto<br />per il terzo anno consecutivo",
+                    'bt' => array(
+                        array('bottone1', '#'),
+                        array('bottone2', '#'),
+                    ),
                 );
+
+
+                // $hero[] = array(
+                //     'bg' => "hero-playoff.png",
+                //     'h2' => "22 Aprile - Le finali del campionato",
+                //     'h3' => "Per la stagione 2011 2012 tornano<br />a Saronno le partite che<br />decideranno chi vincerà<br />lo scudetto",
+                //     'bt' => array(
+                //         array("Visita la pagina dell'evento", 'http://www.tchoukball.it/eventi-ita12a'),
+                //     ),
+                // );
+                $hero[] = array(
+                    'bg' => "hero-ewcs.png",
+                    'h2' => "Campioni d&rsquo;Europa!",
+                    'h3' => "I <b>Saronno Castor</b> hanno vinto<br />per il terzo anno consecutivo<br />l'<b>European Winners' Cup</b><br />confermandosi squadra di club<br />ai vertici del vecchio continente",
+                    'bt' => array(
+                        array("Leggi la news", '/news-62'),
+                        array("I risultati", 'http://www.tchoukball.it/eventi-ewc12'),
+                    ),
+                );
+                $hero[] = array(
+                    'bg' => "hero-2002.png",
+                    'h2' => "Saronno. Since 2002",
+                    'h3' => "Il primo Club di TchoukBall<br />in Italia!",
+                );
+                $hero[] = array(
+                    'bg' => "hero-castorpollux.png",
+                    'h2' => "Castor e Pollux",
+                    'h3' => "Si diceva che si assomigliassero<br />molto fisicamente e che persino si<br />vestissero allo stesso modo, come<br />spesso fanno i gemelli.",
+                    'bt' => array(
+                        array('I nomi delle squadre', '/curiosita'),
+                    ),
+                );
+
                 foreach ($hero AS $k => $h) {
             ?>
-            <div class="hero" style="background-image:url('_static/img/<?php echo $h[0]; ?>');<?php if ($k != 0) echo 'display:none;' ?>">
-                <h2><?php echo $h[1]; ?></h2>
-                <h3><?php echo $h[2]; ?></h3>
+            <div class="hero" style="background-image:url('_static/img/<?php echo $h['bg']; ?>');<?php if ($k != 0) echo 'display:none;' ?>">
+                <h2><?php echo $h['h2']; ?></h2>
+                <h3><?php echo $h['h3']; ?></h3>
+                <?php
+                    if (isset($h['bt'])) {
+                        foreach ($h['bt'] as $b) {
+                            echo '<a href="'.$b[1].'" class="button white">'.$b[0].'</a>';
+                        }
+                    }
+                ?>
             </div>
             <?php } ?>
         </div>
         <div id="content">
             <?php include($page_file); ?>
             <div id="col2">
+                <div id="partite">
+                    <h4>Partite</h4>
 <?php
     $icone = array(
         'Campionato' => 'champ',
@@ -74,10 +125,6 @@
 
     $partite = read_data('http://www.saronnocomets.it/_export/partite_home.php');
     if ($partite) {
-    ?>
-                <div id="partite">
-                    <h4>Partite</h4>
-    <?php
         foreach($partite AS $p) {
             $evento = $p['evento'];
             if ($p['dettaglio'] == 'Serie A') $evento .= ' Serie A';
@@ -94,11 +141,10 @@
                         </div>
             <?php
         }
-        ?>
-                </div>
-        <?php
-    }
+    } else { echo "<p><i>Non ci sono partite in programma</i></p>"; }
 ?>
+                    <a href="/partite" class="button white">Tutte le partite</a>
+                </div>
                 <div id="squadre">
                     <h4>Le squadre</h4>
                     <div class="squadra">
@@ -119,6 +165,7 @@
                             Mizar e Polaris
                         </a>
                     </div>
+                    <a href="/squadre" class="button white">Squadre e giocatori</a>
                 </div>
                 <div id="facebook">
                     <h4>Facebook</h4>
