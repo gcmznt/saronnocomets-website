@@ -15,7 +15,7 @@
                 <p>
                     <i>Presidente:</i> <b>Fausto Zinetti</b><br />
                     <i>Vice presidente:</i> <b>Giacomo Zinetti</b><br />
-                    <i>Segretario generale:</i> <b>Filipo Gilli</b><br />
+                    <i>Segretario generale:</i> <b>Filippo Gilli</b><br />
                     <i>Tesoriere:</i> <b>Michele Volonteri</b><br />
                     <i>Consigliere:</i> <b>Alessandro Aceti</b><br />
                     <i>Consigliere:</i> <b>Emanuele Tramacere</b><br />
