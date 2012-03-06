@@ -1,5 +1,6 @@
             <div id="col1">
-                
+                <?php include(dirname(__FILE__).'/../box/menu.php'); ?>
+                <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colMain">
                 <h2>Squadre</h2>
@@ -40,4 +41,8 @@
         <?php
     }
 ?>
+            </div>
+            <div id="col2">
+                <?php include(dirname(__FILE__).'/../box/partite.php'); ?>
+                <?php include(dirname(__FILE__).'/../box/facebook.php'); ?>
             </div>

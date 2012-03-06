@@ -1,5 +1,6 @@
             <div id="col1">
-                
+                <?php include(dirname(__FILE__).'/../box/menu.php'); ?>
+                <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colMain">
                 <p>
@@ -42,4 +43,8 @@
 					Giocare per perfezionarsi: ecco il sentimento che ogni attivit&agrave; di gioco deve comportare e sviluppare, ed &egrave; verso questa conclusione che l&rsquo;organizzazione del Tchoukball deve aspirare, dal semplice incontro amichevole fino al confronto pi&ugrave; serio delle squadre al vertice.<br />
 					Bisogna ritornare quindi allo spirito olimpico originario.
                 </p>
+            </div>
+            <div id="col2">
+                <?php include(dirname(__FILE__).'/../box/partite.php'); ?>
+                <?php include(dirname(__FILE__).'/../box/facebook.php'); ?>
             </div>

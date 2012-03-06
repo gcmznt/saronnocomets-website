@@ -5,7 +5,7 @@
                         <li><a href="/info">La societ&agrave;</a></li>
                         <li><a href="/squadre">Squadre e giocatori</a></li>
                         <li><a href="/partite">Tutte le partite</a></li>
-                        <li><a href="/torneo">Torneo &quot;Citt&agrave; di Saronno&quot;</a></li>
+                        <!-- <li><a href="/torneo">Torneo &quot;Citt&agrave; di Saronno&quot;</a></li> -->
                         <li><a href="/curiosita">Curiosit&agrave;</a></li>
                     </ul>
                 </div>

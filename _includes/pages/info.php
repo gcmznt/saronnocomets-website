@@ -1,5 +1,6 @@
             <div id="col1">
-                
+                <?php include(dirname(__FILE__).'/../box/menu.php'); ?>
+                <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colMain">
                 <h2>Societ&agrave;</h2>
@@ -39,5 +40,9 @@
                     Lunedì dalle 20:30 alle 22:30<br />
                     presso la palestra dell'ITIS G. Riva in via Carso 10<br />
                 </p>
+            </div>
+            <div id="col2">
+                <?php include(dirname(__FILE__).'/../box/partite.php'); ?>
+                <?php include(dirname(__FILE__).'/../box/facebook.php'); ?>
             </div>
 

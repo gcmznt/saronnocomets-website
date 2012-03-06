@@ -131,6 +131,10 @@ h1 {
     background: #fff;
 }
 
+#menu li {
+    height: 22px;
+}
+
 #content {
     overflow: auto;
     margin-bottom: 50px;
@@ -155,7 +159,6 @@ h1 {
     width: 720px;
     margin: 0 30px 0 0;
     padding-right: 10px;
-    box-shadow: 25px 0px 25px -25px #dbdbdb;
 }
 
 #footer {

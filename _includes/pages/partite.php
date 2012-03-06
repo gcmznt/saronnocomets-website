@@ -1,4 +1,7 @@
-
+            <div id="col1">
+                <?php include(dirname(__FILE__).'/../box/menu.php'); ?>
+                <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
+            </div>
             <div id="colBig">
                 <h2>Partite</h2>
 <?php

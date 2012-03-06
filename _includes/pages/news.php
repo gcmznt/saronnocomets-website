@@ -15,12 +15,17 @@
                     while ($n = mysql_fetch_assoc($news)) {
                 ?>
                 <div class="news">
-                    <div class="date_">
-                        <?php echo substr($n['data'],8,2).'.'.substr($n['data'],5,2); ?><br /><?php echo substr($n['data'],0,4); ?>
-                    </div>
                     <div class="newsContent">
                         <h3><a href="/news-<?php echo $n['id']; ?>"><?php echo stripslashes($n['titolo']); ?></a></h3>
-                        <?php echo ($single) ? stripslashes($n['testo']) : strip_tags(str_replace('<br />', ' ', stripslashes($n['testo']))); ?>
+                        <h5><?php echo substr($n['data'],8,2).' '.substr($n['data'],5,2); ?> <?php echo substr($n['data'],0,4); ?></h5>
+                        <?php
+                            if ($single) {
+                                echo stripslashes($n['testo']);
+                            } else {
+                                preg_match('/^([^.!?\s]*[\.!?\s]+){0,30}/', strip_tags(str_replace('<br />', ' ', stripslashes($n['testo']))), $abstract);
+                                echo $abstract[0];
+                            }
+                        ?>
                         <?php if ($single) { ?>
                         <div class="newsBottom">
                             <div class="twitter">
