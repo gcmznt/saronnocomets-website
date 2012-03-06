@@ -27,7 +27,6 @@
     <script type="text/javascript" src="_static/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery.tools.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="_static/js/moment.min.js"></script>
     <script type="text/javascript" src="_static/js/javascript.js"></script>
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -110,72 +109,6 @@
         </div>
         <div id="content">
             <?php include($page_file); ?>
-            <div id="col2">
-                <div id="partite">
-                    <h4>Partite</h4>
-<?php
-    $icone = array(
-        'Campionato' => 'champ',
-        'Campionato Serie A' => 'champa',
-        'Campionato Serie B' => 'champb',
-        'Amichevole' => 'friendly',
-        'EWC' => 'ewc',
-        'Torneo' => 'torneo',
-    );
-
-    $partite = read_data('http://www.saronnocomets.it/_export/partite_home.php');
-    if ($partite) {
-        foreach($partite AS $p) {
-            $evento = $p['evento'];
-            if ($p['dettaglio'] == 'Serie A') $evento .= ' Serie A';
-            if ($p['dettaglio'] == 'Serie B') $evento .= ' Serie B';
-            ?>
-                        <div class="partita <?php echo $icone[$p['evento']]; ?>">
-                            <h5>
-                                <?php echo substr($p['data'],0,strrpos($p['data'], '.')); ?><br />
-                                <?php echo $p['citta']; ?><?php echo ($p['indirizzo'] != '') ? ', '.$p['indirizzo'] : ''; ?><br />
-                                <?php echo $p['info']; ?>
-                            </h5>
-                            <div><?php echo $p['s1']; ?> <span><?php echo $p['p1']; ?></span></div>
-                            <div><?php echo $p['s2']; ?> <span><?php echo $p['p2']; ?></span></div>
-                        </div>
-            <?php
-        }
-    } else { echo "<p><i>Non ci sono partite in programma</i></p>"; }
-?>
-                    <a href="/partite" class="button white">Tutte le partite</a>
-                </div>
-                <div id="squadre">
-                    <h4>Le squadre</h4>
-                    <div class="squadra">
-                        <a href="_static/img/squadre/Castor2012.jpg" class="prettyPhoto" title="Castor 2012" rel="prettyPhoto[2012]">
-                            <img src="_static/img/squadre/Castor2012_sm.jpg" />
-                            Castor
-                        </a>
-                    </div>
-                    <div class="squadra">
-                        <a href="_static/img/squadre/Pollux2012.jpg" class="prettyPhoto" title="Pollux 2012" rel="prettyPhoto[2012]">
-                            <img src="_static/img/squadre/Pollux2012_sm.jpg" />
-                            Pollux
-                        </a>
-                    </div>
-                    <div class="squadra">
-                        <a href="_static/img/squadre/PolarisMizar2012.jpg" class="prettyPhoto" title="Mizar e Polaris 2012" rel="prettyPhoto[2012]">
-                            <img src="_static/img/squadre/PolarisMizar2012_sm.jpg" />
-                            Mizar e Polaris
-                        </a>
-                    </div>
-                    <a href="/squadre" class="button white">Squadre e giocatori</a>
-                </div>
-                <div id="facebook">
-                    <h4>Facebook</h4>
-                    <div class="facebookContainer">
-                        <div class="facebookInnerContainer">
-                            <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fsaronnocomets&amp;width=184&amp;height=410&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;appId=110921952278697" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:184px; height:410px;" allowTransparency="true"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div id="footer">

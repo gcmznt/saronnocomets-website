@@ -84,4 +84,4 @@
         
     }
     
-    echo json_encode($dataOutput);
+    echo json_encode(array_reverse($dataOutput));
