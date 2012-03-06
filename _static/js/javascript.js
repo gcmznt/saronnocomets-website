@@ -1,17 +1,22 @@
 function changeHero(heroIn) {
-    var heroOut = $('.hero:visible');
-    if (!heroIn) {
-        if (heroOut.next('.hero').length)
-            heroIn = heroOut.next();
-        else
-            heroIn = $('.hero').first();
+    if (!lock) {
+        lock = true;
+        var heroOut = $('.hero:visible');
+        if (!heroIn) {
+            if (heroOut.next('.hero').length)
+                heroIn = heroOut.next();
+            else
+                heroIn = $('.hero').first();
+        }
+        heroOut.animate({top:'-500px'}, 300, function(){
+            $(this).hide()
+            $('#heroNavi .active').removeClass('active');
+            $('#heroNavi a').eq(heroIn.index()).addClass('active');
+        });
+        heroIn.css({left:'-3000px',top:'0px'}).show().animate({left:'0px'}, 700, function() {
+            lock = false;
+        });
     }
-    heroIn.css({left:'-3000px',top:'0px'}).show().animate({left:'0px'}, 700);
-    heroOut.animate({top:'-500px'}, 300, function(){
-        $(this).hide()
-        $('#heroNavi .active').removeClass('active');
-        $('#heroNavi a').eq(heroIn.index()).addClass('active');
-    });
 }
 
 function heroTimer() {
@@ -21,6 +26,7 @@ function heroTimer() {
 
 var heroInterval = 12000;
 var t;
+var lock = false;
 
 $(document).ready(function() {
     var l = $('.hero').length;
@@ -39,8 +45,8 @@ $(document).ready(function() {
         });
         $('#heroNavi a').click(function() {
             if (!$(this).hasClass('active')) {
-                changeHero($('.hero').eq($(this).index()));
                 clearTimeout(t);
+                changeHero($('.hero').eq($(this).index()));
                 t = setTimeout(heroTimer, heroInterval);
             }
         });
@@ -57,5 +63,5 @@ $(document).ready(function() {
         default_height: 500
     });
 
-    // $(".accordion").tabs(".partite", {tabs: 'h3'});
+    // $(".accordion").tabs("ol", {tabs: 'h4', effect: 'horizontal'});
 });

@@ -63,6 +63,13 @@
 
 
                 // $hero[] = array(
+                //     'bg' => "hero-carta.png",
+                //     'h2' => "<i>&quot;Il bel gioco richiama il bel gioco&quot;</i>",
+                //     'bt' => array(
+                //         array("La carta del TchoukBall", '/carta'),
+                //     ),
+                // );
+                // $hero[] = array(
                 //     'bg' => "hero-playoff.png",
                 //     'h2' => "22 Aprile - Le finali del campionato",
                 //     'h3' => "Per la stagione 2011 2012 tornano<br />a Saronno le partite che<br />decideranno chi vincerà<br />lo scudetto",
@@ -83,6 +90,9 @@
                     'bg' => "hero-2002.png",
                     'h2' => "Saronno. Since 2002",
                     'h3' => "Il primo Club di TchoukBall<br />in Italia!",
+                    'bt' => array(
+                        array('La societ&agrave;', '/info'),
+                    ),
                 );
                 $hero[] = array(
                     'bg' => "hero-castorpollux.png",
@@ -95,7 +105,7 @@
 
                 foreach ($hero AS $k => $h) {
             ?>
-            <div class="hero" style="background-image:url('_static/img/<?php echo $h['bg']; ?>');<?php if ($k != 0) echo 'display:none;' ?>">
+            <div class="hero" style="<?php if (isset($h['bg'])) echo "background-image:url('_static/img/".$h['bg']."');"; ?><?php if ($k != 0) echo 'display:none;' ?>">
                 <h2><?php echo $h['h2']; ?></h2>
                 <h3><?php echo $h['h3']; ?></h3>
                 <?php

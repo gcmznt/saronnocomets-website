@@ -1,7 +1,6 @@
 
             <div id="colBig">
                 <h2>Partite</h2>
-                <div class="accordion">
 <?php
     $icone = array(
         'Campionato' => 'ico-cam.png',
@@ -54,5 +53,4 @@
         <?php
     }
 ?>
-                </div>
             </div>
