@@ -3,7 +3,7 @@
                 <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colMain">
-                <h2>News</h2>
+                <h1>News</h1>
                 <?php
                     $w = '';
                     $single = false;
@@ -21,12 +21,7 @@
                         <?php
                             if ($single) {
                                 echo stripslashes($n['testo']);
-                            } else {
-                                preg_match('/^([^.!?\s]*[\.!?\s]+){0,30}/', strip_tags(str_replace('<br />', ' ', stripslashes($n['testo']))), $abstract);
-                                echo $abstract[0];
-                            }
                         ?>
-                        <?php if ($single) { ?>
                         <div class="newsBottom">
                             <div class="twitter">
                                 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.saronnocomets.it/news-<?php echo $n['id']; ?>" data-text="<?php echo stripslashes($n['titolo']); ?>" data-lang="it">Tweet</a>
@@ -36,7 +31,18 @@
                                 <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.saronnocomets.it%2Fnews-<?php echo $n['id']; ?>&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=110921952278697" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
                             </div>
                         </div>
-                        <?php } ?>
+                        <div>
+                            <a href="/news">Torna alle news</a>
+                        </div>
+                        <?php
+                            } else {
+                                $t = strip_tags(str_replace('<br />', ' ', stripslashes($n['testo'])));
+                                preg_match('/^([^.!?\s]*[\.!?\s]+){0,60}/', $t, $abstract);
+                                echo $abstract[0];
+                                if (strlen($abstract[0]) != strlen($t)) echo '... ';
+                                echo '<a href="/news-'.$n['id'].'">continua a leggere</a>';
+                            }
+                        ?>
                     </div>
                 </div>
                 <?php

@@ -3,7 +3,7 @@
                 <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colBig">
-                <h2>Partite</h2>
+                <h1>Tutte le partite</h1>
 <?php
     $icone = array(
         'Campionato' => 'ico-cam.png',
@@ -14,7 +14,7 @@
         'Torneo' => 'ico-tor.png',
 
         'casa' => 'ico-home.png',
-        'trasferta' => 'ico-arrow.png',
+        'trasferta' => 'ico-away.png',
         'neutro' => 'ico-neutral.png',
     );
 
@@ -39,7 +39,7 @@
                 ?>
                     <tr>
                         <td>
-                            <img src="_static/img/<?php echo $icone[$p['evento']]; ?>" alt="<?php echo $evento; ?>" title="<?php echo $evento; ?>" />
+                            <img src="_static/img/<?php echo $icone[$evento]; ?>" alt="<?php echo $evento; ?>" title="<?php echo $evento; ?>" />
                             <img src="_static/img/<?php echo $icone[$campo]; ?>" alt="<?php echo $luogo; ?>" title="<?php echo $luogo; ?>" />
                         </td>
                         <td><?php echo $data; ?></td>

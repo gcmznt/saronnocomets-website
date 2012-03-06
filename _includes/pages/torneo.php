@@ -3,7 +3,7 @@
                 <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colMain">
-                <h2>Torneo &quot;Citt&agrave; di Saronno&quot;</h2>
+                <h1>Torneo &quot;Citt&agrave; di Saronno&quot;</h1>
                 <img src="_static/img/logo-tds.png" />
                 <p>
                     Descrizione del torneo

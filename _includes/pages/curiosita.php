@@ -5,7 +5,7 @@
             <div id="colMain">
 
                 <div title="Curiosit&agrave;" class="info">
-                    <h2>Curiosit&agrave;</h2>
+                    <h1>Curiosit&agrave;</h1>
                     <h3>Castor e Pollux</h3>
                     <p>
                         La costellazione dei Gemelli rappresenta i gemelli Castore e Polluce; ai Greci essi erano noti come i Dioscuri,

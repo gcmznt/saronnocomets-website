@@ -3,7 +3,7 @@
                 <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colMain">
-                <h2>Squadre</h2>
+                <h1>Squadre e giocatori</h1>
 <?php
     require_once(dirname(__FILE__).'/../utilities.php');
 

@@ -3,7 +3,7 @@
                 <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colMain">
-				<h2>Errore</h2>
+				<h1>Errore</h1>
 				<p>La pagina richiesta non esiste</p>
 				<p>Torna alla <a href="/">Home page</a></p>
 			</div>

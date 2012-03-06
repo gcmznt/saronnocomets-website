@@ -19,7 +19,7 @@ body {
     z-index: 10;
 }
 
-h1 {
+#titleText {
     width: 730px;
     padding-left: 230px;
     margin: auto;
@@ -184,6 +184,13 @@ h1 {
     box-shadow: -15px 0px 15px -15px #dbdbdb;
 }
 
+h1 {
+    font-size: 220%;
+    line-height: 120%;
+    margin: 20px 0;
+    text-shadow: 1px 1px 0 #fff;
+    clear: both;
+}
 h2 {
     font-size: 220%;
     line-height: 120%;
@@ -290,6 +297,8 @@ img.shadow {
 }
 .newsBottom {
     clear: both;
+    overflow: auto;
+    margin: 50px 0;
 }
 .twitter {
     float: left;
@@ -311,6 +320,8 @@ img.shadow {
     background-position: left center;
     background-repeat: no-repeat;
     padding-left: 30px;
+    color: #333;
+    font-size: 80%;
 }
 .partita.champ h5 {
     background-image: url('../img/ico-cam.png');
@@ -424,6 +435,9 @@ img.shadow {
 }
 .partite .winner {
     font-weight: bold;
+}
+.partite img {
+    height: 24px;
 }
 
 .squadra {

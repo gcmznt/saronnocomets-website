@@ -3,7 +3,7 @@
                 <?php include(dirname(__FILE__).'/../box/squadre.php'); ?>
             </div>
             <div id="colMain">
-                <h2>Societ&agrave;</h2>
+                <h1>La societ&agrave;</h1>
                 <img src="_static/img/logo.png" />
                 <h3>Associazione Sportiva Dilettantistica Saronno TchoukBall Club</h3>
                 <p>

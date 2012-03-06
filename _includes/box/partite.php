@@ -18,7 +18,7 @@
             if ($p['dettaglio'] == 'Serie B') $evento .= ' Serie B';
             $data = str_replace(' 0.00', '', substr($p['data'],0,strrpos($p['data'], '.')));
             ?>
-                        <div class="partita <?php echo $icone[$p['evento']]; ?>">
+                        <div class="partita <?php echo $icone[$evento]; ?>">
                             <h5>
                                 <?php echo $data; ?><br />
                                 <?php echo $p['citta']; ?><?php echo ($p['indirizzo'] != '') ? ', '.$p['indirizzo'] : ''; ?><br />

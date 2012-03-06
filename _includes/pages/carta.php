@@ -6,7 +6,7 @@
                 <p>
 					La CARTA DEL TCHOUKBALL &egrave; un documento al quale tutti devono attenersi durante la loro attivit&agrave;, dentro e fuori dal campo, e con il quale si vuol garantire, durante lo svolgimento di questo sport, un comportamento leale e basato sul rispetto.
 				</p>
-                <h2>La carta del TchoukBall</h2>
+                <h1>La carta del TchoukBall</h1>
 				<p>
 					Questo gioco esclude ogni ricerca, personale o collettiva, di prestigio. Il giocatore, dal punto di vista personale, deve rispetto agli altri giocatori, siano essi avversari o compagni di squadra, pi&ugrave; deboli di lui.<br />
 					Il gioco &egrave; aperto a tutti; le capacit&agrave;, costituzionali o acquisite, sono molto diverse, ed &egrave; dunque inevitabile che vi si incontrino tutti i gradi di qualit&agrave; sportive. La considerazione e il rispetto dovuti a ciascuno devono spingere il giocatore ad adattare il proprio atteggiamento, tecnico e tattico, alle circostanze del momento.
