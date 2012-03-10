@@ -40,7 +40,7 @@
                                 preg_match('/^([^.!?\s]*[\.!?\s]+){0,60}/', $t, $abstract);
                                 echo $abstract[0];
                                 if (strlen($abstract[0]) != strlen($t)) echo '... ';
-                                echo '<a href="/news-'.$n['id'].'">continua a leggere</a>';
+                                echo '<a href="/news-'.$n['id'].'" class="continua">continua a leggere</a>';
                             }
                         ?>
                     </div>
