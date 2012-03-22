@@ -132,7 +132,7 @@
             </div>
             <div class="footerCol" id="link">
                 <h4>Link</h4>
-                <a href="http://www.tchouball.it" id="ftbi">Federazione TchoukBall Italia</a>
+                <a href="http://www.tchoukball.it" id="ftbi">Federazione TchoukBall Italia</a>
                 <a href="http://www.youtchouk.com/" id="youtchouk">YouTchouk</a>
             </div>
             <div class="footerCol">
