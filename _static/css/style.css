@@ -249,6 +249,9 @@ em {
     font-style: italic;
 }
 
+a.continua {
+    font-variant: small-caps;
+}
 .left {
     float: left;
 }
