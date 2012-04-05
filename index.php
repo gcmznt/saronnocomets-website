@@ -77,30 +77,39 @@
                 //     ),
                 // );
                 $hero[] = array(
-                    'bg' => "hero-ewcs.png",
-                    'h2' => "Campioni d&rsquo;Europa!",
-                    'h3' => "I <b>Saronno Castor</b> hanno vinto<br />per il terzo anno consecutivo<br />l'<b>European Winners' Cup</b><br />confermandosi squadra di club<br />ai vertici del vecchio continente",
+                    'bg' => "hero-playoff12.png",
+                    'h2' => "Playoff 2012 - Le finali del campionato",
+                    'h3' => "PalaDozio, 22 Aprile 2012<br />4 squadre per uno scudetto",
                     'bt' => array(
-                        array("Leggi la news", '/news-62'),
-                        array("I risultati", 'http://www.tchoukball.it/eventi-ewc12'),
+                        array("Programma", '/news-62'),
+                        
                     ),
                 );
-                $hero[] = array(
-                    'bg' => "hero-2002.png",
-                    'h2' => "Saronno. Since 2002",
-                    'h3' => "Il primo Club di TchoukBall<br />in Italia!",
-                    'bt' => array(
-                        array('La societ&agrave;', '/info'),
-                    ),
-                );
-                $hero[] = array(
-                    'bg' => "hero-castorpollux.png",
-                    'h2' => "Castor e Pollux",
-                    'h3' => "Si diceva che si assomigliassero<br />molto fisicamente e che persino si<br />vestissero allo stesso modo, come<br />spesso fanno i gemelli.",
-                    'bt' => array(
-                        array('I nomi delle squadre', '/curiosita'),
-                    ),
-                );
+                // $hero[] = array(
+                //     'bg' => "hero-ewcs.png",
+                //     'h2' => "Campioni d&rsquo;Europa!",
+                //     'h3' => "I <b>Saronno Castor</b> hanno vinto<br />per il terzo anno consecutivo<br />l'<b>European Winners' Cup</b><br />confermandosi squadra di club<br />ai vertici del vecchio continente",
+                //     'bt' => array(
+                //         array("Leggi la news", '/news-62'),
+                //         array("I risultati", 'http://www.tchoukball.it/eventi-ewc12'),
+                //     ),
+                // );
+                // $hero[] = array(
+                //     'bg' => "hero-2002.png",
+                //     'h2' => "Saronno. Since 2002",
+                //     'h3' => "Il primo Club di TchoukBall<br />in Italia!",
+                //     'bt' => array(
+                //         array('La societ&agrave;', '/info'),
+                //     ),
+                // );
+                // $hero[] = array(
+                //     'bg' => "hero-castorpollux.png",
+                //     'h2' => "Castor e Pollux",
+                //     'h3' => "Si diceva che si assomigliassero<br />molto fisicamente e che persino si<br />vestissero allo stesso modo, come<br />spesso fanno i gemelli.",
+                //     'bt' => array(
+                //         array('I nomi delle squadre', '/curiosita'),
+                //     ),
+                // );
 
                 foreach ($hero AS $k => $h) {
             ?>
