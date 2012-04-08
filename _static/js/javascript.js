@@ -20,6 +20,7 @@ function changeHero(heroIn) {
 }
 
 function heroTimer() {
+    clearTimeout(t);
     changeHero();
     t = setTimeout(heroTimer, heroInterval);
 }
