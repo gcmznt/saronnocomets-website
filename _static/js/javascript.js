@@ -8,12 +8,12 @@ function changeHero(heroIn) {
             else
                 heroIn = $('.hero').first();
         }
-        heroOut.animate({top:'-500px'}, 300, function(){
+        heroOut.animate({top:'-200px',opacity:'0'}, 300, function(){
             $(this).hide()
             $('#heroNavi .active').removeClass('active');
             $('#heroNavi a').eq(heroIn.index()).addClass('active');
         });
-        heroIn.css({left:'-3000px',top:'0px'}).show().animate({left:'0px'}, 700, function() {
+        heroIn.css({left:'-800px',top:'0px',opacity:'0'}).show().animate({left:'0px',opacity:'1'}, 700, function() {
             lock = false;
         });
     }
