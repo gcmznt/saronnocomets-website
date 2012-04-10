@@ -16,8 +16,10 @@
                 ?>
                 <div class="news">
                     <div class="newsContent">
-                        <h3><a href="/news-<?php echo $n['id']; ?>"><?php echo stripslashes($n['titolo']); ?></a></h3>
-                        <h5><?php echo substr($n['data'],8,2).' '.substr($n['data'],5,2); ?> <?php echo substr($n['data'],0,4); ?></h5>
+                        <h3>
+                            <time><?php echo substr($n['data'],8,2).' '.substr($n['data'],5,2); ?> <?php echo substr($n['data'],0,4); ?></time>
+                            <a href="/news-<?php echo $n['id']; ?>"><?php echo stripslashes($n['titolo']); ?></a>
+                        </h3>
                         <?php
                             if ($single) {
                                 echo stripslashes($n['testo']);
@@ -38,9 +40,9 @@
                             } else {
                                 $t = strip_tags(str_replace('<br />', ' ', stripslashes($n['testo'])));
                                 preg_match('/^([^.!?\s]*[\.!?\s]+){0,60}/', $t, $abstract);
-                                echo $abstract[0];
+                                echo '<p>'.$abstract[0];
                                 if (strlen($abstract[0]) != strlen($t)) echo '... ';
-                                echo '<a href="/news-'.$n['id'].'" class="continua">continua a leggere</a>';
+                                echo '<a href="/news-'.$n['id'].'" class="continua">continua a leggere</a></p>';
                             }
                         ?>
                     </div>

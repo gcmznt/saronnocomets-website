@@ -152,7 +152,7 @@ body {
     width: 490px;
     margin: 0 30px;
     padding-right: 10px;
-    box-shadow: 25px 0px 25px -25px #dbdbdb;
+    /*box-shadow: 25px 0px 25px -25px #dbdbdb;*/
 }
 #colBig {
     float: left;
@@ -233,6 +233,10 @@ h5 {
 p {
     margin-bottom: 10px;
 }
+*::selection {
+    background: #ff4500;
+    color: #fff;
+}
 #colMain p {
 }
 a {
@@ -286,6 +290,14 @@ a.continua {
     overflow: auto;
     padding: 5px;
 }
+.newsContent time {
+    font-size: 70%;
+    color: #000080;
+    margin: 2px 0;
+    font-style: italic;
+    float: right;
+}
+
 .newsContent img,
 img.shadow {
     box-shadow: 2px 2px 6px #dbdbdb;
