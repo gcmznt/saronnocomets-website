@@ -237,6 +237,7 @@ p {
     color: #fff;
 }
 #colMain p {
+    text-align: justify;
 }
 a {
     color: #FF4500;
