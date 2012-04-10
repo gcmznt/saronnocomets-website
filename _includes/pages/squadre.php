@@ -10,7 +10,7 @@
     $stagioni = read_data('http://www.saronnocomets.it/_export/squadre.php');
     foreach($stagioni AS $s => $squadre) {
         ?>
-                <div title="<?php echo ($s-1).' - '.$s; ?>" class="squadre">
+                <div class="squadre">
                     <h3>Stagione <?php echo ($s-1).' - '.$s; ?></h3>
                     <?php
                         foreach($squadre AS $t => $giocatori) {
