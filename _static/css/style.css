@@ -256,6 +256,7 @@ em {
 a.continua {
     font-variant: small-caps;
 }
+
 .left {
     float: left;
 }
@@ -297,7 +298,6 @@ a.continua {
     font-style: italic;
     float: right;
 }
-
 .newsContent img,
 img.shadow {
     box-shadow: 2px 2px 6px #dbdbdb;
@@ -473,3 +473,144 @@ img.shadow {
     -moz-opacity: 0.15;
     filter: alpha(opacity=15);
 }
+
+.playoff {
+    position: relative;
+    height: 475px;
+    margin: 30px 0;
+}
+
+.match {
+    position: relative;
+    border: solid 1px #bdbdbd;
+    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    background: -moz-linear-gradient(top,  #fff,  #ededed);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+    box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+    width: 240px;
+    height: 140px;
+    text-shadow: 1px 1px 0 #fff;
+}
+.playoff .match {
+    position: absolute; 
+}
+
+.playoff .semifinale {
+    top: 0px;
+}
+.playoff .semifinale.s1 {
+    left: 0px;
+}
+.playoff .semifinale.s2 {
+    right: 0px;
+}
+.playoff .finalina {
+    left: 125px;
+    top: 330px;
+}
+.match .testo {
+    text-align: center;
+    color: #bdbdbd;
+    padding: 7px;
+}
+.match .dati {
+    text-align: center;
+    color: #bdbdbd;
+    padding: 7px;
+    margin-top: 45px;
+}
+.match .vs {
+    background-image: url('../img/vs.png');
+    background-size: 100% 100%;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 36px;
+    left: 102px;
+}
+.match .team {
+    font-size: 120%;
+    position: absolute;
+    bottom: 65px;
+    width: 100px;
+    text-align: center;
+}
+.match .team.t1 {
+    left: 5px;
+}
+.match .team.t2 {
+    right: 5px;
+}
+.match .res {
+    font-size: 250%;
+    position: absolute;
+    top: 80px;
+    width: 80px;
+    text-align: center;
+}
+.match .res.r1 {
+    left: 5px;
+}
+.match .res.r2 {
+    right: 5px;
+}
+
+.match.bigmatch {
+    width: 360px;
+    height: 200px;
+    -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,.3);
+    -moz-box-shadow: 2px 2px 8px rgba(0,0,0,.3);
+    box-shadow: 2px 2px 8px rgba(0,0,0,.3);
+    font-size: 140%;
+}
+.playoff .finale {
+    top: 130px;
+    left: 65px;
+}
+.bigmatch .dati {
+    margin-top: 75px;
+}
+.bigmatch .vs {
+    width: 64px;
+    height: 64px;
+    top: 40px;
+    left: 148px;
+}
+.bigmatch .team {
+    position: absolute;
+    bottom: 95px;
+    width: 150px;
+    text-align: center;
+}
+.bigmatch .team.t1 {
+    left: 5px;
+}
+.bigmatch .team.t2 {
+    right: 5px;
+}
+.bigmatch .res {
+    position: absolute;
+    top: 115px;
+    width: 120px;
+    text-align: center;
+}
+.bigmatch .res.r1 {
+    left: 5px;
+}
+.bigmatch .res.r2 {
+    right: 5px;
+}
+.playout1 {
+}
+.playout2 {
+    float: right;
+}
+
+
+
