@@ -81,7 +81,7 @@
                     'h2' => "Playoff 2012 - Le finali del campionato",
                     'h3' => "PalaDozio, 22 Aprile 2012<br />4 squadre per uno scudetto",
                     'bt' => array(
-                        array("Programma", '/news-62'),
+                        array("Programma", '/playoff'),
                         
                     ),
                 );
