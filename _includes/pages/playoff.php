@@ -15,59 +15,59 @@
                 <div class="playoff">
                     <div class="match semifinale s1">
                         <div class="testo">Semifinale</div>
-                        <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 9:00</div>
+                        <!-- <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 9:00</div> -->
                         <div class="vs"></div>
                         <div class="team t1">Saronno Castor</div>
                         <div class="team t2">Asti<br />Atomik</div>
-                        <div class="res r1"></div>
-                        <div class="res r2"></div>
+                        <div class="res r1">60</div>
+                        <div class="res r2">47</div>
                     </div>
                     <div class="match semifinale s2">
                         <div class="testo">Semifinale</div>
-                        <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 10:00</div>
+                        <!-- <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 10:00</div> -->
                         <div class="vs"></div>
                         <div class="team t1">Rovello Sgavisc</div>
                         <div class="team t2">Ferrara Jokers</div>
-                        <div class="res r1"></div>
-                        <div class="res r2"></div>
+                        <div class="res r1">50</div>
+                        <div class="res r2">48</div>
                     </div>
                     <div class="match finalina">
                         <div class="testo">Finalina</div>
-                        <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 14:30</div>
+                        <!-- <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 14:30</div> -->
                         <div class="vs"></div>
-                        <div class="team t1"></div>
-                        <div class="team t2"></div>
-                        <div class="res r1"></div>
-                        <div class="res r2"></div>
+                        <div class="team t1">Asti<br />Atomik</div>
+                        <div class="team t2">Ferrara Jokers</div>
+                        <div class="res r1">58</div>
+                        <div class="res r2">56</div>
                     </div>
                     <div class="match bigmatch finale">
                         <div class="testo">Finale</div>
-                        <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 17:00</div>
+                        <!-- <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 17:00</div> -->
                         <div class="vs" style="background-image:url('_static/img/vs-champ.png')"></div>
-                        <div class="team t1"></div>
-                        <div class="team t2"></div>
-                        <div class="res r1"></div>
-                        <div class="res r2"></div>
+                        <div class="team t1">Saronno Castor</div>
+                        <div class="team t2">Rovello Sgavisc</div>
+                        <div class="res r1">70</div>
+                        <div class="res r2">54</div>
                     </div>
                 </div>
                 <p>
                     <div class="match playout2">
                         <div class="testo">Playout</div>
-                        <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 12:00</div>
+                        <!-- <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 12:00</div> -->
                         <div class="vs" style="background-image:url('_static/img/vs-playout.png')"></div>
                         <div class="team t1">Gerenzano Sisma</div>
                         <div class="team t2"><small>Torinoceronti</small> TchoukBall</div>
-                        <div class="res r1"></div>
-                        <div class="res r2"></div>
+                        <div class="res r1">57</div>
+                        <div class="res r2">56</div>
                     </div>
                     <div class="match playout1">
                         <div class="testo">Playout</div>
-                        <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 11:00</div>
+                        <!-- <div class="dati">Saronno - PalaDozio<br />22 Aprile 2012 11:00</div> -->
                         <div class="vs" style="background-image:url('_static/img/vs-playout.png')"></div>
                         <div class="team t1">Varese Pirates</div>
                         <div class="team t2">Rovello Seran</div>
-                        <div class="res r1"></div>
-                        <div class="res r2"></div>
+                        <div class="res r1">61</div>
+                        <div class="res r2">50</div>
                     </div>
                 </p>
                 <p>

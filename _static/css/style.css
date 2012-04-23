@@ -551,7 +551,7 @@ img.shadow {
     font-size: 250%;
     position: absolute;
     top: 80px;
-    width: 80px;
+    width: 100px;
     text-align: center;
 }
 .match .res.r1 {
@@ -597,7 +597,7 @@ img.shadow {
 .bigmatch .res {
     position: absolute;
     top: 115px;
-    width: 120px;
+    width: 150px;
     text-align: center;
 }
 .bigmatch .res.r1 {
