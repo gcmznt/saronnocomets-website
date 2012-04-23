@@ -77,14 +77,22 @@
                 //     ),
                 // );
                 $hero[] = array(
-                    'bg' => "hero-playoff12.png",
-                    'h2' => "Playoff 2012 - Le finali del campionato",
-                    'h3' => "PalaDozio, 22 Aprile 2012<br />4 squadre per uno scudetto",
+                    'bg' => "hero-5champ.png",
+                    'h2' => "Castor pentacampioni!",
+                    'h3' => "I Castor hanno conquistato<br />il loro quinto scudetto",
                     'bt' => array(
-                        array("Programma", '/playoff'),
-                        
+                        array("Leggi la news", '/news-77'),
+                        array("Risultati", '/playoff'),
                     ),
                 );
+                // $hero[] = array(
+                //     'bg' => "hero-playoff12.png",
+                //     'h2' => "Playoff 2012 - Le finali del campionato",
+                //     'h3' => "PalaDozio, 22 Aprile 2012<br />4 squadre per uno scudetto",
+                //     'bt' => array(
+                //         array("Programma", '/playoff'),
+                //     ),
+                // );
                 // $hero[] = array(
                 //     'bg' => "hero-ewcs.png",
                 //     'h2' => "Campioni d&rsquo;Europa!",
