@@ -15,7 +15,7 @@
 <head>
     <title>ASD Saronno TchoukBall Club</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-    <meta property="og:image" content="http://www.saronnocomets.it/_static/img/logo-shadow.png" />
+    <meta property="og:image" content="http://www.saronnocomets.it/_static/img/logo.png" />
     <link rel="shortcut icon" href="_static/img/icon.png" type="image/png" />
     <link rel="icon" href="_static/img/icon.png" type="image/png" />
     
@@ -44,7 +44,7 @@
     <div id="title">
         <div id="titleText">Saronno TchoukBall Club</div>
         <div id="bookmark">
-            <a href="./"><img src="_static/img/logo-shadow.png" id="logo" alt="Il logo del Saronno TchoukBall Club" /></a>
+            <a href="./"><img src="_static/img/logo.png" id="logo" alt="Il logo del Saronno TchoukBall Club" /></a>
         </div>
     </div>
     <div id="main">
