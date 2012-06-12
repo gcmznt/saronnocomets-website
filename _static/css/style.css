@@ -313,7 +313,7 @@ img.shadow {
 .newsBottom {
     clear: both;
     overflow: auto;
-    margin: 50px 0;
+    margin: 30px 0;
 }
 .twitter {
     float: left;
@@ -612,5 +612,8 @@ img.shadow {
     float: right;
 }
 
-
+.dsq-brlink {
+    margin-bottom: 20px;
+    display: block;
+}
 
