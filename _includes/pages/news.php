@@ -59,6 +59,7 @@
                                 echo '<p>'.$abstract[0];
                                 if (strlen($abstract[0]) != strlen($t)) echo '... ';
                                 echo '<a href="/news-'.$n['id'].'" class="continua">continua a leggere</a></p>';
+                                echo '</div>';
                             }
                         ?>
                 </div>
