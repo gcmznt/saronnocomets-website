@@ -61,13 +61,13 @@
                 );
 
 
-                // $hero[] = array(
-                //     'bg' => "hero-carta.png",
-                //     'h2' => "<i>&quot;Il bel gioco richiama il bel gioco&quot;</i>",
-                //     'bt' => array(
-                //         array("La carta del TchoukBall", '/carta'),
-                //     ),
-                // );
+                $hero[] = array(
+                    'bg' => "hero-carta.png",
+                    'h2' => "<i>&quot;Il bel gioco richiama il bel gioco&quot;</i>",
+                    'bt' => array(
+                        array("La carta del TchoukBall", '/carta'),
+                    ),
+                );
                 // $hero[] = array(
                 //     'bg' => "hero-playoff.png",
                 //     'h2' => "22 Aprile - Le finali del campionato",
@@ -76,15 +76,15 @@
                 //         array("Visita la pagina dell'evento", 'http://www.tchoukball.it/eventi-ita12a'),
                 //     ),
                 // );
-                $hero[] = array(
-                    'bg' => "hero-5champ.png",
-                    'h2' => "Castor pentacampioni!",
-                    'h3' => "I Castor hanno conquistato<br />il loro quinto scudetto",
-                    'bt' => array(
-                        array("Leggi la news", '/news-77'),
-                        array("Risultati", '/playoff'),
-                    ),
-                );
+                // $hero[] = array(
+                //     'bg' => "hero-5champ.png",
+                //     'h2' => "Castor pentacampioni!",
+                //     'h3' => "I Castor hanno conquistato<br />il loro quinto scudetto",
+                //     'bt' => array(
+                //         array("Leggi la news", '/news-77'),
+                //         array("Risultati", '/playoff'),
+                //     ),
+                // );
                 // $hero[] = array(
                 //     'bg' => "hero-playoff12.png",
                 //     'h2' => "Playoff 2012 - Le finali del campionato",
