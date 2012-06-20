@@ -1,4 +1,5 @@
 <?php
+    require_once(dirname(__FILE__).'/_includes/config.php');
     require_once(dirname(__FILE__).'/_includes/utilities.php');
 
     $page = (isset($_GET['page'])) ? $_GET['page'] : 'news';
