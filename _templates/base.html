@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    {% for meta in meta_tags %}{% if meta %}<meta name="{{ meta.name }}" content="{{ meta.content }}" />{% endif %}{% endfor %}
+
+    {% if favicon.href %}
+    <link rel="shortcut icon" href="{{ favicon.href }}" type="{{ favicon.type }}" />
+    <link rel="icon" href="{{ favicon.href }}" type="{{ favicon.type }}" />
+    {% endif %}
+
+    <link rel="stylesheet" type="text/css" href="/_static/css/reset-min.css" />
+    <link rel="stylesheet" type="text/css" href="/_static/css/style.css" />
+    {% for css in extra_css %}
+    <link rel="stylesheet" type="text/css" href="{{ css }}" />
+    {% endfor %}
+
+    <script type="text/javascript" src="/_static/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/_static/js/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="/_static/js/scripts.js"></script>
+    {% for js in extra_js %}
+    <script type="text/javascript" src="{{ js }}"></script>
+    {% endfor %}
+
+    {% if og_image %}<meta property="og:image" content="{{ og_image }}" />{% endif %}
+    {% if ga_account %}{% include 'inc/ga.html' %}{% endif %}
+
+</head>
+<body>
+	{{ title }}
+</body>
+</html>
