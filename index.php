@@ -11,12 +11,12 @@
 
     $context = array(
         'favicon' => array(
-            'href' => '/_static/img/favicon.png',
+            'href' => '/_static/img/icon.png',
             'type' => 'image/png',
         ),
-        'ga_account' => false,
-        'og_image' => false,
-        'title' => 'Template',
+        // 'ga_account' => 'UA-28063203-1',
+        'og_image' => 'http://www.saronnocomets.it/_static/img/logo.png',
+        'title' => 'ASD Saronno TchoukBall Club',
         'extra_css' => array(),
         'extra_js' => array(),
         'meta_tags' => array(
