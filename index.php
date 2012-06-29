@@ -6,6 +6,9 @@
     Twig_Autoloader::register();
     $twig = new Twig_Environment(new Twig_Loader_Filesystem(__DIR__ . '/_templates'));
 
+    if (preg_match('/MSIE [45678]/i', $_SERVER['HTTP_USER_AGENT'])) {
+        return $silex->redirect('/no-ie');
+    }
 
     $silex['debug'] = true;
 
@@ -35,4 +38,27 @@
         $twig->display('base.html', $context);
     });
 
+    $silex->get('/no-ie', function () use ($silex, $twig, $context) { 
+        $context['title'] = 'AHAHAHAH - ' . $context['title'];
+        $twig->display('base.html', $context);
+    });
+
+    $app->error(function (\Exception $e, $code) {
+    switch ($code) {
+        case 404:
+            $message = 'The requested page could not be found.';
+            break;
+        default:
+            $message = 'We are sorry, but something went terribly wrong.';
+    }
+
+    return new Response($message, $code);
+});
+
     $silex->run();
+
+
+echo $_SERVER['HTTP_USER_AGENT'];
+
+
+die();
