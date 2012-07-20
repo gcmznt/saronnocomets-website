@@ -6,9 +6,13 @@
     Twig_Autoloader::register();
     $twig = new Twig_Environment(new Twig_Loader_Filesystem(__DIR__ . '/_templates'));
 
-    if (preg_match('/MSIE [45678]/i', $_SERVER['HTTP_USER_AGENT'])) {
-        return $silex->redirect('/no-ie');
-    }
+
+    $checkBrowser = function () use ($silex) {
+        if (preg_match('/MSIE [45678]/i', $_SERVER['HTTP_USER_AGENT'])) {
+        // if (preg_match('/safari/i', $_SERVER['HTTP_USER_AGENT'])) {
+            return $silex->redirect('/no-ie');
+        }
+    };
 
     $silex['debug'] = true;
 
@@ -31,6 +35,11 @@
     $silex->get('/', function () use ($silex, $twig, $context) { 
         $context['title'] = 'Home - ' . $context['title'];
         $twig->display('base.html', $context);
+    })->middleware($checkBrowser);;
+
+    $silex->get('/no-ie/', function () use ($silex, $twig, $context) { 
+        $context['title'] = 'AHAHAHAH - ' . $context['title'];
+        $twig->display('base.html', $context);
     });
 
     $silex->get('/{page}/', function ($page) use ($silex, $twig, $context) { 
@@ -38,27 +47,16 @@
         $twig->display('base.html', $context);
     });
 
-    $silex->get('/no-ie', function () use ($silex, $twig, $context) { 
-        $context['title'] = 'AHAHAHAH - ' . $context['title'];
-        $twig->display('base.html', $context);
+    $silex->error(function (\Exception $e, $code) {
+        switch ($code) {
+            case 404:
+                $message = 'The requested page could not be found.';
+                break;
+            default:
+                $message = 'We are sorry, but something went terribly wrong.';
+        }
+
+        echo $message . ', ' . $code;
     });
 
-    $app->error(function (\Exception $e, $code) {
-    switch ($code) {
-        case 404:
-            $message = 'The requested page could not be found.';
-            break;
-        default:
-            $message = 'We are sorry, but something went terribly wrong.';
-    }
-
-    return new Response($message, $code);
-});
-
     $silex->run();
-
-
-echo $_SERVER['HTTP_USER_AGENT'];
-
-
-die();
