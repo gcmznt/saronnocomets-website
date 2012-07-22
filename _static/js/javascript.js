@@ -33,6 +33,7 @@ var t;
 var lock = false;
 
 $(document).ready(function() {
+    $('.hero:first-child').show();
     var l = $('.hero').length;
     if (l > 1) {
         t = setTimeout(heroTimer, heroInterval);
@@ -73,7 +74,7 @@ $(document).ready(function() {
 
 
 $(function() {
-    var top = $('nav').offset().top - parseFloat($('nav').css('margin-top').replace(/auto/, 0));
+    var top = $('#wrapper > nav').offset().top - parseFloat($('#wrapper > nav').css('margin-top').replace(/auto/, 0));
     $(window).scroll(function (event) {
       // what the y position of the scroll is
       var y = $(this).scrollTop();
@@ -81,11 +82,11 @@ $(function() {
       // whether that's below the form
       if (y >= top) {
         // if so, ad the fixed class
-        $('nav').css('position', 'fixed');
+        $('#wrapper > nav').css({'position': 'fixed', 'margin-left': '-480px', 'left': '50%'});
         $('section').css('margin-left', '230px');
       } else {
         // otherwise remove it
-        $('nav').css('position', 'static');
+        $('#wrapper > nav').css({'position': 'static', 'margin-left': '0px', 'left': 'auto'});
         $('section').css('margin-left', '30px');
       }
     });

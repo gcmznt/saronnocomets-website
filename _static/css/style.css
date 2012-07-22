@@ -12,7 +12,7 @@ header, section, article, aside, footer {
 
 header {
     background: url('../img/sfondo-title.png') center top repeat-x;
-    padding-top: 26px;
+    padding-top: 30px;
     overflow: hidden;
 }
 
@@ -24,7 +24,10 @@ header #title {
     display: block;
     text-decoration: none;
     font-size: 300%;
-    line-height: 78px;
+    line-height: 70px;
+    z-index: 10;
+    position: relative;
+    background: url('../img/sfondo-title.png') center -30px repeat-x;
 }
 
 header #bookmark {
@@ -97,15 +100,6 @@ footer li {
     -moz-box-shadow: 1px 1px 2px rgba(0,0,0,.2);
     box-shadow: 1px 1px 2px rgba(0,0,0,.2);
     margin-right: 10px;
-}
-.button:hover {
-    text-decoration: none;
-}
-.button:active {
-    position: relative;
-    top: 1px;
-}
-.button.white {
     color: #333;
     border: solid 1px #bdbdbd;
     background: #fff;
@@ -113,13 +107,16 @@ footer li {
     background: -moz-linear-gradient(top,  #fff,  #ededed);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
 }
-.button.white:hover {
+.button:hover {
+    text-decoration: none;
     background: #ededed;
     background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
     background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
 }
-.button.white:active {
+.button:active {
+    position: relative;
+    top: 1px;
     color: #000080;
     background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
     background: -moz-linear-gradient(top,  #ededed,  #fff);
@@ -132,6 +129,7 @@ footer li {
     margin-left: 230px;
     left: 0;
     position: absolute;
+    display: none;
 }
 
 #heroNavi {
@@ -173,7 +171,7 @@ nav li:hover {
 	-webkit-transform: translate(1em,0);
 	-moz-transform: translate(1em,0);
 	-o-transform: translate(1em,0);
-	-ms-transform:translate(1em,0);
+	-ms-transform: translate(1em,0);
 }
 nav a:hover {
     text-decoration: none;
@@ -185,24 +183,44 @@ nav a:hover {
 }
 
 nav, aside {
-    float: left;
     width: 200px;
     min-height: 1px;
     padding: 20px 0;
     overflow: hidden;
     top: 0;
 }
+nav {
+    float: left;
+}
+aside {
+    float: right;
+    clear: right;
+}
 
 section {
     float: left;
     width: 500px;
-    margin: 0 30px;
+    margin: 0 30px 30px;
+    font-size: 90%;
     /*box-shadow: 25px 0px 25px -25px #dbdbdb;*/
 }
-#colBig {
+#browserError {
+    position: absolute;
+    width: 188px;
+    left: 50%;
+    top: 310px;
+    padding: 5px;
+    margin-left: -480px;
+    font-size: 75%;
+    color: #dd3333;
+    background-color: #Ffbdbd;
+    border: 1px solid #ff6666;
+}
+
+.colBig {
     float: left;
     width: 720px;
-    margin: 0 30px 0 0;
+    margin: 0 0 30px 30px;
     padding-right: 10px;
 }
 
@@ -255,6 +273,7 @@ a {
     text-decoration: none;
 }
 a:hover {
+    color: #ff2200;
     text-decoration: underline;
 }
 strong {
@@ -264,7 +283,34 @@ em {
     font-style: italic;
 }
 
-a.continua {
+dl {
+    overflow: auto;
+}
+dt {
+    font-style: italic;
+    float: left;
+    clear: left;
+    margin-right: 2%;
+    width: 28%;
+    text-align: right;
+}
+dd {
+    width: 70%;
+    float: left;
+}
+
+section nav {
+    width: auto;
+    min-height: auto;
+    padding: 5px 15px;
+    background: #f6f6f6;
+    float: none;
+    overflow: auto;
+    margin: 20px 0 20px;
+    border-radius: 6px;
+}
+a.nav,
+section nav a {
     font-variant: small-caps;
 }
 
@@ -275,14 +321,13 @@ a.continua {
 .team_photo {
     float: left;
     border-radius: 10px;
-    margin: 0 20px 10px 0;
-    box-shadow: 2px 2px 6px #333;
+    margin: 0 20px 15px 0;
+    box-shadow: 2px 6px 10px -5px #333;
 }
 
 article {
     position: relative;
     margin-bottom: 20px;
-    font-size: 90%;
     overflow: auto;
 }
 .news .date {
@@ -324,9 +369,6 @@ img.shadow {
     overflow: auto;
     margin: 30px 0;
 }
-.twitter {
-    float: left;
-}
 
 aside#partite li {
     margin-bottom: 20px;
@@ -341,12 +383,6 @@ aside#partite li small {
     line-height: 130%;
     margin-bottom: 5px;
 }
-aside#partite li.champ small { background-image: url('../img/ico-cam.png'); }
-aside#partite li.champa small { background-image: url('../img/ico-seriea.png'); }
-aside#partite li.champb small { background-image: url('../img/ico-serieb.png'); }
-aside#partite li.friendly small { background-image: url('../img/ico-ami.png'); }
-aside#partite li.ewc small { background-image: url('../img/ico-ewc.png'); }
-aside#partite li.torneo small { background-image: url('../img/ico-tor.png'); }
 aside#partite li span {
     float: right;
 }

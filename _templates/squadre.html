@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Squadre e giocatori &bull; ASD Saronno TchoukBall Club{% endblock %}
+
+{% block content %}
+        <section id="squadre">
+            <h1>Squadre e giocatori</h1>
+            {% for stagione, squadre in stagioni %}
+                <h2>Stagione {{ stagione - 1 }} - {{ stagione }}</h2>
+                {% for nome, squadra in squadre %}
+                    <h3>{{ nome }}</h3>
+                    {% if squadra.foto %}
+                        <a href="{{ squadra.foto }}" class="prettyPhoto" title="{{ nome }} {{ stagione }}" rel="prettyPhoto[{{ nome }}]">
+                            <img src="{{ squadra.foto_sm }}" class="team_photo" />
+                        </a>
+                    {% endif %}
+                    <p class="left">
+                        {% for giocatore in squadra.giocatori %}
+                            {% if giocatore.capitano %}&copy; {% endif %}
+                            {{ giocatore.nome }}<br />
+                        {% endfor %}
+                    </p>
+                {% endfor %}
+            {% endfor %}
+        </section>
+{% endblock %}

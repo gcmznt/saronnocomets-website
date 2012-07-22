@@ -1,2 +1,3 @@
 *.DS_Store
 _static/uploads/*
+_includes/config.php
