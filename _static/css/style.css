@@ -403,6 +403,8 @@ aside#facebook iframe {
     height: 90px;
     width: 220px;
     margin: 0 0 0 -10px;
+    overflow: hidden;
+    border: 0;
 }
 
 footer img {
