@@ -57,7 +57,7 @@ $(document).ready(function() {
         });
     }
 
-    $('.newsContent img').parents('a').attr('rel','prettyPhoto[news]').addClass('prettyPhoto');
+    $('#news img').parents('a').attr('data-prettyphoto', 'prettyPhoto[news]').addClass('prettyPhoto');
     $('.prettyPhoto').prettyPhoto({
         deeplinking: false,
         social_tools: ''

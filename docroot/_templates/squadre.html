@@ -10,7 +10,7 @@
                 {% for nome, squadra in squadre %}
                     <h3>{{ nome }}</h3>
                     {% if squadra.foto %}
-                        <a href="{{ squadra.foto }}" class="prettyPhoto" title="{{ nome }} {{ stagione }}" rel="prettyPhoto[{{ nome }}]">
+                        <a href="{{ squadra.foto }}" class="prettyPhoto" title="{{ nome }} {{ stagione }}" data-prettyphoto="prettyPhoto[{{ nome }}]">
                             <img src="{{ squadra.foto_sm }}" class="team_photo" />
                         </a>
                     {% endif %}

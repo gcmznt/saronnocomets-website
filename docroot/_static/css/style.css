@@ -352,7 +352,7 @@ h2 time {
     margin: 2px 0;
     float: right;
 }
-.newsContent img,
+#news img,
 img.shadow {
     box-shadow: 0 12px 20px -15px #000;
     margin: 10px 0;
