@@ -601,5 +601,9 @@ footer img {
     display: block;
 }
 
+.controls .loader {
+    vertical-align: bottom;
+}
+
 
 

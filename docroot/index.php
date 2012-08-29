@@ -41,6 +41,90 @@
         });
     }
 
+    $silex->get("/torneo-di-saronno/iscrizioni/", function () use ($silex, $twig, $context) { 
+        $twig->display("iscrizione-tds.html", $context);
+    });
+    $silex->get("/torneo-di-saronno/iscrizioni/confirm/{code}/", function ($code) use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/db_connect.php');
+        $year = date('Y');
+        $code = mysql_real_escape_string($code);
+        $q = mysql_query("SELECT * FROM tds WHERE year = '$year' AND confirm = '$code' AND status = 'pending'");
+        if (mysql_num_rows($q) == 1) {
+            $dati = mysql_fetch_assoc($q);
+            $context['name'] = $dati['responsible'];
+            $context['team'] = $dati['team'];
+            $q = mysql_query("UPDATE tds SET status = 'confirmed' WHERE year = '$year' AND confirm = '$code' AND status = 'pending'");
+            $twig->display("iscrizione-tds-confirm.html", $context);
+        } else {
+            $silex->abort(404);
+        }
+    });
+    $silex->post("/torneo-di-saronno/submit/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/db_connect.php');
+        $res = array();
+        $res['status'] = 'ko';
+        $res['errors'] = array();
+
+        $team = mysql_real_escape_string($_POST['inputName']);
+        $tournament = mysql_real_escape_string($_POST['inputTorneo']);
+        $year = date('Y');
+        $invite = mysql_real_escape_string($_POST['inputCode']);
+        $responsible = mysql_real_escape_string($_POST['inputResponsible']);
+        $email = mysql_real_escape_string($_POST['inputEmail']);
+        $saturnday = mysql_real_escape_string($_POST['inputSaturnday']);
+        $sunday = mysql_real_escape_string($_POST['inputSunday']);
+        $status = ($tournament == 'elite') ? 'confirmed' : 'pending';
+        $confirm = uniqid();
+
+        if ($team == '') {
+            $res['errors']['inputName'] = "Inserire il nome della squadra";
+        } else {
+            $n = mysql_num_rows(mysql_query("SELECT * FROM tds WHERE team = '$team' AND year = '$year' AND tournament = '$tournament'"));
+            if ($n > 0) {
+                $res['errors']['inputName'] = "Squadra già iscritta";
+            }
+        }
+        if ($tournament == 'elite') {
+            $n = mysql_num_rows(mysql_query("SELECT * FROM tds WHERE team = '' AND year = '$year' AND invite = '$invite'"));
+            if ($n == 0) {
+                $res['errors']['inputCode'] = "Codice non valido";
+            }
+        }
+        if ($responsible == '') {
+            $res['errors']['inputResponsible'] = "Inserire il nome del responsabile";
+        }
+        if ($email == '') {
+            $res['errors']['inputEmail'] = "Inserire l'indirizzo email";
+        } elseif (!validEmail($email)) {
+            $res['errors']['inputEmail'] = "Indirizzo email non valido";
+        }
+
+        if ($res['errors'] == array()) {
+            mysql_query("INSERT INTO tds (team, tournament, year, invite, responsible, email, saturnday, sunday, status, confirm) VALUES ('$team', '$tournament', '$year', '$invite', '$responsible', '$email', '$saturnday', '$sunday', '$status', '$confirm')");
+            
+            if (mysql_affected_rows() == 1) {
+                if ($invite != '') {
+                    mysql_query("DELETE FROM tds WHERE team = '' AND year = '$year' AND invite = '$invite'");
+                }
+                $res['status'] = 'ok';
+                $res['message'] = 'Iscrizione avvenuta con successo';
+
+                $subject = 'Iscrizione Torneo di Saronno';
+                $context['name'] = $responsible;
+                $context['team'] = $team;
+                $context['url'] = 'http://www.saronnocomets.it/torneo-di-saronno/iscrizioni/confirm/'.$confirm.'/';
+                $message = $twig->render("iscrizione-tds-email.html", $context);
+                $headers = 'From: torneo@saronnocomets.it';
+
+                mail($email, $subject, $message, $headers);
+            } else {
+                $res['message'] = 'Errore durante il salvataggio';
+            }
+        }
+
+        header('Content-type: application/json');
+        echo json_encode($res);
+    });
     $silex->get("/partite/", function () use ($silex, $twig, $context) { 
         $context['stagioni'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php');
         $twig->display("partite.html", $context);
