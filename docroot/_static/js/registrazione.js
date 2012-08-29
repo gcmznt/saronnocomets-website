@@ -13,7 +13,10 @@
             $(this).parents('.control-group').removeClass('error');
         });
 
-        $('#inputTorneo, #inputSaturnday, #inputSunday').change(function(){
+        $('#inputTorneo').change(function(){
+            calcolaPrezzo();
+        });
+        $('#inputSaturnday, #inputSunday').keyup(function(){
             calcolaPrezzo();
         });
 
@@ -28,6 +31,7 @@
                 type: 'POST',
                 url: '/torneo-di-saronno/submit/',
                 data: $(this).serialize(),
+                dataType: 'json',
                 success: function(data) {
                     if (data.status == 'ko') {
                         form.find('.loader').remove();

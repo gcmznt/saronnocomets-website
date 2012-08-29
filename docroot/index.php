@@ -71,8 +71,8 @@
         $invite = mysql_real_escape_string($_POST['inputCode']);
         $responsible = mysql_real_escape_string($_POST['inputResponsible']);
         $email = mysql_real_escape_string($_POST['inputEmail']);
-        $saturnday = mysql_real_escape_string($_POST['inputSaturnday']);
-        $sunday = mysql_real_escape_string($_POST['inputSunday']);
+        $saturnday = ($_POST['inputSaturnday'] == '') ? 0 : $_POST['inputSaturnday'];
+        $sunday = ($_POST['inputSunday'] == '') ? 0 : $_POST['inputSunday'];
         $status = ($tournament == 'elite') ? 'confirmed' : 'pending';
         $confirm = uniqid();
 
@@ -98,6 +98,12 @@
         } elseif (!validEmail($email)) {
             $res['errors']['inputEmail'] = "Indirizzo email non valido";
         }
+        if (!is_numeric($saturnday)) {
+            $res['errors']['inputSaturnday'] = "Inserire un numero di buoni pasto";
+        }
+        if (!is_numeric($sunday)) {
+            $res['errors']['inputSunday'] = "Inserire un numero di buoni pasto";
+        }
 
         if ($res['errors'] == array()) {
             mysql_query("INSERT INTO tds (team, tournament, year, invite, responsible, email, saturnday, sunday, status, confirm) VALUES ('$team', '$tournament', '$year', '$invite', '$responsible', '$email', '$saturnday', '$sunday', '$status', '$confirm')");
@@ -105,16 +111,18 @@
             if (mysql_affected_rows() == 1) {
                 if ($invite != '') {
                     mysql_query("DELETE FROM tds WHERE team = '' AND year = '$year' AND invite = '$invite'");
+                    $res['message'] = 'Registrazione avvenuta con successo';
+                } else {
+                    $res['message'] = "Dati salvati con successo.<br />Per confermare la tua iscrizione clicca sul link che ti abbiamo inviato all'indirizzo email $email.";
                 }
                 $res['status'] = 'ok';
-                $res['message'] = 'Iscrizione avvenuta con successo';
 
                 $subject = 'Iscrizione Torneo di Saronno';
                 $context['name'] = $responsible;
                 $context['team'] = $team;
                 $context['url'] = 'http://www.saronnocomets.it/torneo-di-saronno/iscrizioni/confirm/'.$confirm.'/';
                 $message = $twig->render("iscrizione-tds-email.html", $context);
-                $headers = 'From: torneo@saronnocomets.it';
+                $headers = 'From: Torneo di TchoukBall Città di Saronno <torneo@saronnocomets.it>';
 
                 mail($email, $subject, $message, $headers);
             } else {
