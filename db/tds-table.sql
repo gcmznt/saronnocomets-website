@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9.2
+-- version 3.4.7.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Aug 29, 2012 at 10:47 PM
--- Server version: 5.5.9
--- PHP Version: 5.3.6
+-- Host: 62.149.150.66
+-- Generato il: Ago 30, 2012 alle 21:52
+-- Versione del server: 5.0.92
+-- Versione PHP: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,17 +17,17 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `stbc`
+-- Database: `Sql125733_3`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tds`
+-- Struttura della tabella `tds`
 --
 
-CREATE TABLE `tds` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `tds` (
+  `id` int(11) NOT NULL auto_increment,
   `team` varchar(50) NOT NULL,
   `tournament` varchar(10) NOT NULL,
   `year` int(11) NOT NULL,
@@ -37,7 +38,11 @@ CREATE TABLE `tds` (
   `sunday` int(11) NOT NULL,
   `status` varchar(20) NOT NULL,
   `confirm` varchar(50) NOT NULL,
-  `request` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
+  `request` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`),
   UNIQUE KEY `invite` (`invite`,`confirm`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

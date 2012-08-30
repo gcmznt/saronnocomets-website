@@ -89,7 +89,7 @@
 })(jQuery);
 
 function calcolaPrezzo() {
-    var t = ($('#inputTorneo').val() == 'classic') ? 40 : 0;
+    var t = ($('#inputTorneo').val() == 'classic') ? 30 : 0;
     var sat = parseInt($('#inputSaturnday').val(), 10);
     var sun = parseInt($('#inputSunday').val(), 10);
     sat = (isNaN(sat)) ? 0 : sat;

@@ -53,21 +53,31 @@
     //         array("I risultati", 'http://www.tchoukball.it/eventi-ewc12'),
     //     ),
     // );
+    // $hero[] = array(
+    //     'bg' => "hero-summer.png",
+    //     'h2' => "Ci vediamo a Settembre!",
+    //     'h3' => "Buone vacanze<br />dal Saronno TchoukBall Club",
+    //     'bt' => array(
+    //     ),
+    // );
     $hero[] = array(
-        'bg' => "hero-summer.png",
-        'h2' => "Ci vediamo a Settembre!",
-        'h3' => "Buone vacanze<br />dal Saronno TchoukBall Club",
+        'bg' => "hero-tds12.png",
+        'h2' => "Torneo &quot;Citt&agrave; di Saronno&quot;",
+        'h3' => "Decima edizione<br />29 e 30 Settembre 2012<br />Non potete mancare!",
         'bt' => array(
+            array('Iscriviti', '/torneo-di-saronno/iscrizioni/'),
+            array('Info ITA', '/_static/doc/tds12-presentazione.pdf'),
+            array('Info ENG', '/_static/doc/tds12-presentation.pdf'),
         ),
     );
-    $hero[] = array(
-        'bg' => "hero-2002.png",
-        'h2' => "Saronno. Since 2002",
-        'h3' => "Il primo Club di TchoukBall<br />in Italia!",
-        'bt' => array(
-            array('La societ&agrave;', '/info'),
-        ),
-    );
+    // $hero[] = array(
+    //     'bg' => "hero-2002.png",
+    //     'h2' => "Saronno. Since 2002",
+    //     'h3' => "Il primo Club di TchoukBall<br />in Italia!",
+    //     'bt' => array(
+    //         array('La societ&agrave;', '/info'),
+    //     ),
+    // );
     // $hero[] = array(
     //     'bg' => "hero-castorpollux.png",
     //     'h2' => "Castor e Pollux",

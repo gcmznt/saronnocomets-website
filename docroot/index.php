@@ -48,13 +48,15 @@
         require_once(__DIR__ . '/_includes/db_connect.php');
         $year = date('Y');
         $code = mysql_real_escape_string($code);
-        $q = mysql_query("SELECT * FROM tds WHERE year = '$year' AND confirm = '$code' AND status = 'pending'");
-        if (mysql_num_rows($q) == 1) {
-            $dati = mysql_fetch_assoc($q);
+        $dati = mysql_query("SELECT * FROM tds WHERE year = '$year' AND confirm = '$code' AND status = 'pending'");
+        if (mysql_num_rows($dati) == 1) {
+            $dati = mysql_fetch_assoc($dati);
+            $iscritti = mysql_query("SELECT * FROM tds WHERE year = '$year' AND tournament = 'classic' AND status = 'confirmed'");
             $context['name'] = $dati['responsible'];
             $context['team'] = $dati['team'];
-            $q = mysql_query("UPDATE tds SET status = 'confirmed' WHERE year = '$year' AND confirm = '$code' AND status = 'pending'");
-            $twig->display("iscrizione-tds-confirm.html", $context);
+            $status = (mysql_num_rows($iscritti) >= 24) ? 'queued' : 'confirmed';
+            mysql_query("UPDATE tds SET status = '$status' WHERE year = '$year' AND confirm = '$code' AND status = 'pending'");
+            $twig->display("iscrizione-tds-" . $status . ".html", $context);
         } else {
             $silex->abort(404);
         }
@@ -114,17 +116,17 @@
                     $res['message'] = 'Registrazione avvenuta con successo';
                 } else {
                     $res['message'] = "Dati salvati con successo.<br />Per confermare la tua iscrizione clicca sul link che ti abbiamo inviato all'indirizzo email $email.";
+
+                    $subject = 'Iscrizione Torneo di Saronno';
+                    $context['name'] = $responsible;
+                    $context['team'] = $team;
+                    $context['url'] = 'http://www.saronnocomets.it/torneo-di-saronno/iscrizioni/confirm/'.$confirm.'/';
+                    $message = $twig->render("iscrizione-tds-email.html", $context);
+                    $headers = 'From: Saronno TchoukBall Club <torneo@saronnocomets.it>';
+
+                    mail($email, $subject, $message, $headers);
                 }
                 $res['status'] = 'ok';
-
-                $subject = 'Iscrizione Torneo di Saronno';
-                $context['name'] = $responsible;
-                $context['team'] = $team;
-                $context['url'] = 'http://www.saronnocomets.it/torneo-di-saronno/iscrizioni/confirm/'.$confirm.'/';
-                $message = $twig->render("iscrizione-tds-email.html", $context);
-                $headers = 'From: Torneo di TchoukBall Città di Saronno <torneo@saronnocomets.it>';
-
-                mail($email, $subject, $message, $headers);
             } else {
                 $res['message'] = 'Errore durante il salvataggio';
             }
