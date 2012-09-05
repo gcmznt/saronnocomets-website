@@ -1,0 +1,23 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block nav_menu %}
+    <li class=""><a href="/admin/profilo/">{% if name %}{{ name }}{% else %}Profilo{% endif %}</a></li>
+    <li class=""><a href="/admin/logout/">Logout</a></li>
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="span3" id="menuCol">
+            <ul class="nav nav-list well">
+                <li{% if page == 'home' %} class="active"{% endif %}><a href="/admin/">Home</a></li>
+                <li{% if page == 'news' %} class="active"{% endif %}><a href="/admin/news/">News</a></li>
+                <li{% if page == 'tds' %} class="active"{% endif %}><a href="/admin/tds/">Torneo di Saronno</a></li>
+            </ul>
+        </div>
+        <div class="span9 pull-right">
+            {% block mainContent %}Dashboard{% endblock %}
+        </div>
+    </div>
+{% endblock %}
+

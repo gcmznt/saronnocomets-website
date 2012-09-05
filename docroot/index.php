@@ -6,16 +6,17 @@
     Twig_Autoloader::register();
     $twig = new Twig_Environment(new Twig_Loader_Filesystem(__DIR__ . '/_templates'));
 
+    session_start();
+
     $context = array();
     require_once(__DIR__ . '/_includes/config.php');
     require_once(__DIR__ . '/_includes/utilities.php');
 
-    require_once(__DIR__ . '/_includes/hero.php');
-    $context['heros'] = $hero;
-
-    $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
-
     $silex->get('/', function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
         require_once(__DIR__ . '/_includes/db_connect.php');
         $news = mysql_query("SELECT * FROM news ORDER BY data DESC LIMIT 0,10;");
         while ($n = mysql_fetch_assoc($news)) {
@@ -37,14 +38,26 @@
     );
     foreach ($static_pages as $page) {
         $silex->get("/$page/", function () use ($silex, $twig, $context, $page) { 
+            require_once(__DIR__ . '/_includes/hero.php');
+            $context['heros'] = $hero;
+            $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
             $twig->display("$page.html", $context);
         });
     }
 
     $silex->get("/torneo-di-saronno/iscrizioni/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
         $twig->display("iscrizione-tds.html", $context);
     });
     $silex->get("/torneo-di-saronno/iscrizioni/confirm/{code}/", function ($code) use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
         require_once(__DIR__ . '/_includes/db_connect.php');
         $year = date('Y');
         $code = mysql_real_escape_string($code);
@@ -62,6 +75,10 @@
         }
     });
     $silex->post("/torneo-di-saronno/submit/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
         require_once(__DIR__ . '/_includes/db_connect.php');
         $res = array();
         $res['status'] = 'ko';
@@ -136,10 +153,18 @@
         echo json_encode($res);
     });
     $silex->get("/partite/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
         $context['stagioni'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php');
         $twig->display("partite.html", $context);
     });
     $silex->get("/squadre/", function () use ($silex, $twig, $context) {
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
         $context['stagioni'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/squadre.php');
         $twig->display("squadre.html", $context);
     });
@@ -150,6 +175,10 @@
         return $silex->redirect("/news/$id/");
     });
     $silex->get("/news/{id}/", function ($id) use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
         require_once(__DIR__ . '/_includes/db_connect.php');
         $news = mysql_query("SELECT * FROM news WHERE id = " . mysql_real_escape_string($id) . " ORDER BY data DESC LIMIT 0,10;");
         $n = mysql_fetch_assoc($news);
@@ -172,5 +201,125 @@
 
         $twig->display("singlenews.html", $context);
     });
+
+
+
+
+    $silex->get("/admin/", function () use ($silex, $twig, $context) {
+        if (isset($_SESSION['logged']) && $_SESSION['logged']) {
+            return $silex->redirect('/admin/home/');
+        } else {
+            $twig->display("admin/login.html", $context);
+        }
+    });
+    $silex->get("/admin/logout/", function () use ($silex, $twig, $context) {
+        $_SESSION['logged'] = false;
+        $_SESSION['id'] = false;
+        $_SESSION['email'] = false;
+        $_SESSION['gravatar'] = false;
+        $_SESSION['name'] = false;
+        return $silex->redirect('/admin/');
+    });
+    $silex->post("/admin/login/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/db_connect.php');
+        $res = array();
+        $res['logged'] = false;
+
+        $email = mysql_real_escape_string($_POST['email']);
+        $password = md5($_POST['password']);
+
+        $q = mysql_query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
+        if (mysql_num_rows($q) > 0) {
+            $c = mysql_fetch_assoc($q);
+            $_SESSION['logged'] = true;
+            $_SESSION['id'] = $c['id'];
+            $_SESSION['email'] = $c['email'];
+            $_SESSION['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($_SESSION['email']))) . '?d=identicon';
+            $_SESSION['name'] = $c['name'];
+            $res['logged'] = true;
+        }
+
+        header('Content-type: application/json');
+        echo json_encode($res);
+    });
+    $silex->get("/admin/{page}/", function ($page) use ($silex, $twig, $context) { 
+        $context['page'] = $page;
+        $context['id'] = $_SESSION['id'];
+        $context['name'] = $_SESSION['name'];
+        $context['email'] = $_SESSION['email'];
+        $context['gravatar'] = $_SESSION['gravatar'];
+        $twig->display("admin/" . $page . ".html", $context);
+    });
+    $silex->post("/admin/profilo/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/db_connect.php');
+        $errors = array();
+
+        $id = $_SESSION['id'];
+        $name = mysql_real_escape_string($_POST['name']);
+        $email = mysql_real_escape_string($_POST['email']);
+        $password = md5($_POST['password']);
+        $new_password = md5($_POST['new_password']);
+
+        $q = mysql_query("SELECT * FROM users WHERE id = '$id' AND password = '$password'");
+        if (mysql_num_rows($q) == 0) $errors[] = 'Password sbagliata';
+        if (!validEmail($email)) $errors[] = 'Indirizzo email non valido';
+        if ($_POST['new_password'] != $_POST['new_password_retype']) $errors[] = 'Le passord non coincidono';
+
+        if (count($errors) == 0) {
+            if ($_POST['new_password'] != '')
+                $q = mysql_query("UPDATE users SET name = '$name', email = '$email', password = '$new_password' WHERE id = '$id' AND password = '$password'");
+            else
+                $q = mysql_query("UPDATE users SET name = '$name', email = '$email' WHERE id = '$id' AND password = '$password'");
+            $_SESSION['name'] = $name;
+            $_SESSION['email'] = $email;
+            $_SESSION['gravatar'] = 'http://www.gravatar.com/avatar/' . md5(strtolower(trim($_SESSION['email']))) . '?d=identicon';
+        } else {
+            $context['errors'] = $errors;
+        }
+
+        $context['name'] = $_SESSION['name'];
+        $context['email'] = $_SESSION['email'];
+        $context['gravatar'] = $_SESSION['gravatar'];
+        $twig->display("admin/profilo.html", $context);
+    });
+    $silex->get("/admin/tds/data/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/db_connect.php');
+        $res = array();
+
+        $q = mysql_query("SELECT * FROM tds WHERE year = '2012' ORDER BY team ASC");
+        while ($res[] = mysql_fetch_assoc($q)) {}
+
+        header('Content-type: application/json');
+        echo json_encode($res);
+    });
+    $silex->get("/admin/news/data/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/db_connect.php');
+        $res = array();
+
+        $q = mysql_query("SELECT * FROM news ORDER BY data DESC");
+        while ($res[] = mysql_fetch_assoc($q)) {}
+
+        header('Content-type: application/json');
+        echo json_encode($res);
+    });
+
+    $silex->get("/admin/news/{id}/", function ($id) use ($silex, $twig, $context) {
+        require_once(__DIR__ . '/_includes/db_connect.php');
+        $context['page'] = 'news';
+        $context['id'] = $_SESSION['id'];
+        $context['name'] = $_SESSION['name'];
+        $context['email'] = $_SESSION['email'];
+        $context['gravatar'] = $_SESSION['gravatar'];
+        $q = mysql_query("SELECT * FROM news WHERE id = '$id'");
+        $news = mysql_fetch_assoc($q);
+        $context['titolo'] = $news['titolo'];
+        $context['testo'] = $news['testo'];
+        $twig->display("admin/singlenews.html", $context);
+    });
+
+
+
+
+
 
     $silex->run();

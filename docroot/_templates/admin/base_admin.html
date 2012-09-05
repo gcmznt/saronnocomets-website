@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Saronno TchoukBall Club Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saronno TchoukBall Club Admin">
+    <meta name="author" content="Giko">
+
+    <link href="/_static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/_static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/_static/css/admin.css" rel="stylesheet">
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/admin/">Saronno TchoukBall Club Admin</a>
+                <ul class="nav pull-right">
+                    {% block nav_menu %}{% endblock %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {% block content %}
+            {% block mainContent %}{% endblock %}
+        {% endblock %}
+    </div>
+
+    <script src="/_static/js/json2.js"></script>
+    <script src="/_static/js/jquery-1.7.2.min.js"></script>
+    <script src="/_static/js/underscore-min.js"></script>
+    <script src="/_static/js/backbone-min.js"></script>
+    <script src="/_static/js/bootstrap.min.js"></script>
+    <script src="/_static/js/admin.js"></script>
+
+    {% block extra_body %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,55 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="span7">
+        <div class="hero-unit">
+            <h1>Saronno TB Club</h1>
+            <p>Benvenuto nel programma gestionale</p>
+            <p><a class="btn btn-primary" href="/">Torna al sito &raquo;</a></p>
+        </div>
+    </div>
+    <div class="span5">
+        <form class="form-horizontal" id="login-form">
+            <legend>Login</legend>
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Email</label>
+                <div class="controls">
+                    <input type="text" id="email" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPassword">Password</label>
+                <div class="controls">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button class="btn">Sign in</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_body %}
+    <script src="/_static/js/admin/login.js"></script>
+
+    <script type="text/html" id="team-template">
+        <td><%- team %></td>
+        <td><%- responsible %></td>
+        <td><%- email %></td>
+        <td><%- saturnday %></td>
+        <td><%- sunday %></td>
+        <td>
+            <% if (status == "confirmed") { %><span class="label label-success"><%- status %></span><% } %>
+            <% if (status == "pending") { %><span class="label label-warning"><%- status %></span><% } %>
+            <% if (status == "queued") { %><span class="label label-important"><%- status %></span><% } %>
+        </td>
+        <td><%- request %></td>
+    </script>
+{% endblock %}
+
