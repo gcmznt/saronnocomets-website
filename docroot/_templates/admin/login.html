@@ -37,19 +37,5 @@
 
 {% block extra_body %}
     <script src="/_static/js/admin/login.js"></script>
-
-    <script type="text/html" id="team-template">
-        <td><%- team %></td>
-        <td><%- responsible %></td>
-        <td><%- email %></td>
-        <td><%- saturnday %></td>
-        <td><%- sunday %></td>
-        <td>
-            <% if (status == "confirmed") { %><span class="label label-success"><%- status %></span><% } %>
-            <% if (status == "pending") { %><span class="label label-warning"><%- status %></span><% } %>
-            <% if (status == "queued") { %><span class="label label-important"><%- status %></span><% } %>
-        </td>
-        <td><%- request %></td>
-    </script>
 {% endblock %}
 
