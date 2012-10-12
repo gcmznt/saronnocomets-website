@@ -606,4 +606,95 @@ footer img {
 }
 
 
+#tds-history {
+    position: relative;
+    overflow: hidden;
+    width: 500px;
+    height: 600px;
+    background: url(../img/logo-tds.png) center top no-repeat;
+}
+#tds .navigator {
+    position: relative;
+    text-align: center;
+}
+#tds .navigator a:hover {
+    text-decoration: none;
+}
+#tds .navigator .prev,
+#tds .navigator .next {
+    display: none;
+    margin: 5px;
+    cursor: pointer;
+}
+#tds .navigator .disabled {
+    color: white;
+    cursor: default;
+}
+#tds .navi {
+    display: inline-block;
+}
+#tds .navi a {
+    display: inline-block;
+    margin: 0px;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+#tds .navi a.active {
+    background: navy;
+    color: white;
+    cursor: default;
+}
+#tds-history .items {
+    width: 20000em;
+    position: absolute;
+}
+#tds-history .item {
+    float: left;
+    width: 500px;
+}
+#tds-history .column {
+    float: left;
+    width: 46%;
+    margin: 0 2%;
+}
+#tds-history .column li span {
+    float: right;
+    display: inline-block;
+    width: 20px;
+    margin: 0 10px;
+    text-align: center;
+}
+#tds-history .columnFull {
+    width: 96%;
+    margin: 0 2%;
+}
+#tds-history .column:nth-child(3) {
+    text-align: right;
+}
+#tds-history .column:nth-child(3) li span {
+    float: left;
+}
+#tds-history h4 {
+    text-align: center;
+}
+#tds-history .year {
+    margin: 162px auto 120px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+#tds-history .prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+}
+#tds-history .next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+}
+
 

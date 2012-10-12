@@ -46,6 +46,13 @@
         });
     }
 
+    $silex->get("/torneo-di-saronno/", function () use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
+        $twig->display("tds.html", $context);
+    });
     $silex->get("/torneo-di-saronno/iscrizioni/", function () use ($silex, $twig, $context) { 
         require_once(__DIR__ . '/_includes/hero.php');
         $context['heros'] = $hero;

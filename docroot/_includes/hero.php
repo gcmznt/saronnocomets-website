@@ -63,11 +63,11 @@
     $hero[] = array(
         'bg' => "hero-tds12.png",
         'h2' => "Torneo &quot;Citt&agrave; di Saronno&quot;",
-        'h3' => "Decima edizione<br />29 e 30 Settembre 2012<br />Non potete mancare!",
+        'h3' => "Decima edizione<br />29 e 30 Settembre 2012",
         'bt' => array(
-            array('Iscriviti', '/torneo-di-saronno/iscrizioni/'),
-            array('Info ITA', '/_static/doc/tds12-presentazione.pdf'),
-            array('Info ENG', '/_static/doc/tds12-presentation.pdf'),
+            array('Le classifiche', '/torneo-di-saronno/'),
+            // array('Info ITA', '/_static/doc/tds12-presentazione.pdf'),
+            // array('Info ENG', '/_static/doc/tds12-presentation.pdf'),
         ),
     );
     // $hero[] = array(
