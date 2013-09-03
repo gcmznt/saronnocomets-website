@@ -45,12 +45,12 @@
     <?php
         if (isset($_POST['titolo']) && isset($_POST['testo']) && $_POST['titolo'] != '' && $_POST['testo'] != '') {
             require_once(__DIR__ . '/../_includes/db_connect.php');
-            require_once(__DIR__ . '/../_includes/post_on_facebook.php');
+            // require_once(__DIR__ . '/../_includes/post_on_facebook.php');
             $t = mysql_real_escape_string($_POST['titolo']);
             $p = mysql_real_escape_string($_POST['testo']);
             mysql_query("INSERT INTO news (testo, titolo) VALUES ('$p', '$t');");
             $id = mysql_insert_id();
-            post_on_facebook($t,'http://www.saronnocomets.it/news-'.$id);
+            // post_on_facebook($t,'http://www.saronnocomets.it/news-'.$id);
             echo 'Salvataggio effettuato.';
         } else {
     ?>
