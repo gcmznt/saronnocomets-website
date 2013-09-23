@@ -159,6 +159,13 @@
         header('Content-type: application/json');
         echo json_encode($res);
     });
+    $silex->get("/torneo-di-saronno/{anno}/", function ($anno) use ($silex, $twig, $context) { 
+        require_once(__DIR__ . '/_includes/hero.php');
+        $context['heros'] = $hero;
+        $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
+
+        $twig->display("tds-$anno.html", $context);
+    });
     $silex->get("/partite/", function () use ($silex, $twig, $context) { 
         require_once(__DIR__ . '/_includes/hero.php');
         $context['heros'] = $hero;
@@ -293,7 +300,7 @@
         require_once(__DIR__ . '/_includes/db_connect.php');
         $res = array();
 
-        $q = mysql_query("SELECT * FROM tds WHERE year = '2012' ORDER BY team ASC");
+        $q = mysql_query("SELECT * FROM tds WHERE year = '" . date('Y') . "' ORDER BY team ASC");
         while ($res[] = mysql_fetch_assoc($q)) {}
 
         header('Content-type: application/json');

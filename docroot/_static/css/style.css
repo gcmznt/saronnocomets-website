@@ -204,6 +204,9 @@ section {
     font-size: 90%;
     /*box-shadow: 25px 0px 25px -25px #dbdbdb;*/
 }
+section li {
+    list-style: disc;
+}
 #browserError {
     position: absolute;
     width: 188px;

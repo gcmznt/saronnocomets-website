@@ -61,13 +61,12 @@
     //     ),
     // );
     $hero[] = array(
-        'bg' => "hero-tds12.png",
+        'bg' => "hero-tds.png",
         'h2' => "Torneo &quot;Citt&agrave; di Saronno&quot;",
-        'h3' => "Decima edizione<br />29 e 30 Settembre 2012",
+        'h3' => "Undicesima edizione<br />6 Ottobre 2013",
         'bt' => array(
-            array('Le classifiche', '/torneo-di-saronno/'),
-            // array('Info ITA', '/_static/doc/tds12-presentazione.pdf'),
-            // array('Info ENG', '/_static/doc/tds12-presentation.pdf'),
+            array('Informazioni', '/torneo-di-saronno/2013/'),
+            array('Iscrizioni', '/torneo-di-saronno/iscrizioni/'),
         ),
     );
     // $hero[] = array(
