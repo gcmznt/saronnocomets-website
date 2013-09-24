@@ -35,7 +35,7 @@ var lock = false;
 $(document).ready(function() {
     $('.hero:first-child').show();
     var l = $('.hero').length;
-    if (l > 1) {
+    if (l > 1 && ($(document).width() >= 600)) {
         t = setTimeout(heroTimer, heroInterval);
         var navi = $('<div id="heroNavi"></div>');
         for (var i = 0; i < l; i++) {
@@ -76,12 +76,14 @@ $(document).ready(function() {
 $(function() {
     var top = $('#innerwrapper > nav').offset().top - parseFloat($('#innerwrapper > nav').css('margin-top').replace(/auto/, 0));
     $(window).scroll(function (event) {
-        if ($('#wrapper').offset().top + $('#wrapper').outerHeight() < $(this).scrollTop() + $('nav').outerHeight()) {
-            $('#innerwrapper > nav').css({'position': 'absolute', 'margin-left': '0px', 'left': '0', 'top': 'auto', 'bottom': 0});
-        } else if ($(this).scrollTop() >= top) {
-            $('#innerwrapper > nav').css({'position': 'fixed', 'margin-left': '-480px', 'left': '50%', 'top': 0, 'bottom': 'auto'});
-        } else {
-            $('#innerwrapper > nav').css({'position': 'absolute', 'margin-left': '0px', 'left': '0', 'top': 'auto', 'bottom': 'auto'});
+        if ($(document).width() >= 1000) {
+            if ($('#wrapper').offset().top + $('#wrapper').outerHeight() < $(this).scrollTop() + $('nav').outerHeight()) {
+                $('#innerwrapper > nav').css({'position': 'absolute', 'margin-left': '0px', 'left': '0', 'top': 'auto', 'bottom': 0});
+            } else if ($(this).scrollTop() >= top) {
+                $('#innerwrapper > nav').css({'position': 'fixed', 'margin-left': '-480px', 'left': '50%', 'top': 0, 'bottom': 'auto'});
+            } else {
+                $('#innerwrapper > nav').css({'position': 'absolute', 'margin-left': '0px', 'left': '0', 'top': 'auto', 'bottom': 'auto'});
+            }
         }
     });
 });

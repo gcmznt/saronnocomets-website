@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic" />
     <link rel="stylesheet" href="/_static/css/prettyPhoto.css" type="text/css" />
     <link rel="stylesheet" href="/_static/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="/_static/css/style.css?v5" type="text/css" />
+    <link rel="stylesheet" href="/_static/css/style.css?v6" type="text/css" />
 
     {% if ga_account %}{% include 'inc/ga.html' %}{% endif %}
 
@@ -26,8 +26,8 @@
 
     {% block header %}
     <header>
-        <a href="/" id="title">Saronno TchoukBall Club</a>
         <a href="/" id="bookmark"><img src="/_static/img/logo.png" alt="Il logo del Saronno TchoukBall Club" /></a>
+        <a href="/" id="title">Saronno TchoukBall Club</a>
         <div id="herospace">
             {% for hero in heros %}
             <div class="hero" style="background-image:url('/_static/img/{{ hero.bg }}');">
@@ -49,10 +49,6 @@
 
     <div id="wrapper">
         <div id="innerwrapper">
-            {% block menu %}
-                {% include 'inc/menu.html' %}
-            {% endblock %}
-            
             {% block content %}
             <section>
                 <h1>Titolo</h1>
@@ -61,6 +57,10 @@
 
             {% block sidebar %}
                 {% include 'inc/sidebar.html' %}
+            {% endblock %}
+
+            {% block menu %}
+                {% include 'inc/menu.html' %}
             {% endblock %}
         </div>
     </div>
@@ -99,7 +99,7 @@
     <script src="/_static/js/jquery.tools.min.js" type="text/javascript"></script>
     <script src="/_static/js/jquery.prettyPhoto.mod.js" type="text/javascript"></script>
     <script src="/_static/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/_static/js/javascript.js?v3" type="text/javascript"></script>
+    <script src="/_static/js/javascript.js?v4" type="text/javascript"></script>
 
     <!--[if lt IE 9]>
     <script src="/_static/js/html5shiv.js" type="text/javascript"></script>
