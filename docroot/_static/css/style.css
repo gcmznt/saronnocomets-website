@@ -7,13 +7,15 @@ body {
 }
 
 header, section, article, aside, footer {
-	display: block;
+    display: block;
 }
 
 header {
-    background: url('../img/sfondo-title.png') center top repeat-x;
+    background: url('../img/sfondo-title.png') center top repeat-x, url('../img/sfondo.png') center top repeat-x;
     padding-top: 30px;
     overflow: hidden;
+    z-index: 20;
+    position: relative;
 }
 
 header #title {
@@ -58,18 +60,27 @@ header #herospace {
 }
 
 #wrapper {
+    position: relative;
+    margin-bottom: 221px;
+    z-index: 20;
+    background: white url('../img/sfondo.png') center -456px repeat-x;
+    box-shadow: 0 10px 40px -20px #dbdbdb;
+    border-bottom: 2px solid #eee;
+}
+#innerwrapper {
     width: 960px;
     margin: 0 auto;
     overflow: auto;
+    position: relative;
 }
 
 footer {
     font-size: 88%;
-    border-top: 2px solid #eee;
-    box-shadow: inset 0 20px 70px -20px #dbdbdb;
     background: url('../img/sfondo-gray.png') center center;
-    padding: 20px 0px;
-    position: relative;
+    position: fixed;
+    z-index: 10;
+    bottom: -1px;
+    width: 100%;
 }
 
 footer ul {
@@ -162,16 +173,16 @@ footer li {
 
 nav li {
     line-height: 150%;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
 }
 nav li:hover {
-	-webkit-transform: translate(1em,0);
-	-moz-transform: translate(1em,0);
-	-o-transform: translate(1em,0);
-	-ms-transform: translate(1em,0);
+    -webkit-transform: translate(1em,0);
+    -moz-transform: translate(1em,0);
+    -o-transform: translate(1em,0);
+    -ms-transform: translate(1em,0);
 }
 nav a:hover {
     text-decoration: none;
@@ -190,7 +201,7 @@ nav, aside {
     top: 0;
 }
 nav {
-    float: left;
+    position: absolute;
 }
 aside {
     float: right;
@@ -200,7 +211,7 @@ aside {
 section {
     float: left;
     width: 500px;
-    margin: 0 30px 30px;
+    margin: 0 30px 30px 230px;
     font-size: 90%;
     /*box-shadow: 25px 0px 25px -25px #dbdbdb;*/
 }

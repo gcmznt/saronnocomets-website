@@ -48,19 +48,21 @@
     {% endblock %}
 
     <div id="wrapper">
-        {% block menu %}
-            {% include 'inc/menu.html' %}
-        {% endblock %}
-        
-        {% block content %}
-        <section>
-            <h1>Titolo</h1>
-        </section>
-        {% endblock %}
+        <div id="innerwrapper">
+            {% block menu %}
+                {% include 'inc/menu.html' %}
+            {% endblock %}
+            
+            {% block content %}
+            <section>
+                <h1>Titolo</h1>
+            </section>
+            {% endblock %}
 
-        {% block sidebar %}
-            {% include 'inc/sidebar.html' %}
-        {% endblock %}
+            {% block sidebar %}
+                {% include 'inc/sidebar.html' %}
+            {% endblock %}
+        </div>
     </div>
 
     {% block footer %}

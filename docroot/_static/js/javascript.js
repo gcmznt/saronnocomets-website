@@ -74,20 +74,14 @@ $(document).ready(function() {
 
 
 $(function() {
-    var top = $('#wrapper > nav').offset().top - parseFloat($('#wrapper > nav').css('margin-top').replace(/auto/, 0));
+    var top = $('#innerwrapper > nav').offset().top - parseFloat($('#innerwrapper > nav').css('margin-top').replace(/auto/, 0));
     $(window).scroll(function (event) {
-      // what the y position of the scroll is
-      var y = $(this).scrollTop();
-      
-      // whether that's below the form
-      if (y >= top) {
-        // if so, ad the fixed class
-        $('#wrapper > nav').css({'position': 'fixed', 'margin-left': '-480px', 'left': '50%'});
-        $('section').css('margin-left', '230px');
-      } else {
-        // otherwise remove it
-        $('#wrapper > nav').css({'position': 'static', 'margin-left': '0px', 'left': 'auto'});
-        $('section').css('margin-left', '30px');
-      }
+        if ($('#wrapper').offset().top + $('#wrapper').outerHeight() < $(this).scrollTop() + $('nav').outerHeight()) {
+            $('#innerwrapper > nav').css({'position': 'absolute', 'margin-left': '0px', 'left': '0', 'top': 'auto', 'bottom': 0});
+        } else if ($(this).scrollTop() >= top) {
+            $('#innerwrapper > nav').css({'position': 'fixed', 'margin-left': '-480px', 'left': '50%', 'top': 0, 'bottom': 'auto'});
+        } else {
+            $('#innerwrapper > nav').css({'position': 'absolute', 'margin-left': '0px', 'left': '0', 'top': 'auto', 'bottom': 'auto'});
+        }
     });
 });

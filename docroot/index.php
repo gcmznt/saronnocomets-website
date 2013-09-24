@@ -5,7 +5,7 @@
     require_once __DIR__ . '/_libs/twig/lib/Twig/Autoloader.php';
     Twig_Autoloader::register();
     $twig = new Twig_Environment(new Twig_Loader_Filesystem(__DIR__ . '/_templates'));
-
+    
     session_start();
 
     $context = array();
@@ -16,7 +16,6 @@
         require_once(__DIR__ . '/_includes/hero.php');
         $context['heros'] = $hero;
         $context['main_matches'] = read_data('http://' . $_SERVER["HTTP_HOST"] . '/_export/partite.php?main');
-
         require_once(__DIR__ . '/_includes/db_connect.php');
         $news = mysql_query("SELECT * FROM news ORDER BY data DESC LIMIT 0,10;");
         while ($n = mysql_fetch_assoc($news)) {
@@ -330,7 +329,6 @@
         $context['testo'] = $news['testo'];
         $twig->display("admin/singlenews.html", $context);
     });
-
 
 
 
