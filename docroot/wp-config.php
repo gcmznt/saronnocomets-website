@@ -17,8 +17,8 @@
 $port = ($_SERVER['SERVER_PORT'] != 80) ? ':' . $_SERVER['SERVER_PORT'] : '';
 define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . $port . '/wordpress');
 define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME'] . $port);
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/extra');
-define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . $port . '/extra');
+define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/assets');
+define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . $port . '/assets');
 
 define('WP_DEFAULT_THEME', 'html5blank');
 
