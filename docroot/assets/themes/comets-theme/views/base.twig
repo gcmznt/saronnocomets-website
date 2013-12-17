@@ -1,0 +1,53 @@
+{% include 'html-header.twig' %}
+{% block head %}
+{% endblock %}
+</head>
+<body class="{{body_class}}" data-source="base.twig">
+
+    <!--[if lt IE 9]>
+    <p class="browser-error">
+        Per migliorare la navigazione ti consigliamo di <a href="http://browsehappy.com/">aggiornare il tuo browser all'ultima versione</a>.
+    </p>
+    <![endif]-->
+
+    <a href="#main-navigation" class="gotomenu"><span></span></a>
+    
+    {% block header %}
+    <header>
+        <a href="/" class="bookmark"><img src="{{ STATIC_URL }}/img/logo.png" alt="Il logo del Saronno TchoukBall Club" /></a>
+        <a href="/" class="title" rel="home"><h1>{{ bloginfo('name') }}</h1></a>
+    </header>
+    {% endblock %}
+
+
+    <div class="wrapper">
+        <div class="innerwrapper" id="main-wrap">
+            <section role="main">
+                {% if title %}<h1>{{title}}</h1>{% endif %}
+                {% block content %}
+                    Sorry, no content
+                {% endblock %}
+            </section>
+
+            {% if sidebar %}
+                <aside class="layout-sidebar">
+                    {{sidebar}}
+                </aside>
+            {% endif %}
+            
+            <nav class="main-navigation" id="main-navigation" role="navigation">
+                <h1>Menu</h1>
+                {% for item in menu.items %}
+                    <a href="{{item.link}}">{{item.title}}</a>
+                {% endfor %}
+            </nav>
+        </div>
+    </div>
+
+
+    <footer>
+        {% include 'footer.twig' %}
+    </footer>
+    {{ function('wp_footer') }}
+</body>
+</html>

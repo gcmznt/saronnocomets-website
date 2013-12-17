@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<h1 class="article-h1">{{post.title}}</h1>
+
+		{% if post.thumbnail.src %}
+			<figure><a href="{{post.link}}"><img src="{{post.thumbnail.src}}"></a></figure>
+		{% endif %}
+
+		<p class="blog-author">
+			<small><span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.display_date }}</small>
+		</p>
+
+		<div class="article-body">
+			{{post.content}}
+		</div>
+	</article>
+
+	<nav class="pagination">
+	{% if post.get_prev.status == 'publish' %}
+		<a href="{{ post.get_prev.get_permalink }}" class="prev">&lt;<br><small>{{ post.get_prev.title }}</small></a>
+	{% endif %}
+	{% if post.get_next.status == 'publish' %}
+		<a href="{{ post.get_next.get_permalink }}" class="next">&gt;<br><small>{{ post.get_next.title }}</small></a>
+	{% endif %}
+	</nav>
+
+{% endblock %}

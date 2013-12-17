@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	{% for post in posts %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+
+	<nav class="pagination">
+	{% for page in pagination.pages %}
+		{% if page.link %}
+			<a class="{{ page.class }}" href="{{ page.link }}">{{ page.title }}</a>
+		{% else %}
+			<span class="{{ page.class }}">{{ page.title }}</span>
+		{% endif %}
+	{% endfor %}
+	</nav>
+
+{% endblock %}
