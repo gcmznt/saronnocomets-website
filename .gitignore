@@ -1,0 +1,4 @@
+*.DS_Store
+*Thumbs.db
+docroot/db-config.php
+docroot/assets/uploads/
