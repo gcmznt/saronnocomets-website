@@ -1,3 +1,0 @@
-[submodule "docroot/_libs/twig"]
-	path = docroot/_libs/twig
-	url = git://github.com/fabpot/Twig.git
