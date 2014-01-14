@@ -15,6 +15,7 @@
         /* this is where you can add your own data to Timber's context object */
         $data['menu'] = new TimberMenu();
         $data['STATIC_URL'] = THEME_URL;
+
         return $data;
     }
 

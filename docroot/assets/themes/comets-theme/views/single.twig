@@ -18,13 +18,15 @@
 		</div>
 	</article>
 
+	{% if post.prev.status == 'publish' or post.next.status == 'publish' %}
 	<nav class="pagination">
-	{% if post.get_prev.status == 'publish' %}
-		<a href="{{ post.get_prev.get_permalink }}" class="prev">&lt;<br><small>{{ post.get_prev.title }}</small></a>
+	{% if post.prev.status == 'publish' %}
+		<a href="{{ post.prev.get_permalink }}" class="prev">&lt;<br><small>{{ post.prev.title }}</small></a>
 	{% endif %}
-	{% if post.get_next.status == 'publish' %}
-		<a href="{{ post.get_next.get_permalink }}" class="next">&gt;<br><small>{{ post.get_next.title }}</small></a>
+	{% if post.next.status == 'publish' %}
+		<a href="{{ post.next.get_permalink }}" class="next">&gt;<br><small>{{ post.next.title }}</small></a>
 	{% endif %}
 	</nav>
+	{% endif %}
 
 {% endblock %}

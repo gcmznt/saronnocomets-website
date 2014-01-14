@@ -6,6 +6,7 @@
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
 
+	{% if pagination.pages %}
 	<nav class="pagination">
 	{% for page in pagination.pages %}
 		{% if page.link %}
@@ -15,5 +16,6 @@
 		{% endif %}
 	{% endfor %}
 	</nav>
+	{% endif %}
 
 {% endblock %}

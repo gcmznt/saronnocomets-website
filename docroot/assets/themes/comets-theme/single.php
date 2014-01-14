@@ -12,6 +12,8 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+$context['post']->next = new $context['post']->PostClass(get_adjacent_post( true, "", false ));
+$context['post']->prev = new $context['post']->PostClass(get_adjacent_post( true, "", true ));
 $context['wp_title'] .= ' - ' . $post->title();
 $context['comment_form'] = TimberHelper::get_comment_form();
 

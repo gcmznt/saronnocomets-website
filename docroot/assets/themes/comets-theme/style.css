@@ -209,8 +209,23 @@ section figure {
     margin: 0 -20px;
 }
 
+.home .rubriche {
+    background: #f0f0f0;
+    padding: 1px 20px;
+    margin: 0 -20px 20px;
+    border: 1px solid #dbdbdb;
+    overflow: hidden;
+}
+
+.home .conosci-i-comets h2:before {
+    content: 'conosci i comets';
+    font-variant:small-caps;
+    opacity: 0.5;
+    color: #333;
+}
+
 nav {
-    border: 1px solid #f0f0f0;
+    border: 1px solid #dbdbdb;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -240,12 +255,12 @@ nav a:last-child {
     display: table-cell;
     text-align: center;
     padding: .5em 0;
-    border-right: 1px solid #f0f0f0;
+    border-right: 1px solid #dbdbdb;
 }
 .main-navigation a {
     display: block;
     padding: .5em 20px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #dbdbdb;
 }
 .pagination a {
     line-height: 1em;
@@ -327,6 +342,10 @@ footer h1 {
         float: left;
         width: 40%;
         margin: 0 20px 20px 0;
+    }
+    .home .rubriche {
+        margin-left: 0;
+        margin-right: 0;
     }
     footer {
         overflow: hidden;

@@ -20,7 +20,7 @@
 	$context = Timber::get_context();
 	$context['posts'] = Timber::get_posts();
 	$context['pagination'] = Timber::get_pagination(array('mid_size' => 1));
-	$context['title'] = 'News';
+	$context['title'] = 'Home page';
 	$templates = array('index.twig');
 	if (is_home()){
 		array_unshift($templates, 'home.twig');
